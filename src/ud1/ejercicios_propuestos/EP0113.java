@@ -1,7 +1,6 @@
 package ud1.ejercicios_propuestos;
 
  import java.util.Scanner;
- import java.math.*;
 
 
 public class EP0113 {
@@ -28,5 +27,7 @@ public class EP0113 {
         System.out.println(y);
 
         //System.out.println(Math.pow(coeficientea * coeficientex, 2));
+
+        sc.close();
     }
 }
