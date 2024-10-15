@@ -30,7 +30,8 @@ public class horasClaseAsistencia {
 
         double clasesFaltadas =  sc.nextInt();
 
-        clasesFaltadas <= sesetaPorciento ? System.out.println("Verdadero") : System.out.println("Falso");
+        String resultado = clasesFaltadas <= sesetaPorciento ? "Verdadero" : "Falso";
+        System.out.println(resultado);
 
 
 

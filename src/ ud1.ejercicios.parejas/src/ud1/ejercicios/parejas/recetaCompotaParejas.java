@@ -20,6 +20,8 @@ public class recetaCompotaParejas {
         double azucarPersona = AZUCAR / PERSONAS;
         double limonPersona = LIMON / PERSONAS;
 
+        sc.next
+
         System.out.println("Las cantidades están pensadas para "+ PERSONAS + " personas, y necesitaremos " + MANZANA + " gramos de manzanas, " + AGUA + " ml de agua, " + AZUCAR + " gramos de azucar "+ LIMON + " ml, aproximadamente 1 cucharadita");
 
         Scanner sc = new Scanner(System.in);
