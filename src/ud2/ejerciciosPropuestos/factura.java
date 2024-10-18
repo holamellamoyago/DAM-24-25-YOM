@@ -10,6 +10,7 @@ public class factura {
 
         System.out.println("Introduce el numero de unidades");
         int unidades = sc.nextInt();
+        sc.close();
 
         double precioTotal = (unidades * precio * 21 /100) + unidades * precio;
 
