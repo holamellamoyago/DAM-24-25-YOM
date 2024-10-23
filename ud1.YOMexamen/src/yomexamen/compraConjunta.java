@@ -1,4 +1,3 @@
-
 package yomexamen;
 import java.util.Scanner;
 
