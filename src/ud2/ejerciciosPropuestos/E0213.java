@@ -9,6 +9,7 @@ public class E0213 {
         int hora = sc.nextInt();
         int minuto = sc.nextInt();
         int segundo = sc.nextInt();
+        sc.close();
 
         // switch (segundo) {
         // case 59 : minuto++;

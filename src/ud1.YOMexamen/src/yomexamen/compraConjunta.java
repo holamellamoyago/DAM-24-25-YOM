@@ -48,7 +48,7 @@ public class compraConjunta {
         // Aquí lo que hice fue declarar 3 strings para simplificar el resultado de abajo , para no hacer una cadena de condicionales muy extensa . 
 
         String siComprar = "Se puede comprar pero sobran " + dineroSobranteFaltante;
-        String igualComprar = "Se puede comprar pero sobran ";
+        String igualComprar = "Se puede comprar y no sobra ";
         String noComprar = "No se puede comprar por qué faltan " + (precioArticulo - dineroSobranteFaltante) + "euros";
 
 

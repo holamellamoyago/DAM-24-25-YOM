@@ -9,6 +9,7 @@ public class numerosOrdenados {
         int numero1= sc.nextInt();
         int numero2= sc.nextInt();
         int numero3= sc.nextInt();
+        sc.close();
 
         // String resultado = numero1 > numero2  ? numero2 > numero3 ? "Esta ordenado de mayor a menor" : numero1 < numero2 ? numero2 < numero3 ? "Es de menos a mayor" : "";
 

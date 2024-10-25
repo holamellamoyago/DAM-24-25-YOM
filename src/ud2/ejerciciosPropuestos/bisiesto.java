@@ -8,6 +8,7 @@ public class bisiesto {
         System.out.println("Introduce el numero de año");
         int anho = sc.nextInt();
         boolean esBisiesto;
+        sc.close();
 
         // String bisiesto = año % 4 == 0  ? SiEs : NoEs;
         // String bisiestoSecular = año % 100 == 0 ? SiEs : NoEs;

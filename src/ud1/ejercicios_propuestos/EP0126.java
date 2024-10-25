@@ -8,7 +8,7 @@ public class EP0126 {
         double raiz, numero;
 
         // No utilizar npackage ud1.ejercicios_propuestos;
-inguna importación
+        //inguna importación
         java.util.Scanner entrada;
         entrada = new java.util.Scanner(System.in);
 
