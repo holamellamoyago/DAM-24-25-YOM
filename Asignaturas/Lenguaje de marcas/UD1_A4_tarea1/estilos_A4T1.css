@@ -1,0 +1,32 @@
+h2{
+	color:red;
+	
+}
+footer{
+	margin:0;
+	padding:0;
+	background-color:black;
+	font-family: verdana;
+}
+
+footer h2{
+	color: grey;
+	margin:0;
+}
+
+footer p{
+	color: white;
+}
+
+footer time{
+	color: green;
+}
+
+section{
+	background-color:green;
+	
+}
+
+p{
+	margin: 0;
+}
