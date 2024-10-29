@@ -1,0 +1,69 @@
+*{
+	font-family:Arial;
+}
+
+h1{
+	font-family:Arial Narrow;
+	color:brown;
+	letter-spacing:0.2rem;
+}
+
+h2{
+	
+	color: mediumseagreen ;
+}
+h2::after{
+	content:"!!!";
+}
+
+p::first-line{
+	font-style:italic;
+	color:#444432;
+}
+li{
+	background-color:lightcoral ;
+	list-style:none;
+}
+li:nth-of-type(odd){
+	background-color:papayawhip;
+}
+
+a{
+	text-decoration:none;
+}
+
+a:hover{
+	color:seagreen ;
+	text-decoration:underline;
+}
+
+
+
+article:last-child li:nth-of-type(even){
+	background-color:white;
+}
+
+article:last-child section+section+a:nth-of-type(odd){
+	color:brown;
+}
+
+article:last-child article:last-child{
+		color:red;
+}
+
+article:last-child li:nth-of-type(even){
+	color:brown;
+	font-size:2rem;
+}
+
+article:last-child li:first-of-type{
+	color:red;
+}
+
+article:last-child li:last-of-type{
+	color:green;
+}
+
+article:last-child li:nth-child(3){
+	color:orange;
+}
