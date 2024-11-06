@@ -17,9 +17,7 @@ public class E0307 {
 
         do {
             if (x % 7 == 0) {
-                System.out.println(x + "Es multiplo");
-            } else{
-                System.out.println(x + " No es multilpo");
+                System.out.println(x + " Es multiplo");
             }
             x++;
         } while (x < 100);

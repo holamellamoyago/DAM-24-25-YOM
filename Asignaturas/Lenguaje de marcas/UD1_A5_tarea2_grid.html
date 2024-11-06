@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>UD1_A5_tarea2_grid</title>
+		
+		<style>
+		
+			ul{
+				list-style:none;
+				border: solid 2px grey;
+			}
+		
+			.nav1 ul{
+				display:flex;
+				justify-content: space-between;
+
+			}
+			
+			.nav2 ul{
+				display:float;
+				height:40px;
+			}
+			
+			.linav2{
+				float:right;
+			}
+			
+			
+			.nav3 ul{
+				display:grid;
+				grid-template-columns: 1fr 1fr;
+			}
+			
+			.nav3 ul li:nth-of-type(2){
+				text-align:end;
+			}
+		</style>
+	</head>
+	<body>
+		<nav class="nav1">
+			<ul>
+				<li>Anterior</li>
+				<li>Siguiente</li>
+			</ul>
+		</nav>
+		<nav class="nav2">
+			<ul>
+				<li>Anterior</li>
+				<li class="linav2">Siguiente</li>
+			</ul>
+		</nav>
+		<nav class="nav3">
+			<ul>
+				<li>Anterior</li>
+				<li class="ult">Siguiente</li>
+			</ul>
+		</nav>
+	</body>
+</html>
