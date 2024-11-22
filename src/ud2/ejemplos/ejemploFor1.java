@@ -1,4 +1,4 @@
-
+package ud2.ejemplos;
 public class ejemploFor1 {
     public static void main(String[] args) {
         int i = 1;

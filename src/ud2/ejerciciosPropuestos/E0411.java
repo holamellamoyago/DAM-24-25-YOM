@@ -1,7 +1,8 @@
 package ud2.ejerciciosPropuestos;
 
 import java.util.Scanner;
-import ud2.Util;
+
+import ud3.Util;
 
 public class E0411 {
     public static void main(String[] args) {

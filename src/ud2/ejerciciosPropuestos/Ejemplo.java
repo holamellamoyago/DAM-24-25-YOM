@@ -1,4 +1,5 @@
-import java.util.Random;
+package ud2.ejerciciosPropuestos;
+
 
 public class Ejemplo {
     public static void main(String[] args) {
