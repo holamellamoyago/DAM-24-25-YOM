@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+>>>>>>> e0ee34906f121a6d4c76a12206b8d60f1f932ad1
 class Conexion {
 
 
