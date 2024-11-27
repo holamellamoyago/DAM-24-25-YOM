@@ -1,4 +1,4 @@
-package extra;
+package ud1.otros;
 /* Crea un programa que calcule la edad de una persona en años, meses y días, dada su fecha de nacimiento. 
 El usuario debe ingresar su fecha de nacimiento y el programa debe calcular y mostrar su edad actual.
 

@@ -7,32 +7,38 @@ public class EjemploPOO {
         Persona p ;
         p = new Persona(); 
     
-        //se utilizan los métodos definidos en la clase Persona                                    
+        // //se utilizan los métodos definidos en la clase Persona                                    
         p.inicializar("Yago","Otero","Martínez",21);
-        String nombre2 = p.nombreCompleto();
-        if(p.esMayorEdad()){
-           System.out.println(nombre2 + " es mayor de edad");
-        }else{
-           System.out.println(nombre2 + " no es mayor de edad");
-        }
+        p.setEstatura(1.80);
+        p.crecer(0.5);
 
-        Persona p2;
-        p2 = new Persona();
+        System.out.println(p.getEstatura());
+        // String nombre2 = p.nombreCompleto();
+        // if(p.esMayorEdad()){
+        //    System.out.println(nombre2 + " es mayor de edad");
+        // }else{
+        //    System.out.println(nombre2 + " no es mayor de edad");
+        // }
 
-        p2.inicializar("Maria", "Ape1", "Ape2", 33);
-        p2.inicializar("Fernando", "Alonso", "Díaz", 33);
+        // Persona p2;
+        // p2 = new Persona();
 
-        System.out.println(p2.nombreCompleto());
+        // p2.inicializar("Maria", "Ape1", "Ape2", 33);
+        // p2.inicializar("Fernando", "Alonso", "Díaz", 33);
 
-        System.out.println(Persona.contadorPersonas);
-        Persona.incrementarContador();
-        System.out.println(Persona.contadorPersonas);
+        // System.out.println(p2.nombreCompleto());
 
-        Persona p4 = null;
-        p4 = p;
-        p4.incrementarAnhos();
-        System.out.println(p4.getEdad());
+        // System.out.println(Persona.contadorPersonas);
+        // Persona.incrementarContador();
+        // System.out.println(Persona.contadorPersonas);
 
-        System.out.println(p4.nombreCompleto() + " tiene " + p4.getEdad() + " años");
+        // Persona p4 = null;
+        // p4 = p;
+        // p4.incrementarAnhos();
+        // System.out.println(p4.getEdad());
+
+        // System.out.println(p4.nombreCompleto() + " tiene " + p4.getEdad() + " años");
+
+        // p.saludar();
     }
 }

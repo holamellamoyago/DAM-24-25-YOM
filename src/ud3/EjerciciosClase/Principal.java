@@ -20,5 +20,11 @@ public class Principal {
         } else {
             System.out.println("Fecha no valida");
         }
+
+
+
+
+        sc.close();
+        
     }
 }

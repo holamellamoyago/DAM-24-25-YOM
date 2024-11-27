@@ -1,4 +1,5 @@
-package extra;
+package ud1.otros;
+
 /* Desarrolla un programa que calcule la media de las notas de un alumno. Permite al usuario ingresar varias notas 
 (hasta que ingrese -1 para terminar). El programa debe calcular y mostrar la media de las notas ingresadas.
 

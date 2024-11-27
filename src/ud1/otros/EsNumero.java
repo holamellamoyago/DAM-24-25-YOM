@@ -1,4 +1,5 @@
-package extra;
+package ud1.otros;
+
 /* Escribe un programa que lea un carácter de teclado e imprima por pantalla si se trata de un número, de una letra mayúscula, de una letra minúscula o si no es nada de eso.
 
 Utiliza el operador ternario para imprimir la salida. */

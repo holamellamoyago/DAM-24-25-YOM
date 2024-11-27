@@ -6,7 +6,34 @@ public class Persona {
     private String apellido1;
     private String apellido2;
     private int edad;
+    private double estatura = 180;
     public static int contadorPersonas;
+    // private final String dni;
+
+    // Constructores
+    Persona (String nombre, int edad, double estatura) {
+        this.nombre = nombre; //asigna el parámetro al atributo
+        this.edad =  edad;
+        this.estatura = estatura;
+    }
+
+    public Persona(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+    
+    public Persona(String nombre) {
+        this.nombre = nombre;
+    }
+
+    
+
+
+    Persona(){
+
+    }
+
+
 
     // Métodos
     public void inicializar(String n, String a1, String a2, int e) {
@@ -32,11 +59,30 @@ public class Persona {
         contadorPersonas++;
     }
 
-    public void incrementarAnhos(){
+    public void incrementarAnhos() {
         edad++;
     }
 
-    public int getEdad(){
+    public int getEdad() {
         return edad;
     }
+
+    public double getEstatura() {
+        return estatura;
+    }
+
+    public void setEstatura(double estatura) {
+        if (estatura > 0) {
+            this.estatura = estatura;
+        }
+    }
+
+    void crecer(double altura) {
+        estatura += altura;
+    }
+
+    void saludar() {
+        System.out.println("Hola, mi nombre es: " + nombre);
+    }
+
 }
