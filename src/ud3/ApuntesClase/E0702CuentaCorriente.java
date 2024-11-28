@@ -1,6 +1,6 @@
-package ud3.EjerciciosClase;
+package ud3.ApuntesClase;
 
-public class CuentaCorriente {
+public class E0702CuentaCorriente {
     private String dni;
     private String nombre;
     private double saldo;
@@ -22,23 +22,23 @@ public class CuentaCorriente {
     public double getSaldo() {
         return saldo;
     }
-    public void setSaldo(double sueldo) {
-        this.saldo = sueldo;
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
     }
 
     
     // Constructores 
-    public CuentaCorriente(String dni, String nombre, double sueldo) {
+    
+
+    public E0702CuentaCorriente(String dni, String nombre, double saldo) {
         this.dni = dni;
         this.nombre = nombre;
-        this.saldo = sueldo;
-    }
-    public CuentaCorriente(String dni, String nombre) {
-        this.dni = dni;
-        this.nombre = nombre;
+        this.saldo = saldo;
     }
 
-    
+    public E0702CuentaCorriente(String dni, int saldo) {
+        this(dni, "nombre", saldo);
+    }
 
     // Metodos 
     void sacarDinero(double dinero){

@@ -1,9 +1,9 @@
-package ud3.EjerciciosClase;
+package ud3.ApuntesClase;
 
 public class E0701 {
 
     public static void main(String[] args) {
-        CuentaCorriente c = new CuentaCorriente("39511342X", "Yago", 0);
+        E0701CuentaCorriente c = new E0701CuentaCorriente("39511342X", "Yago", 0);
 
         System.out.println("Elige operación");
         System.out.println("1. Sacar dinero");

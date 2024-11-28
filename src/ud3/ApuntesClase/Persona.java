@@ -1,4 +1,4 @@
-package ud3.EjerciciosClase;
+package ud3.ApuntesClase;
 
 public class Persona {
     // Datos
