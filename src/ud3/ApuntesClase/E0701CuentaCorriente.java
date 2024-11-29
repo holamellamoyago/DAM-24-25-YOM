@@ -1,8 +1,14 @@
-package ud3.EjerciciosClase;
+package ud3.ApuntesClase;
 
+<<<<<<< HEAD:src/ud3/EjerciciosClase/CuentaCorriente.java
 public class CuentaCorriente {
     String dni;
     public String titular;
+=======
+public class E0701CuentaCorriente {
+    private String dni;
+    private String nombre;
+>>>>>>> 7144c1f0902a83fd8a8ceb427d310cc5ff45afc7:src/ud3/ApuntesClase/E0701CuentaCorriente.java
     private double saldo;
     private String banco;
 
@@ -33,6 +39,7 @@ public class CuentaCorriente {
         this.saldo = sueldo;
     }
 
+<<<<<<< HEAD:src/ud3/EjerciciosClase/CuentaCorriente.java
     public String getBanco() {
         return banco;
     }
@@ -51,12 +58,21 @@ public class CuentaCorriente {
 
     // Constructores
     public CuentaCorriente(String titular, String dni, double sueldo) {
+=======
+    
+    // Constructores 
+    public E0701CuentaCorriente(String dni, String nombre, double sueldo) {
+>>>>>>> 7144c1f0902a83fd8a8ceb427d310cc5ff45afc7:src/ud3/ApuntesClase/E0701CuentaCorriente.java
         this.dni = dni;
         this.titular = titular;
         this.saldo = sueldo;
     }
+<<<<<<< HEAD:src/ud3/EjerciciosClase/CuentaCorriente.java
 
     public CuentaCorriente(String titular, String dni) {
+=======
+    public E0701CuentaCorriente(String dni, String nombre) {
+>>>>>>> 7144c1f0902a83fd8a8ceb427d310cc5ff45afc7:src/ud3/ApuntesClase/E0701CuentaCorriente.java
         this.dni = dni;
         this.titular = titular;
     }

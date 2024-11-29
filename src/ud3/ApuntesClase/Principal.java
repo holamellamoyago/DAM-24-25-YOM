@@ -1,4 +1,4 @@
-package ud3.EjerciciosClase;
+package ud3.ApuntesClase;
 
 import java.util.Scanner;
 

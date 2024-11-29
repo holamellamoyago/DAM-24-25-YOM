@@ -1,4 +1,4 @@
-package ud3.EjerciciosClase;
+package ud3.ApuntesClase;
 
 public class EjemploPOO {
     public static void main(String[] args) {
