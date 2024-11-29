@@ -1,65 +1,122 @@
 package ud3.EjerciciosClase;
 
 public class CuentaCorriente {
-    private String dni;
-    private String nombre;
+    String dni;
+    public String titular;
     private double saldo;
+    private String banco;
 
+    private Gestor gestor;
 
     // Getters & Setters
     public String getDni() {
         return dni;
     }
+
     public void setDni(String dni) {
         this.dni = dni;
     }
-    public String getNombre() {
-        return nombre;
+
+    public String getTitular() {
+        return titular;
     }
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+
+    public void setTitular(String nombre) {
+        this.titular = nombre;
     }
+
     public double getSaldo() {
         return saldo;
     }
+
     public void setSaldo(double sueldo) {
         this.saldo = sueldo;
     }
 
-    
-    // Constructores 
-    public CuentaCorriente(String dni, String nombre, double sueldo) {
+    public String getBanco() {
+        return banco;
+    }
+
+    public void setBanco(String banco) {
+        this.banco = banco;
+    }
+
+    public Gestor getGestor() {
+        return gestor;
+    }
+
+    public void setGestor(Gestor gestor) {
+        this.gestor = gestor;
+    }
+
+    // Constructores
+    public CuentaCorriente(String titular, String dni, double sueldo) {
         this.dni = dni;
-        this.nombre = nombre;
+        this.titular = titular;
         this.saldo = sueldo;
     }
-    public CuentaCorriente(String dni, String nombre) {
+
+    public CuentaCorriente(String titular, String dni) {
         this.dni = dni;
-        this.nombre = nombre;
+        this.titular = titular;
     }
 
-    
-
-    // Metodos 
-    void sacarDinero(double dinero){
+    // Metodos
+    void sacarDinero(double dinero) {
         if (saldo <= 0) {
             System.out.println("Disculpa , dinero insuficiente");
-        } else{
-            saldo =- dinero;
+        } else {
+            saldo = -dinero;
             System.out.println("Nuevo saldo: " + saldo);
         }
     }
 
-    void ingresarDinero(double dinero){
+    void ingresarDinero(double dinero) {
         dinero = getSaldo() + dinero;
 
         setSaldo(dinero);
     }
 
-    void mostrarInformacion(){
-        System.out.println("El sueldo de: " + nombre + " con DNI " + dni + " es " + getSaldo());
+    public void mostrar() {
+        System.out.println("El sueldo de: " + titular + " con DNI " + dni + " es " + getSaldo());
+
+        if (gestor != null) {
+            System.err.print(" - ");
+            gestor.mostrar();
+        }
     }
-    
-    
-    
+
+    public static void main(String[] args) {
+
+    }
+
+    public static boolean transferencia(CuentaCorriente c1, CuentaCorriente c2, double importe) {
+        boolean resultado = false;
+        if (c1 != null && c2 != null && c1.saldo >= importe) {
+
+            c1.saldo -= importe;
+            c2.saldo += importe;
+
+            resultado = true;
+
+        }
+
+        return resultado;
+    }
+
+    public boolean transferir(CuentaCorriente c2, double importe) {
+        
+        boolean resultado = false;
+        if (c2 != null && this.saldo >= importe) {
+
+            this.saldo -= importe;
+            c2.saldo += importe;
+
+            resultado = true;
+
+        }
+
+        return resultado;
+    }
+
 }

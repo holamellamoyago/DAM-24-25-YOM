@@ -23,7 +23,7 @@ public class E0701 {
                 System.out.println(c.getSaldo());
                 break;
             case 3:
-                c.mostrarInformacion();
+                c.mostrar();
                 break;
 
             default:
