@@ -7,14 +7,20 @@ public class Persona {
     private String apellido2;
     private int edad;
     private double estatura = 180;
+    private String dni = null;
     public static int contadorPersonas;
     // private final String dni;
 
     // Constructores
-    Persona (String nombre, int edad, double estatura) {
+    public Persona (String nombre, int edad, double estatura) {
         this.nombre = nombre; //asigna el parámetro al atributo
         this.edad =  edad;
         this.estatura = estatura;
+    }
+
+    public Persona(String nombre, String dni){
+        this.nombre = nombre;
+        this.dni = dni;
     }
 
     public Persona(String nombre, int edad) {
@@ -25,6 +31,8 @@ public class Persona {
     public Persona(String nombre) {
         this.nombre = nombre;
     }
+
+
 
     
 
