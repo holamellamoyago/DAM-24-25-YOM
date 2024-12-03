@@ -1,5 +1,5 @@
-package ud3.EjerciciosClase;
+package Clases;
 
-enum DiaDeLaSemana {
+public enum DiaDeLaSemana {
     LUNES,MARTES,MIERCOLES,JUEVES,SABADO,DOMINGO;
 }

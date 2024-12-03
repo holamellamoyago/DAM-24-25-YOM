@@ -1,3 +1,4 @@
+package Clases;
 public class Sintonizador {
     private double frecuencia;
     private double memoria1;

@@ -1,4 +1,5 @@
-package ud3.EjerciciosClase;
+package Clases;
+
 
 public class Gestor {
     public String nombre;

@@ -1,4 +1,7 @@
+package Ejercicios;
 import java.util.Scanner;
+
+import Clases.Sintonizador;
 
 public class E0708 {
 
@@ -29,6 +32,8 @@ public class E0708 {
             opcionSeleccionada = sc.nextInt();
         }
 
+
+        sc.close();
 
 
 

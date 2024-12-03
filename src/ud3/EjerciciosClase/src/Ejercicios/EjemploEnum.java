@@ -1,8 +1,12 @@
-package ud3.EjerciciosClase;
+package Ejercicios;
+
 import java.util.Scanner;
+import Clases.*;
+
 public class EjemploEnum {
 
     public static void main(String[] args) {
+        
         DiaDeLaSemana hoy;
         Scanner sc = new Scanner(System.in);
 

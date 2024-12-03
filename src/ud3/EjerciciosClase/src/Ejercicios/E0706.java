@@ -1,6 +1,9 @@
-package ud3.EjerciciosClase;
+package Ejercicios;
+
 
 import java.util.Scanner;
+
+import Clases.Hora;
 
 public class E0706 {
 
