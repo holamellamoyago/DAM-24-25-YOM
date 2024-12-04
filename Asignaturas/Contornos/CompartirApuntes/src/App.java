@@ -17,9 +17,11 @@ public class App {
             System.out.println("Escribe la opcion que quieres hacer: ");
             System.out.println("1.Iniciar sesisión");
             System.out.println("2.Registrarse en la plataforma");
+            System.out.println("3. Listar usuarios");
             switch (opcionEscogida) {
                 case 1 -> iniciarSesion();
                 case 2 -> registroUsuario();
+                case 3 -> listarUsuarios();
             
                 default -> System.out.println("Error");
             }
