@@ -7,7 +7,7 @@ class Conexion {
 
     // Datos de conexión a la base de datos (localhost)
     static final String HOST = "localhost";
-    static final String DATABASE = "compartirapuntes";
+    static final String DATABASE = "compartirapuntes2";
     static final String USER = "root";
     static final String PASSWORD = "";
     static final String PORT = "3306";

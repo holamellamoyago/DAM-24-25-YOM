@@ -1,3 +1,4 @@
+package compartircoche.bd;
 
 import java.nio.charset.StandardCharsets;
 import java.sql.Connection;
@@ -8,49 +9,9 @@ import java.sql.Timestamp;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
 
-public class App {
-    public static void main(String[] args) throws Exception {
+public class UsuariosBD {
 
-        int opcionEscogida = 2;
-
-        do {
-            System.out.println("Escribe la opcion que quieres hacer: ");
-            System.out.println("1.Iniciar sesisión");
-            System.out.println("2.Registrarse en la plataforma");
-            System.out.println("3. Listar usuarios");
-            switch (opcionEscogida) {
-                case 1 -> iniciarSesion();
-                case 2 -> registroUsuario();
-                case 3 -> listarUsuarios();
-            
-                default -> System.out.println("Error");
-            }
-        } while (opcionEscogida>=1 && opcionEscogida<3);
-    }
-
-    public static boolean registroUsuario() {
-        Connection conexion = Conexion.conectar();
-        Statement sentencia;
-        try {
-            sentencia = conexion.createStatement();
-            System.out.print("Usuario: ");
-            String usuario = System.console().readLine();
-            System.out.print("Contraseña: ");
-            String password = new String(System.console().readPassword());
-            int resultado = sentencia.executeUpdate("INSERT INTO user (username, password) VALUES ('" + usuario + "', '"
-                    + generarStringHash2Y(password) + "')");
-            sentencia.close();
-            conexion.close();
-            return resultado == 1;
-        } catch (SQLException e) {
-            e.printStackTrace();
-            //System.out.println("Error al crear el usuario");
-            return false;
-        }
-    }
-
-
-        /**
+    /**
      * Lista los usuarios de la base de datos
      */
     public static void listarUsuarios() {
@@ -67,7 +28,7 @@ public class App {
                 int id = resultado.getInt("id");
                 String username = resultado.getString("username");
                 //String password = resultado.getString("password");
-                Timestamp createdAt = resultado.getTimestamp("create_up");
+                Timestamp createdAt = resultado.getTimestamp("created_at");
 
                 // Procesa los datos
                 System.out.println(
@@ -196,4 +157,91 @@ public class App {
             }
         } while (true);
     }
+
+    /**
+     * Crea un nuevo usuario
+     * Solicita credenciales de nuevo usuario, y si se crea correctamente devuelve
+     * true
+     * 
+     * @return true si se creó el usuario
+     */
+    public static boolean crearUsuario() {
+        Connection conexion = Conexion.conectar();
+        Statement sentencia;
+        try {
+            sentencia = conexion.createStatement();
+            System.out.print("Usuario: ");
+            String usuario = System.console().readLine();
+            System.out.print("Contraseña: ");
+            String password = new String(System.console().readPassword());
+            int resultado = sentencia.executeUpdate("INSERT INTO user (username, password) VALUES ('" + usuario + "', '"
+                    + generarStringHash2Y(password) + "')");
+            sentencia.close();
+            conexion.close();
+            return resultado == 1;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            //System.out.println("Error al crear el usuario");
+            return false;
+        }
+    }
+
+    /**
+     * Método principal de ejemplo
+     */
+    public static void main(String[] args) {
+        System.out.println("\n*******************");
+        System.out.println("GESTIÓN DE USUARIOS");
+        System.out.println("*******************\n");
+        System.out.println("BASE DE DATOS: " + Conexion.DATABASE + " en " + Conexion.HOST + ":" + Conexion.PORT);
+        String opcion;
+        do {
+            System.out.println();
+            System.out.println("1. LISTADO DE USUARIOS:");
+            System.out.println("2. CREACIÓN DE USUARIO");
+            System.out.println("3. LOGIN DE USUARIO");
+            System.out.println("4. CAMBIO DE CONTRASEÑA");
+            System.out.println("0. SALIR");
+
+            System.out.println();
+            System.out.print("Opción: ");
+            opcion = System.console().readLine();
+            System.out.println();
+
+            switch (opcion) {
+                case "1":
+                    listarUsuarios();
+                    break;
+                case "2":
+                    System.out.println(crearUsuario() ? "Usuario creado" : "Error al crear el usuario");
+                    break;
+                case "3":
+                    System.out.println("LOGIN DE USUARIO");
+                    System.out.print("Usuario: ");
+                    String usuario = System.console().readLine();
+                    System.out.print("Contraseña: ");
+                    String password = new String(System.console().readPassword());
+                    System.out.println(loginUsuario(usuario, password) ? "Login OK" : "Login KO");
+                    break;
+                case "4":
+                    System.out.println("CAMBIO DE CONTRASEÑA");
+                    System.out.print("Usuario: ");
+                    String usuarioCambio = System.console().readLine();
+                    System.out.print("Nueva contraseña: ");
+                    String newPassword = new String(System.console().readPassword());
+                    System.out.println(
+                            cambiarPassword(usuarioCambio, newPassword) ? "Contraseña cambiada"
+                                    : "Error al cambiar la contraseña");
+                    break;
+                case "0":
+                    System.out.println("Hasta pronto...\n");
+                    break;
+                default:
+                    System.out.println("Opción no válida");
+                    break;
+            }
+        } while (!opcion.equals("0"));
+
+    }
+
 }
