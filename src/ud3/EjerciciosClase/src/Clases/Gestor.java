@@ -1,9 +1,8 @@
 package Clases;
 
-
 public class Gestor {
     public String nombre;
-    public final String telefono;
+    String telefono;
     double importeMax;
 
     public Gestor(String nombre, String telefono) {
@@ -12,24 +11,19 @@ public class Gestor {
         this.importeMax = 10000;
     }
 
-    public double getImporteMax() {
-        return importeMax;
+    public String getTelefono() {
+        return telefono;
     }
 
-    public void mostrar() {
-        System.out.println(nombre + "( " + telefono + " )" + " IMA: " + importeMax);
+    public void mostrarInformacion() {
+        System.out.println("Nombre: " + this.nombre + "\n" + "Telefono: " + this.telefono + "\n" + "ImporteMax: "
+                + this.importeMax);
     }
 
+    public static void main(String[] args) {
+        Gestor g = new Gestor("Pedro", "123456789");
 
+        g.mostrarInformacion();
+    }
 
-    
-
-
-
-    
-
-    
-    
 }
-
-
