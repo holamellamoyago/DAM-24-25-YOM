@@ -121,7 +121,7 @@ public class Dardos {
 
     public static void main(String[] args) {
         JugadorDardo j1 = new JugadorDardo("Yago", 21, "hombre");
-        JugadorDardo j2 = new JugadorDardo("Pedro", 21, "hombre");
+        JugadorDardo j2 = new JugadorDardo("Oscar", 21, "hombre");
 
         Dardos dardos = new Dardos(j1, j2);
 
