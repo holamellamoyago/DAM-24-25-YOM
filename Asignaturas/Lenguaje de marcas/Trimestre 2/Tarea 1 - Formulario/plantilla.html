@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tarea 1 -Formulario</title>
+		<style>
+		
+			*{
+				color:white;
+			}
+			
+			body{
+				background-color: #cedfef;
+				font-family: Verdana;
+				
+			}
+			
+			h1, button, select, option, optgroup{
+				color:black;
+			}
+			
+			form{
+				background-color:SteelBlue;
+				border: 5px solid LightSteelBlue;
+				width:80%;
+				margin: 0 auto;
+				
+			}
+			
+			fieldset{
+				margin-top:1rem;
+			}
+			
+			input{
+				border: 2px solid LightSteelBlue;
+				border-radius: 1px;
+			}
+			
+			.relleno{
+				display:flex;
+				flex-direction:column;
+			}
+			
+			.relleno p{
+				display:flex;
+				flex-direction:column;
+				justify-content: space-between;
+				
+			}
+			
+			.relleno p input{
+				width:80%;
+				
+			}
+			
+
+			
+			.productos{
+				
+			}
+			
+			.productos select{
+				width:100%;
+			}
+			
+			.contacto div{
+				display:flex;
+				
+			}
+			
+			.fieldset:last-of-type{
+				margin-bottom:1rem;
+			}
+			
+			
+			
+
+			@media(min-width:600px){
+				.relleno p {
+					flex-direction:row;
+				}
+			
+			}
+
+			
+		</style>
+	</head>
+	<body>
+		<h1>Formulario de contacto</h1>
+		<form>
+			<fieldset class="relleno">
+				<legend>Datos personales</legend>
+				<p>Apellidos: <input type="text"></p>
+				<p>Nombre: <input type="text"></p>
+				<p>Edad: <input type="text"></p>
+				<p>Teléfono: <input type="text"></p>
+				<p>Email: <input type="text"></p>
+			</fieldset>
+			
+			<fieldset class="productos">
+				<label for="raquetas">Productos que te interesan</label>
+				<br>
+				<br>
+				<select name="raquetas" size="10">
+				<optgroup label="Raquetas">
+					<option value="padel">Padel</option>
+					<option value="tenis">Tenis</option>
+					<option value="badminton">Badminton</option>
+					<option value="tenisMesa">Tenis de mesa</option>
+
+				</optgroup>
+				<optgroup label="raquetero">
+					<option value="padel">Padel</option>
+					<option value="tenis">Tenis</option>
+					<option value="badminton">Badminton</option>
+					<option value="tenisMesa">Tenis de mesa</option>
+
+				</optgroup>
+				</select>
+				<p><input type="checkbox" name="verificaciones" id="deporteHabitual"> Practico deporte habitualmente</p>
+				<p><input type="checkbox" name="verificaciones" id="fumo"> Fumo</p>
+			</fieldset>
+			
+			<fieldset class="contacto">
+				<label>¿Quieres que contactemos contigo? ¿Como?</label>
+				<div>
+					<p><input type="radio" name="contacto" id="telefono"> Si , por teléfono</p>
+					<p><input type="radio" name="contacto" id="email"> Si , por mail</p>
+					<p><input type="radio" name="contacto" id="no"> No</p>
+				</div>
+				
+			</fieldset>
+			
+			<fieldset >
+				<button type="reset">Limpiar</button>
+				<button type="submit">Enviar</button>
+			</fieldset>
+		</form>
+	</body>
+</html>
