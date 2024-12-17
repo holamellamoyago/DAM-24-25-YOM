@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>UD1_A6_Tarea2_ </title>
+		<style>
+		
+			form,h1,form div{
+				margin: 0 auto;
+			}
+		
+			.lista{
+				list-style-type: lower-alpha;
+			}
+			
+			h1{
+				margin-left:3rem;
+				font-family: Verdana;
+				color: #AD6FA0;
+			}
+			
+			.flex{
+				display:flex;
+				flex-direction:column;
+			}
+			
+			fieldset{
+				font-family: Verdana;
+				border: 2px solid #9D9FF9;
+				color: #9D9FF9;
+				font-weight:bold;
+			}
+			fieldset li,p{
+				color: #444444;
+			}
+			
+			form, form div , h1{
+				width:60%;
+			}
+			
+			form div{
+				display:flex;
+				justify-content:end;
+			}
+			
+			form div button{
+				padding: 1rem;
+				color: #AD6FA0;
+			}
+			
+			form div button:first-of-type{
+				margin-right:1rem;
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<h1>Cuestionario HTML</h1>
+			<form>
+				<ol>
+					<li>
+						<fieldset>
+							<label>Las etiquetas < ol > y < li > se empienza a crear</label>
+							<ul class="lista">
+								<li><input type="radio" name="1" id="1">Una tabla</li>
+								<li><input type="radio" name="1" id="2">Una lista ordenada</li>
+								<li><input type="radio" name="1" id="3">Una lista desordenada</li>
+							</ul>
+						</fieldset>
+					</li>
+					<li>
+						<fieldset>
+							<label>En HTML para definir que eñ idioma principal de una página es el español se emplea</label>
+							<ul class="lista">
+								<li><input type="radio" name="1" id="1">< html lang="es" > </li>
+								<li><input type="radio" name="1" id="2">< html id="es" > </li>
+								<li><input type="radio" name="1" id="3">< head lang="es" > </li>
+							</ul>
+						</fieldset>
+					</li>
+					<li>
+						<fieldset>
+							<label>Indica que usa HTML para definir el titulo de una tabla</label>
+							<input type="text" name="cuadroTexto">
+						</fieldset>
+					</li>
+					<li>
+						<fieldset class="flex">
+							<label>Describe cómo se puede incluir el estilo CSS en una página html</label>
+							<textarea id="texto" name="texto" cols="20"></textarea>
+						</fieldset>
+					</li>
+					<li>
+						<fieldset>
+							<label>Selecciona las afirmaciones que son verdaderas:</label>
+							<p><input type="checkbox" name="checkbox" id="1">En html para crear ... </p>
+							<p><input type="checkbox" name="checkbox" id="1">Los elementos de una...</p>
+							<p><input type="checkbox" name="checkbox" id="2">Los atributos ...</p>
+							<p><input type="checkbox" name="checkbox" id="3">las etiquetas ....</p>
+							<p><input type="checkbox" name="checkbox" id="4">la etiqueta ....</p>
+							<p><input type="checkbox" name="checkbox" id="4">la etiqueta ....</p>
+						</fieldset>
+					</li>
+
+				</ol>
+				<div>
+					<button type="reset" id="btnLimpiar">Limpiar</button>
+					<button type="submit" id="btnSubmit">Comprobar</button>
+				</div>
+				
+			</form>
+		</main>
+	</body>
+</html>
