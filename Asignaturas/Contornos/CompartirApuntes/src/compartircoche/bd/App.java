@@ -17,6 +17,10 @@ public class App {
         int opcionEscogida = -1;
         
         do {
+            System.out.println("**************");
+            System.out.println("** APPuntes **");
+            System.out.println("**************");
+
             System.out.println("Escribe la opcion que quieres hacer: ");
             System.out.println("1.Iniciar sesisión");
             System.out.println("2.Registrarse en la plataforma");
