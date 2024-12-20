@@ -14,7 +14,6 @@ public class Ejemplos03 {
 
         System.out.println(edad);
         System.out.println(Arrays.toString(edad));
-        System.out.println(Arrays.binarySearch(10, edad[1]));
 
 
     }
