@@ -115,11 +115,12 @@ public class EjemplosOrdenar {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Integer l[] = ArraysUtil.arrayAleatorio(1000, 1, 10000);
+        Integer l[] = ArraysUtil.arrayAleatorio(10, 1, 10);
 
         System.err.println(Arrays.toString(l));
 
         // Arrays.sort(l, Collections.reverseOrder());
+        Arrays.sort(l);
 
         System.out.println(Arrays.toString(l));
 
@@ -131,7 +132,7 @@ public class EjemplosOrdenar {
         if (pos > 0) {
             System.out.println("El número esta en la posición " + pos);
         } else{
-            System.out.println("El numero no se encuentra, debería de insertarse en la .." + (pos+1));
+            System.out.println("El numero no se encuentra, debería de insertarse en la .." + (pos-1));
         }
     
     }

@@ -1,5 +1,6 @@
 package ud4;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -52,6 +53,28 @@ public class ArraysUtil {
     }    
 
     /**
+     * Crea y devuelve una tabla ordenada de la longitud especificada rellena con números pares aleatorios en el rango desde 2 hasta el valor de fin inclusive.
+     * @param longitud
+     * @param fin
+     * @return
+     */
+    static int[] rellenaPares(int longitud, int fin) {
+        int[] t = new int[longitud];
+
+        for(int i = 0; i < t.length; i++) {
+            Random rnd = new Random();
+            do
+                t[i] = rnd.nextInt(2, fin + 1);
+            while (t[i] % 2 != 0);
+        }
+
+        Arrays.sort(t);
+
+        return t;
+    }
+
+
+    /**
      * Cuenta las apariciones de un número (clave) en un array de enteros
      * @param t
      * @param clave
@@ -66,6 +89,19 @@ public class ArraysUtil {
 
         return contar;
     } 
+
+    /**
+     * 
+     * @param t
+     * @param clave
+     * @return
+     */
+    static int buscar(int t[], int clave) {
+        for(int i = 0; i < t.length; i++)
+            if (t[i] == clave)
+                return i;
+        return -1;
+    }
 
     /**
      * Suma los elementos de un array de enteros
