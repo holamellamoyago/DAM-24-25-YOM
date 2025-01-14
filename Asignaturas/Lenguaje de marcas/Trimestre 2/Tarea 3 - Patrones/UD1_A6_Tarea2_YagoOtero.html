@@ -10,11 +10,11 @@
 				<p>A</p>
 				<!-- Aquí pongo la regla entre parantesis , le digo con \s que puede haber un espacio y ya 
 							en el seundo parentesis le digo qu epuede ser opcional con ? !-->
-				<input type="text" pattern="([A-Z]{1}[a-z]+)(\s[A-Z]{1}[a-z]+)*">
+				<input type="text" pattern="([A-ZÁÉÍÓÚÑ]{1}[a-záéóúíñ]+)(\s[A-Z]{1}[a-z]+)*">
 				
 				<p>B</p>
 				<!-- Con {6,}  hago que tenga 6 como mínimo !-->
-				<input type="text" pattern="[0-9a-z_]{6,}">
+				<input type="text" pattern="[0-9a-z\-]{6,}" id="password">
 				
 				<p>C</p>
 				<!--  !-->
