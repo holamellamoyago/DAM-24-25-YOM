@@ -1,6 +1,7 @@
 package ud4;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -127,6 +128,12 @@ public class ArraysUtil {
                 maximo = t[i];
 
         return maximo;
+    }
+
+    public static Integer[] ordenarAlReves(Integer t[]){
+        Arrays.sort(t, Collections.reverseOrder());
+        
+        return t;
     }
 
 }

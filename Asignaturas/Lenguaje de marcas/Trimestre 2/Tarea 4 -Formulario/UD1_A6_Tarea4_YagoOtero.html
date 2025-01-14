@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tarea 4 -Formulario</title>
+		<style>
+			
+			main{
+				font-family: Arial;
+				color:white;
+				width:250px;
+				background-color:SlateGray ;
+				border: 4px solid LightSteelBlue;
+
+			}
+			
+			ul{
+				padding:0;
+			}
+			
+			main div form ul li{
+				display:flex;
+				justify-content: space-between;
+				text-decoration:none;
+				list-style:none;
+				padding:0;
+				margin-bottom:10px;
+				
+			}
+			
+			p{
+				margin-left: 0.5rem;
+			}
+			
+			label{
+				margin-left:1rem;
+			}
+			
+			#nombre, #numero, #email{
+				border: 2px solid red;
+			}
+			
+			button{
+				margin: 0 0 10px 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			
+			<div>
+				<p>Datos personales</p>
+				<form>
+					<ul>
+						<li>
+							<label for="nombre">Nombre</label>
+							<input required class="borderojo" type="text" name="datos_personales" id="nombre" value="" placeholder="Escribe tu nombre completo">
+						</li>
+						<li>
+							<label for="email">email</label>
+							<input type="text" name="datos_personales" id="email" value="" placeholder="correo@tu-dominio.com">
+						</li>
+						<li>
+							<label for="telefono">telefono</label>
+							<input type="text" name="datos_personales" id="telefono" value="" placeholder="+34 692433876">
+						</li>
+						<li>
+							<label for="pais">pais</label>
+							<input type="text" name="datos_personales" id="pais" value="">
+						</li>
+						<li>
+							<label for="edad">edad</label>
+							<input type="number" name="datos_personales" id="edad" value="18">
+						</li>						
+					</ul>
+					<ul>
+						<p>Datos de tarjeta de crédito</p>
+						<li>
+							<label for="numero">Número</label>
+							<input type="number" name="datos_tarjeta" id="numero">
+						</li>
+						<li>
+							<label for="nombre">nombre</label>
+							<input type="text" name="datos_tarjeta" id="nombre" placeholder="Nombre del propietario">
+						</li>
+					</ul>
+					<button type="submit">Realizar compra</button>
+				</form>
+				
+				
+			</div>
+		</main>
+	</body>
+</html>
