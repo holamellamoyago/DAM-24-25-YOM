@@ -1,9 +1,24 @@
+import java.util.Random;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, Yago!");
-        System.out.println("Chao");
+        final Pareja p1 = new Pareja("Yago");
 
-        Saludo sl = new Saludo("Yago");
-        sl.saludar();
+
+        int rnd = new Random().nextInt(1, 2);
+        System.out.println(rnd);
+
+        switch (rnd) {
+            case 1 -> {
+                return p1.nombre1;
+            }
+
+
+            default:
+
+
+        }
+
+
     }
 }

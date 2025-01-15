@@ -9,12 +9,10 @@ public class E0507 {
         Integer p[] = new Integer[0];
         int contadorp = 0;
 
-        Arrays.sort(t);
         System.out.println(Arrays.toString(t));
+        Arrays.sort(t);
 
-    
-        
-        
+
         
         for (int i = 0; i < t.length; i++) {
             int posicion = Arrays.binarySearch(p, t[i]);
@@ -31,7 +29,7 @@ public class E0507 {
     }
 
     public static void main(String[] args) {
-        Integer t[] = ArraysUtil.arrayAleatorio(10, 1, 6);
+        Integer t[] = ArraysUtil.arrayAleatorio(10, 1, 10);
 
          t = sinRepetidos(t);
 
