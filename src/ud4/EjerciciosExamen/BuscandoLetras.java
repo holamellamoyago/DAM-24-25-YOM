@@ -1,31 +1,45 @@
 package ud4.EjerciciosExamen;
 
 import java.util.Arrays;
+import java.util.Random;
+import java.util.Scanner;
 
 public class BuscandoLetras {
 
+
+
     public static void main(String[] args) {
-        String s = "hola";
+        Scanner sc = new Scanner(System.in);
+
+
+        System.out.println("Escribe letras para comprobar su posicion en la ...");
+
+        int[]posiciones = new int[0];
+
+
+        do {
+            char letra = sc.next().charAt(0);
+            posiciones = buscarLetra(fraseAleatoria(), letra);
+            System.out.println("Se encuentra en las posiciones: " + Arrays.toString(posiciones));
+        } while (posiciones.length != 0);
+
+
 
         System.out.println("Aparece en las posiciones: ");
-        System.out.println(Arrays.toString(buscarLetra(s, 'a')));
 
         
     }
 
-    static Integer[] buscarLetra(String cadena, char letra){
+    static int[] buscarLetra(String cadena, char letra){
 
         char[] t = cadena.toCharArray();
-        Integer posiciones[] = new Integer[0];
+        int posiciones[] = new int[0];
         System.out.println(Arrays.toString(t));
 
 
-        int contadorP = 0;
-
         for(int i = 0; i<t.length; i++){
-            int posicion = Arrays.binarySearch(t, t[i]);
 
-            if (posicion < 0) {
+            if (t[i] == letra) {
                 posiciones =  Arrays.copyOf(posiciones , posiciones.length+1);
                 posiciones[posiciones.length-1] = i;
             }
@@ -35,5 +49,13 @@ public class BuscandoLetras {
         return posiciones;
 
     } 
+
+    static String fraseAleatoria() {
+        String conceptos [] = {"Entorno de desarollo" , "Compilacion" , "Ejecucion" , "Código fuente", "Bytecode" , "codigo objecto", "Algoritmo", "Lenguaje de programación"};
+
+        int rnd = new Random().nextInt(0, conceptos.length);
+
+        return conceptos[rnd];
+    }
     
 }
