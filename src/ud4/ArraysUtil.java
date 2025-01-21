@@ -136,7 +136,7 @@ public class ArraysUtil {
         return t;
     }
 
-    static int [][] generarMatrizAleatorio_09(int numFilas , int numColumnas){
+    static public  int [][] generarMatrizAleatorio_09(int numFilas , int numColumnas){
 
         int m [][] = new int[numFilas][numColumnas];
 
