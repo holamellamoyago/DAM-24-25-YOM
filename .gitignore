@@ -4,3 +4,5 @@
 # Archivos de compilación
 *.class
 bin/
+/Asignaturas/Contornos/HolaMundoYOM2/nbproject/private/
+/Asignaturas/Contornos/HolaMundoYOM2/build/
