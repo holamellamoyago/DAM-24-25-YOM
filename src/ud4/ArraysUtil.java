@@ -59,7 +59,7 @@ public class ArraysUtil {
      * @param fin
      * @return
      */
-    static int[] rellenaPares(int longitud, int fin) {
+    static public int[] rellenaPares(int longitud, int fin) {
         int[] t = new int[longitud];
 
         for(int i = 0; i < t.length; i++) {

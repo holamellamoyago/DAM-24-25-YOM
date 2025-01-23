@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>Tarea de repaso</title>
+		<meta charset="utf-8">
+		
+		<style>
+			body{
+				margin:0 auto;
+			}
+			
+			form{
+				margin: 0 auto;
+				width:30rem;
+			}
+			
+			fieldset{
+				margin-bottom: 1rem;
+				
+			}
+			
+			ul{
+				list-style:none;
+			}
+		
+		
+			form fieldset{
+				width: 20rem;
+				display:flex;
+				flex-direction: column;
+			}
+		
+			[required] {
+				border: 2px solid red;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<header>
+			<h1>Página de Yago</h1>
+		</header>
+		<main>
+			<form method="get" action="">
+				<fieldset>
+					<label for="cuadro-texto">Tú nombre</label>
+					<input required type="text" name="cuadro-texto" id="cuadro-texto" placeholder="Inserta el nombre" pattern="([A-ZÁÉÍÓÚ]{1}[a-záéíóú]+)(\s[A-ZÁÉÍÓÚ]{1}[a-záéíóú]+)*">
+				</fieldset>
+				
+				<fieldset>
+					<label for="edad">Introduce tu edad, mínimo 16 , max 66</label>
+					<input type="number" name="edad" value="11" id="edad" min="16" max="66" step="5" >
+				</fieldset>
+				
+				<fieldset>
+					<label for="fruta">Tus gustos</label>
+					<ul>
+						<li>Fruta<input type="checkbox" name="gustos" id="fruta" value="fruta"></li>
+						<li>Pizza<input type="checkbox" name="gustos" id="pizza" value="pizza"></li>
+						<li>Chocolate<input type="checkbox" name="gustos" id="chocolate" value="chocolate"></li>
+					</ul>
+				</fieldset>
+				
+				<fieldset>
+						<label>Sexo</label>
+						<ul>
+							<li>Hombre<input type="radio" name="sexo" value="hombre" id="hombre"></li>
+							<li>mujer<input type="radio" name="sexo" value="mujer" id="mujer"></li>
+							<li>transformer<input type="radio" name="sexo" value="transformer" id="transformer"></li>
+						</ul>
+				</fieldset>
+				
+				<fieldset>
+					<legend>Selecciona a tu patria</legend>
+					<select name="idioma">
+						<option value="ES">Español</option>
+						<option value="ES">solo hay español perro</option>
+						<option value="ES">Español</option>
+					</select>
+				</fieldset>
+			
+				
+				
+				<button type="submit">Enviar</button>
+				<button type="reset">Resetear</button>
+			</form>
+		</main>
+	</body>
+</html>
