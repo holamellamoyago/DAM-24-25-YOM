@@ -125,9 +125,9 @@ public class MatricesTriangulares {
     // 8. Matriz triangular superior con elementos cero en la diagonal
     @Test
     public void testMatrizTriangularSuperiorCero() {
-        { 0, 2, 3 },
-        { 0, 0, 5 },
         int[][] matrizTriangularSuperiorCero = {
+            { 0, 2, 3 },
+            { 0, 0, 5 },
                 { 0, 0, 0 }
         };
         assertTrue(esTriangular(matrizTriangularSuperiorCero));
