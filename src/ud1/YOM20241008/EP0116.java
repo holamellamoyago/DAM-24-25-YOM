@@ -1,7 +1,5 @@
+package ud1.YOM20241008;
 
-/**
- * EP0116
- */
 import java.util.Scanner;
 import java.util.Locale;
 

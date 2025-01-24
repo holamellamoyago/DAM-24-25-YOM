@@ -1,4 +1,4 @@
-package Propuestos;
+package ud2.EjerciciosYOM20241117.Propuestos;
 import java.time.LocalTime;
 import java.util.Scanner;
 

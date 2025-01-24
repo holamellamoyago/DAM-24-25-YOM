@@ -1,4 +1,4 @@
-package Funciones;
+package ud2.EjerciciosFunciones;
 
 public class E0412_Fibbonacci {
     private static int fibo(int n) {

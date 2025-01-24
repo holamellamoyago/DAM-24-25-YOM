@@ -1,4 +1,4 @@
-package For;
+package ud2.ejerciciosBucles.For;
 import java.util.Scanner;
 public class E0312 {
     public static void main(String[] args) {

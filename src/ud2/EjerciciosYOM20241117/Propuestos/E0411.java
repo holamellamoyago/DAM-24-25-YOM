@@ -1,8 +1,7 @@
-package Propuestos;
+package ud2.EjerciciosYOM20241117.Propuestos;
 
 import java.util.Scanner;
 
-import Funciones.Util;
 
 public class E0411 {
     public static void main(String[] args) {
@@ -24,7 +23,7 @@ public class E0411 {
             int c = a - b;
 
             while (c == 1) {
-                int sobrante = Util.esPar(c) ? c / 2 : c / 3;
+                int sobrante = ud2.EjerciciosYOM20241117.funciones.Util.esPar(c) ? c / 2 : c / 3;
                 return sobrante;
             }
 

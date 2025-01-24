@@ -1,5 +1,6 @@
+package ud2.EjerciciosYOM20241117.Propuestos;
 
-package Propuestos;
+
 
 /**
  * EjercicioPrpuesto31

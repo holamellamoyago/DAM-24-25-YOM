@@ -1,3 +1,5 @@
+package ud1.YOM20241008;
+
 import java.util.Scanner;
 
 public class EP0123_ConversionMasa {

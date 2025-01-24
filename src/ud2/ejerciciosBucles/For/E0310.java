@@ -1,4 +1,4 @@
-package For;
+package ud2.ejerciciosBucles.For;
 
 public class E0310 {
     

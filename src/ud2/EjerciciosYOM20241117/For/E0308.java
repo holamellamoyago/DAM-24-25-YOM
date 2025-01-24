@@ -1,4 +1,4 @@
-package For;
+package ud2.EjerciciosYOM20241117.For;
 import java.util.Scanner;
 
 public class E0308 {

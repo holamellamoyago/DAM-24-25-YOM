@@ -16,11 +16,9 @@ public class AbadiasPirenaicas {
         } while (altura > 0 || totalMontañas >= 1000);
 
         contarAbadias(a);
-
     }
 
     static int[] contarAbadias(int a[]) {
-
         int alturaMaxima = 0;
         int alturaAnterior = 0;
         int indices[] = new int[0];
@@ -29,9 +27,7 @@ public class AbadiasPirenaicas {
             if (a[i] > alturaAnterior && a[i] > alturaMaxima) {
                 indices = Arrays.copyOf(indices, indices.length + 1);
                 indices[indices.length - 1] = i;
-
                 alturaAnterior = a[i];
-
                 if (a[i] > alturaMaxima) {
                     alturaMaxima = a[i];
                 }
@@ -39,10 +35,8 @@ public class AbadiasPirenaicas {
         }
 
         Arrays.sort(indices);
-
         System.out.println("El numero máximo de cordilleras es: " + indices.length);
         System.out.println(Arrays.toString(indices));
-
         return indices;
     }
 

@@ -1,4 +1,4 @@
-package For;
+package ud2.EjerciciosYOM20241117.For;
 
 public class E0306 {
     public static void main(String[] args) {

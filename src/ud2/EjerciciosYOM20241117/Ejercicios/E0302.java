@@ -1,4 +1,4 @@
-package Ejercicios;
+package ud2.EjerciciosYOM20241117.Ejercicios;
 import java.util.Scanner;
 
 public class E0302 {

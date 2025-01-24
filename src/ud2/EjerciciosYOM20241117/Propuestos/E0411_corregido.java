@@ -1,7 +1,6 @@
-package Propuestos;
+package ud2.EjerciciosYOM20241117.Propuestos;
 
 import java.util.Scanner;
-import Funciones.Util;
 
 public class E0411_corregido {
 

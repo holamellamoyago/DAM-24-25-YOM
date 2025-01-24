@@ -1,4 +1,4 @@
-package Propuestos;
+package ud2.EjerciciosYOM20241117.Propuestos;
 
 // E0312. Pedir 5 calificaciones de alumnos y decir al final si hay algún suspenso.
 import java.util.Scanner;

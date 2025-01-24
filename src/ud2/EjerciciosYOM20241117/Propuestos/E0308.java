@@ -1,4 +1,4 @@
-package Propuestos;
+package ud2.EjerciciosYOM20241117.Propuestos;
 
 // E0308. Pedir diez números enteros por teclado y mostrar la media.
 import java.util.Scanner;

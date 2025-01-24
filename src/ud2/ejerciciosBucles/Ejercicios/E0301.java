@@ -1,4 +1,4 @@
-package Ejercicios;
+package ud2.ejerciciosBucles.Ejercicios;
 import java.util.Scanner;
 public class E0301 {
 

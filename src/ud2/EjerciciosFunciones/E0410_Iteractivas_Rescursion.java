@@ -1,4 +1,4 @@
-package Funciones;
+package ud2.EjerciciosFunciones;
 
 public class E0410_Iteractivas_Rescursion {
     private static int calcularPotencia(int base, int exponente) {

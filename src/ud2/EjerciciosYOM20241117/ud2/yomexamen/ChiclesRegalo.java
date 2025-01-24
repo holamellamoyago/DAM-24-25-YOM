@@ -1,4 +1,4 @@
-package ud2.yomexamen;
+package ud2.EjerciciosYOM20241117.ud2.yomexamen;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

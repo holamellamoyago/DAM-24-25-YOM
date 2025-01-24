@@ -1,4 +1,4 @@
-package Propuestos;
+package ud2.EjerciciosYOM20241117.Propuestos;
 
 public class E0406_Primo {
 

@@ -1,4 +1,4 @@
-package DoWhile;
+package ud2.ejerciciosBucles.DoWhile;
 
 import java.util.Scanner;
 

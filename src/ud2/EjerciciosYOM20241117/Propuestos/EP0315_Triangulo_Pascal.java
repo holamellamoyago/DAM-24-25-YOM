@@ -1,4 +1,4 @@
-package Propuestos;
+package ud2.EjerciciosYOM20241117.Propuestos;
 
 public class EP0315_Triangulo_Pascal {
     public static void trianguoPascal(int num){

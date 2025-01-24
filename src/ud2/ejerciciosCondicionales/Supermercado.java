@@ -16,7 +16,7 @@
 // 7. Una vez finalizada la compra de un cliente el programa solicitará si se desea repetir
 // el proceso para un nuevo cliente.
 
-package Ejercicios;
+package ud2.ejerciciosCondicionales;
 
 import java.util.Scanner;
 

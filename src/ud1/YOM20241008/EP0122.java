@@ -1,3 +1,5 @@
+package ud1.YOM20241008;
+
 import java.util.Locale;
 import java.util.Scanner;
 

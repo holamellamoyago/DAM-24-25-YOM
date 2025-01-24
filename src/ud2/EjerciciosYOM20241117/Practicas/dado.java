@@ -1,4 +1,4 @@
-package Practicas;
+package ud2.EjerciciosYOM20241117.Practicas;
 
 public class dado {
 

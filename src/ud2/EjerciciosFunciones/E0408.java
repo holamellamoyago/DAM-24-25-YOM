@@ -1,4 +1,4 @@
-package Funciones;
+package ud2.EjerciciosFunciones;
 
 import java.util.Scanner;
 

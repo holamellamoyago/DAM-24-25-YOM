@@ -16,7 +16,5 @@ public class EP0111 {
         System.out.println("El resultado es: " + operacion);
 
         sc.close();
-
-
     }
 }

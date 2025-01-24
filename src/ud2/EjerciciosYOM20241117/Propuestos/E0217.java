@@ -1,4 +1,4 @@
-package Propuestos;
+package ud2.EjerciciosYOM20241117.Propuestos;
 public class E0217 {
     public static void main(String[] args) {
         // Genera un numero entre 0 y 99 

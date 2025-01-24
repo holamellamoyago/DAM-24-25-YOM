@@ -25,12 +25,9 @@ public class ArraysEstadisticas {
         System.out.println("Suma: " + suma(numeros));
         System.out.println("Máximo: " + maximo(numeros));
         System.out.println("Mínimo: " + minimo(numeros));
-        // System.out.println("Media: " + media(numeros));
         System.out.println("Mediana: " + mediana(numeros));
-        // System.out.println("Moda: " + moda(numeros));
         Arrays.sort(numeros);
         System.out.println("ARRAY ORDENADO: " + Arrays.toString(numeros));
-
         System.out.println("---------------------------------------------\n\n");
     }
 
@@ -88,18 +85,13 @@ public class ArraysEstadisticas {
 
     }
 
-    static int minimo(int[]l){
-        int m = 100;
-        if (l != null) {
-            for(int i = 0; i<l.length; i++){
-                if (l[i] < m) {
-                    m = l[i];
-                }
+    static int minimo(int[] l) {
+        int m = l[0];
+        for (int i = 1; i < l.length; i++) {
+            if (l[i] < m) {
+                m = l[i];
             }
-        } else{
-            return -1;
         }
-
         return m;
     }
 

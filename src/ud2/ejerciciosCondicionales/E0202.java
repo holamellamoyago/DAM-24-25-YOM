@@ -1,4 +1,4 @@
-package Ejercicios;
+package ud2.ejerciciosCondicionales;
 import java.util.Scanner;
 public class E0202 {
     public static void main(String[] args) {

@@ -1,4 +1,5 @@
-package Condicionales;
+package ud2.EjerciciosYOM20241117.Condicionales;
+
 import java.util.Scanner;
 
 

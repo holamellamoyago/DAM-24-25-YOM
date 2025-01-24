@@ -1,4 +1,4 @@
-package Propuestos;
+package ud2.EjerciciosYOM20241117.Propuestos;
 
 // Diseñar un programa que muestre, para cada número introducido por teclado, si
 // es par, si es positivo y su cuadrado. El proceso se repetirá hasta que el número

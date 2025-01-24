@@ -8,6 +8,7 @@ public class Ventas {
 
     public static String diaSemana(int n){
         return switch(n){
+            case 1 -> "Lunes";
             case 2 -> "Martes";
             case 3 -> "Miercoles";
             case 4 -> "Jueves";

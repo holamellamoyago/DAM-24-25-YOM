@@ -1,4 +1,4 @@
-package yomexamen;
+package ud1.YOMexamen;
 import java.util.Scanner;
 
 /**

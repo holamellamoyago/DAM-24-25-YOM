@@ -1,3 +1,5 @@
+package ud1.YOM20241015;
+
 /**
  * multiplo7
  */

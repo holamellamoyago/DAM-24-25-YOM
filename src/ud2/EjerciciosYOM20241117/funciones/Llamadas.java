@@ -1,4 +1,4 @@
-package ud2.funciones;
+package ud2.EjerciciosYOM20241117.funciones;
 import java.util.Scanner;
 
 import ud3.Util;

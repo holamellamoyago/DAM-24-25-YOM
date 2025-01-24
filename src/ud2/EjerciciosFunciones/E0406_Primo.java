@@ -1,4 +1,4 @@
-package Funciones;
+package ud2.EjerciciosFunciones;
 
 public class E0406_Primo {
     private static boolean esPrimo(int n) {

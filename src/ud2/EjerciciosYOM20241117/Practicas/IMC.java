@@ -1,4 +1,4 @@
-package Practicas;
+package ud2.EjerciciosYOM20241117.Practicas;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package BuclesAnidados;
+package ud2.EjerciciosYOM20241117.BuclesAnidados;
 
 public class E0315 {
     public static void main(String[] args) {

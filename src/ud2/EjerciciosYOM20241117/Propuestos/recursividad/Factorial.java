@@ -1,4 +1,4 @@
-package Propuestos.recursividad;
+package ud2.EjerciciosYOM20241117.Propuestos.recursividad;
 
 // Factorizar es 5*4*3*2...
 

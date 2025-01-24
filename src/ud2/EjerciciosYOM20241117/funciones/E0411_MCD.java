@@ -1,4 +1,4 @@
-package Funciones;
+package ud2.EjerciciosYOM20241117.funciones;
 
 public class E0411_MCD {
     private static int calcularMCD(int a, int b) {
