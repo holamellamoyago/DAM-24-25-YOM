@@ -1,6 +1,6 @@
 //Eva driver, Yago navigator 
 
-package ud1.ejercicios.parejas;
+package ud1.ejercicios_parejas;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package ud1.ejercicios.parejas;
+package ud1.ejercicios_parejas;
 
 /**
  * unidadesMedidas
