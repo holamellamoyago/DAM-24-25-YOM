@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+
+<inmobiliaria nombre="Casas manoli">
+
+	<vivienda precioAlquiler="300" precioCompra="200.000">
+	
+	</vivienda>
+	
+</inmobiliaria>
+
+
+<!--<inmobiliaria nombre="">
+
+	<vivienda>
+		<regimen precio="500">
+			Alquiler
+		</regimen>
+		<duenho nombre="Manolo" apellidos="Perez" telefono="132456789">
+			
+		</duenho>
+		<situacion calle="Los milagros" numero="33" localidad="Bueu" codPostal="13245">
+		
+		</situacion>
+		<tamanho>
+			500m
+		</tamanho>
+		<anhoConstruccion>
+			2020
+		</anhoConstruccion>
+		<distribucion tamanho="10">
+			5 habitaciones
+		</distribucion>
+		<caracteristicas>
+			Piscina
+		</caracteristicas>
+		<fotos>
+			
+		</fotos>
+		
+	</vivienda>
+	<vivienda>
+		<regimen precio="10000">
+			Compra
+		</regimen>
+		<duenho nombre="Pepa" apellidos="Ramila" telefono="66633311144">
+			
+		</duenho>
+		<situacion calle="Los chiringos" numero="33" localidad="Cangas" codPostal="13245">
+		
+		</situacion>
+		<tamanho>
+			500m
+		</tamanho>
+		<anhoConstruccion>
+			2020
+		</anhoConstruccion>
+		<distribucion tamanho="10">
+			5 habitaciones
+		</distribucion>
+		<caracteristicas>
+			Piscina
+		</caracteristicas>
+		<fotos>
+			
+		</fotos>
+		
+	</vivienda>
+	<vivienda>
+		<regimen precio="200">
+			Hipoteca
+		</regimen>
+		<duenho nombre="Ana" apellidos="Martinez" telefono="999666333">
+			
+		</duenho>
+		<situacion calle="Rosalia de castro" numero="33" localidad="Vigo" codPostal="13245">
+		
+		</situacion>
+		<tamanho>
+			500m
+		</tamanho>
+		<anhoConstruccion>
+			2020
+		</anhoConstruccion>
+		<distribucion tamanho="10">
+			5 habitaciones
+		</distribucion>
+		<caracteristicas>
+			Piscina
+		</caracteristicas>
+		<fotos>
+			
+		</fotos>
+		
+	</vivienda>
+	<vivienda>
+		<regimen precio="400">
+			Alquiler
+		</regimen>
+		<duenho nombre="Antonio" apellidos="Otero" telefono="999666333">
+			
+		</duenho>
+		<situacion calle="Noria" numero="33" localidad="Cangas" codPostal="13245">
+		
+		</situacion>
+		<tamanho>
+			500m
+		</tamanho>
+		<anhoConstruccion>
+			2020
+		</anhoConstruccion>
+		<distribucion tamanho="10">
+			5 habitaciones
+		</distribucion>
+		<caracteristicas>
+			Piscina
+		</caracteristicas>
+		<fotos>
+			
+		</fotos>
+		
+	</vivienda>
+	<vivienda>
+		<regimen precio="1000000000">
+			Compra	
+		</regimen>
+		<duenho nombre="Yago" apellidos="Otero" telefono="999666333">
+			
+		</duenho>
+		<situacion calle="Real " numero="33" localidad="Cangas" codPostal="13245">
+		
+		</situacion>
+		<tamanho>
+			500m
+		</tamanho>
+		<anhoConstruccion>
+			2020
+		</anhoConstruccion>
+		<distribucion tamanho="10">
+			5 habitaciones
+		</distribucion>
+		<caracteristicas>
+			Piscina
+		</caracteristicas>
+		<fotos>
+			
+		</fotos>
+		
+	</vivienda>
+
+</inmobiliaria>-->
