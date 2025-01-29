@@ -160,4 +160,11 @@ public class ArraysUtil {
         }
     }
 
+    public static String quitarEspacios(String frase){
+        return frase.replace(" ", "");
+    }
+
+
+
+
 }
