@@ -161,7 +161,11 @@ public class ArraysUtil {
     }
 
     public static String quitarEspacios(String frase){
-        return frase.replace(" ", "");
+
+        // frase = frase.replace(" ", ""); \\s Todo \\ttabulacion \\saltoLinea \\retorno de carro
+        frase = frase.replaceAll("\\s", "");
+
+        return frase;
     }
 
     public static String sinVocales(String cad) {

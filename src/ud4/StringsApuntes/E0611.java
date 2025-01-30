@@ -21,7 +21,7 @@ public class E0611 {
         
         for(int i = 0; i<p.length(); i++){
             int pos = Arrays.binarySearch(conjunto1, p.charAt(i));
-            System.out.println(pos);
+            
 
             if (pos >= 0) {
                 palabraFinal += conjunto2[pos];
