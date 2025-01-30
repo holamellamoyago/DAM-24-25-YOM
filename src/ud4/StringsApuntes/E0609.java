@@ -1,25 +1,28 @@
 package ud4.StringsApuntes;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class E0609 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Introduce palabras separadas por ENTER para componer una frase, fin para terminar: ");
 
-        String frase= "";
-        String palabra = sc.nextLine();
+        String palabras[] = new String[0];
+        System.out.println("Introduce palabras");
+        
+        String palabra ="";
 
-        while (!palabra.toUpperCase().equals("FIN")) {
-            frase += palabra + " ";
+        int num [] = {1,2,3};
 
+        
+
+        do {
             palabra = sc.nextLine();
-        }
 
-        frase = frase.stripTrailing();
+            palabras = Arrays.copyOf(palabras, palabras.length+1);
+            palabras[palabras.length-1] = palabra;
 
-        System.out.println(frase);
-
+        } while (palabra != "fin");
 
     }
 }

@@ -1,4 +1,4 @@
-package ud4.Ejercicios;
+package ud4.StringsApuntes;
 
 public class E0605 {
     public static void main(String[] args) {

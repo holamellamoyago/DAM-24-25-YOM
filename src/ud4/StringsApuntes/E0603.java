@@ -1,4 +1,4 @@
-package ud4.Ejercicios;
+package ud4.StringsApuntes;
 
 import java.util.Scanner;
 

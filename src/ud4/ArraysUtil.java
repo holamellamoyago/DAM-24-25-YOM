@@ -164,6 +164,24 @@ public class ArraysUtil {
         return frase.replace(" ", "");
     }
 
+    public static String sinVocales(String cad) {
+        String fraseDevolver = "";
+        String vocales = "aeiouÁÉÍÚÚ";
+        char a [] = vocales.toCharArray();
+        
+        for(int i = 0; i<cad.length(); i++){
+           int pos = Arrays.binarySearch(a, cad.charAt(i));
+
+            if (pos < 0) {
+                fraseDevolver+= cad.charAt(i);
+            }
+
+        }
+
+        
+        return fraseDevolver;
+    }
+
 
 
 

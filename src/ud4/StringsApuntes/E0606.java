@@ -1,4 +1,6 @@
-package ud4.Ejercicios;
+package ud4.StringsApuntes;
+
+import java.util.Arrays;
 
 //Escribir un
 //programa que
@@ -27,19 +29,22 @@ public class E0606 {
 
     static String sinVocales(String cad) {
         String fraseDevolver = "";
-        for (int i = 0; i < cad.length(); i++) {
-            char c = Character.toUpperCase(cad.charAt(i));
+        String vocales = "aeiouÁÉÍÚÚ";
+        char a [] = vocales.toCharArray();
+        
+        for(int i = 0; i<cad.length(); i++){
+           int pos = Arrays.binarySearch(a, cad.charAt(i));
 
-            switch (c) {
-                case 'A', 'E', 'I', 'O', 'U', 'Á', 'É', 'Í', 'Ú' -> {
-                }
-                default -> fraseDevolver += c;
+            if (pos < 0) {
+                fraseDevolver+= cad.charAt(i);
             }
-
 
         }
 
+        
         return fraseDevolver;
     }
+
+
 
 }
