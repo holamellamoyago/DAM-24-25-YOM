@@ -2,9 +2,29 @@
 
 <inmobiliaria nombre="Casas manoli">
 
-	<vivienda precioAlquiler="300" precioCompra="200.000">
-	
+	<vivienda>
+		<regimen tipo="alquiler" pvp="500"></regimen>
+		<regimen tipo="compra" pvp="20000000"></regimen>
+		<propietario id="PO101"></propietario>
+		<situacion calle="noria" num="5" codPostal="36940"></situacion>
+		<caracteristicas m2="120" anoConstruccion="2000">
+			<huecos>
+				<hueco tipo="domitorio" m2="30"></hueco>
+				<hueco tipo="salon" m2="20"></hueco>
+				<hueco tipo="cocina" m2="15"></hueco>
+				<hueco tipo="garaje"></hueco>
+				<hueco tipo="ascensor"></hueco>
+			</huecos>
+		</caracteristicas>
 	</vivienda>
+	
+	<propietarios>
+		<propiertario id="PO101">
+			<nombre>Perico</nombre>
+			<Apellidos>Otero MArínez</Apellidos>
+			
+		</propiertario>
+	</propietarios>
 	
 </inmobiliaria>
 
