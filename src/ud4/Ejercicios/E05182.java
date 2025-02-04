@@ -31,8 +31,14 @@ public class E05182 {
             int suma = 0;
             for (int j = 0; j < t[i].length; j++) {
                 suma+= t[j][i];
-                
+
+            }
+
+            if (constanteMagica != suma) {
+                return false;
             }
         }
+
+        return true;
     }
 }
