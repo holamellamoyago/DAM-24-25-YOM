@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+<VBox  spacing="20" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.holamellamoyago.gestionusuariosfx.HomeScreen"
+      prefHeight="400.0" prefWidth="600.0">
+
+    <padding>
+        <Insets left="10" right="10"/>
+    </padding>
+
+    <Text >Bienvenido a Super Admin 3000, aquí podrás realizar todo tipo de tareas de tu empresa</Text>
+
+    <HBox spacing="20" alignment="CENTER">
+        <Button>Listar empleados</Button>
+        <Button>Crear empleado</Button>
+        <Button>Despedir empleados</Button>
+    </HBox>
+
+
+
+
+</VBox>
