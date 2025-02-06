@@ -127,14 +127,20 @@ GO
 ALTER DATABASE BD_AlterDB3
 MODIFY FILEGROUP GRUPO1 DEFAULT;
 
+<<<<<<< HEAD
+=======
 --Ejrecicio 4
 
+>>>>>>> 836cb00a091408b146455f16e2f961f681c8fa92
 GO 
 ALTER DATABASE BD_AlterDB3
 REMOVE FILE BD_AlterDB3_Data3;
 
+<<<<<<< HEAD
+=======
 -- Ejercicio 5
 
+>>>>>>> 836cb00a091408b146455f16e2f961f681c8fa92
 GO
 ALTER DATABASE BD_AlterDB3
 MODIFY FILE
@@ -143,6 +149,12 @@ MODIFY FILE
 	FILEGROWTH=3MB
 );
 
+<<<<<<< HEAD
+GO
+ALTER DATABASE BD_AlterDB3
+MODIFY FILEGROUP GRUPO1
+	READONLY;
+=======
 -- Ejercicio 6
 
 GO
@@ -152,16 +164,20 @@ MODIFY FILEGROUP GRUPO1
 	
 
 --Ejercicio 7 // Teine que estar vacio , sin default y escritura
+>>>>>>> 836cb00a091408b146455f16e2f961f681c8fa92
 
 	
 GO
 ALTER DATABASE BD_AlterDB3
 MODIFY FILEGROUP GRUPO1
 	READ_WRITE;
+<<<<<<< HEAD
+=======
 	
 GO
 ALTER DATABASE BD_AlterDB3 -- Para que acepte palanras reservadas o sin reglas es con []
 	MODIFY FILEGROUP [PRIMARY] DEFAULT;
+>>>>>>> 836cb00a091408b146455f16e2f961f681c8fa92
 
 GO
 ALTER DATABASE BD_AlterDB3

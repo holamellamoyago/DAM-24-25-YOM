@@ -43,5 +43,10 @@ public class test {
 String s2 = "Ja" + "va";
 System.out.println(s1 == s2);
 
+            Arrays.toString(n)
+        );
+
+
+        
     }
 }
