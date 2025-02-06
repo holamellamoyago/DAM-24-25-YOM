@@ -96,7 +96,7 @@ public class ConjugarVerbos {
         String terminacion = verbo.substring(verbo.length()-2);
         System.out.println(terminacion);
 
-        if (terminacion != "ar" || terminacion=="er" || terminacion=="ir") {
+        if (terminacion.equals("ar")  || terminacion.equals("er") || terminacion.equals("ir")) {
 
             return true;
             

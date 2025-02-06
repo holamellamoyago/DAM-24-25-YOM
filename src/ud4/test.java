@@ -12,17 +12,17 @@ public class test {
     static void ordenarAlfabeticamente(String[] n) {
         System.out.println(n[1].compareTo(n[2]));
 
-        for (int i = 0; i < n.length-1; i++) {
+        for (int i = 0; i < n.length - 1; i++) {
             if (n[i].compareTo(n[i + 1]) == 0 || n[i].compareTo(n[i + 1]) < 0) {
                 System.out.println("Esta ordenador");
-            } else{
+            } else {
                 System.out.println("No esta ordenado");
 
                 String aux = n[i];
 
-                n[i] = n[i+1];
+                n[i] = n[i + 1];
 
-                n[i+1] = aux;
+                n[i + 1] = aux;
 
                 i = -1;
 
@@ -30,7 +30,18 @@ public class test {
         }
 
         System.out.println(
-            Arrays.toString(n)
-        );
+                Arrays.toString(n));
+
+        String s = new String("Hola").concat(" Mundo");
+
+        System.out.println(s);
+
+        String str = "abcde";
+        System.out.println(str.substring(1, 3));
+
+        String s1 = "Java";
+String s2 = "Ja" + "va";
+System.out.println(s1 == s2);
+
     }
 }
