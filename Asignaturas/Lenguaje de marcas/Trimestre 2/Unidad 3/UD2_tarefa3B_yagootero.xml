@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<biblioteca>
+	<libros>
+		<libro titulo="XML" ISBN="13255" anhoPublicacion="2020" editorial="Ecolares">
+			<autor>Pedro</autor>
+			<autor>Laura</autor>
+			<descripcion xml:lang="es">Es...</descripcion>
+			<descripcion xml:lang="en">Es...</descripcion>
+		</libro>
+	</libros>
+</biblioteca>
+<!--<autor nombre="">
+	<libro isbn="312312" titulo="Una chica en el bisque" anhoPublicacion="2121" editorial="paisaje">
+		<descripcion idioma="ES">
+			una chuajhahdsavdha
+		</descripcion>
+	</libro>
+	<libro isbn="21432" titulo="MArvel y los malos" anhoPublicacion="2020" editorial="DC">
+		<descripcion idioma="GAL">
+			los villanos contratacan y marvel se defiende
+		</descripcion>
+	</libro>
+</autor>-->
