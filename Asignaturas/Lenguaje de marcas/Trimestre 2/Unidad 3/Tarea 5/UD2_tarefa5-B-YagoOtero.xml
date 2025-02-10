@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reservas SYSTEM "archivo5B.dtd">
+<reservas>
+  <reserva lugar="localsocial"></reserva>
+</reservas>
