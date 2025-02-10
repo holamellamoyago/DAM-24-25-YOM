@@ -40,13 +40,10 @@ public class test {
         System.out.println(str.substring(1, 3));
 
         String s1 = "Java";
-String s2 = "Ja" + "va";
-System.out.println(s1 == s2);
+        String s2 = "Ja" + "va";
+        System.out.println(s1 == s2);
 
-            Arrays.toString(n)
-        );
+        Arrays.toString(n);
 
-
-        
     }
 }
