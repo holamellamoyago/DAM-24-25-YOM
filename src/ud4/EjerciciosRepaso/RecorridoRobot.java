@@ -1,4 +1,4 @@
-package ud4.EjerciciosExamen;
+package ud4.EjerciciosRepaso;
 
 import java.util.Arrays;
 
