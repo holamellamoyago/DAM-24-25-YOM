@@ -6,7 +6,8 @@ public class test {
     public static void main(String[] args) {
         String[] nombres = { "Yago", "Manuel", "Eva", "Pepa", "Antonio" };
 
-        ordenarAlfabeticamente(nombres);
+        //ordenarAlfabeticamente(nombres);
+        separarEnLetras(nombres);
     }
 
     static void ordenarAlfabeticamente(String[] n) {
@@ -45,5 +46,15 @@ public class test {
 
         Arrays.toString(n);
 
+    }
+
+    static void separarEnLetras(String [] n){
+        char [][] m = new char[0][0];
+        char n2[] = new char[0];
+
+        for (int i = 0; i < n[i].length(); i++) {
+            char n3[] = n[i].toCharArray();
+            System.out.println(Arrays.toString(n3));
+        }
     }
 }

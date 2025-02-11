@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reservas SYSTEM "archivo5B.dtd">
-<reservas>
-  <reserva lugar="localsocial"></reserva>
+<reservas ano="2022">
+  <reserva local ="local" bonificacion="200">
+    <data dia="1" mes="2" horario="mañana"></data>  
+    <informacionEvento></informacionEvento>
+  </reserva>
 </reservas>
