@@ -1,5 +1,5 @@
 <!ELEMENT reservas (reserva*)>
-<!ELEMENT reserva (data, informacionEvento>
+<!ELEMENT reserva (data, informacionEvento)>
 
 <!ELEMENT data (#PCDATA)>
 <!ELEMENT informacionEvento (#PCDATA)>
