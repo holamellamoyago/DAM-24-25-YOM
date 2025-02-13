@@ -187,21 +187,6 @@ public class ArraysUtil {
     }
 
 
-    public static int buscarLetra(char[] l, char character){
-        
-        String frase = "";
-
-        for (int i = 0; i < l.length; i++) {
-            frase += l[i];
-        }
-
-        
-
-        return frase.indexOf(character);
-        
-    }
-
-
 
 
 }
