@@ -21,5 +21,14 @@ class Vagon {
   
     }
 
+    @Override
+    public String toString() {
+        return "\n - Vagon " + id + ". Carga=" + cargaMaxima + " / " + cargaActual + ". TipoMercancia="
+                + tipoMercancia ;
+    }
+
+
+    
+
     
 }

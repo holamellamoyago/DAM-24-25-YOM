@@ -5,7 +5,7 @@ import ud5.clasesejercicios.E0710.Personal.Mecanico;
 public class Locomotora {
     String matricula;
     int potencia;
-    int anhoFabricacion;    
+    int anhoFabricacion;
 
     Mecanico mecanico;
 
@@ -16,5 +16,17 @@ public class Locomotora {
         this.mecanico = mecanico;
     }
 
+    @Override
+    public String toString() {
+        return "Locomotora [matricula=" + matricula + ", " + potencia + ", anhoFabricacion=" + anhoFabricacion
+                + mecanico + "]";
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+
     
+
 }
