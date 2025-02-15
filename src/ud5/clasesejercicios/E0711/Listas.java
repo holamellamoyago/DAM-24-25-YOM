@@ -46,11 +46,10 @@ public class Listas {
     }
 
 
-    //TODO ARREGLAR
     public boolean insertarLista(Integer[] listaNueva) {
 
         int contador = 0;
-        l = Arrays.copyOf(l, l.length+listaNueva.length);
+        l = Arrays.copyOf(l, l.length+listaNueva.length-1);
 
         for (int i = l.length-1; i < l.length-1 + listaNueva.length-1; i++) {
             l[i] = listaNueva[contador];
@@ -59,6 +58,31 @@ public class Listas {
 
         return true;
     }
+
+    // 7.
+    public void eliminarNumero(int indice){
+        l[indice] = null;
+    }
+
+    // 8.
+    public int obetenerNumero(int indice){
+        return l[indice];
+    }
+
+    // 9.
+    public Integer buscarNumero(Integer numero){
+        int posicion = -1;
+
+        for (int i = 0; i < l.length; i++) {
+            if (l[i] == numero) {
+                posicion = i;
+            }
+        }
+
+        return posicion;
+    }
+
+    
 
     @Override
     public String toString() {

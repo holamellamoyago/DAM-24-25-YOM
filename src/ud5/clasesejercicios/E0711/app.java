@@ -18,6 +18,12 @@ public class app {
 
         lista.insertarLista(lista3);
 
-        System.out.println(lista);
+        lista.eliminarNumero(1);
+
+        System.out.println(lista.buscarNumero(5));
+
+        // System.out.println(lista);
+
+        lista.toString();
     }
 }
