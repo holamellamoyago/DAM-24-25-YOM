@@ -14,7 +14,7 @@ public class Personaje {
     double fuerza, agilidad, constitucion;
 
 
-    int vidaInicial;
+    private int vidaInicial;
 
     public Personaje(String nombre, int fuerza, int agilidad, int constitucion, byte nivel, int experiencia,
             int puntosDeVida, Raza raza) {
@@ -27,7 +27,7 @@ public class Personaje {
         this.puntosDeVida = 50 + validarValor(constitucion);
         this.raza = raza;
 
-        vidaInicial = puntosDeVida;
+        this.vidaInicial = puntosDeVida;
 
     }
 
@@ -41,7 +41,7 @@ public class Personaje {
         this.experiencia = 0;
         this.puntosDeVida = 50 + validarValor(constitucion);
 
-        vidaInicial = puntosDeVida;
+        this.vidaInicial = puntosDeVida;
 
         
     }
@@ -58,7 +58,7 @@ public class Personaje {
         this.puntosDeVida = 50 + generarValor();
 
 
-        vidaInicial = puntosDeVida;
+        this.vidaInicial = puntosDeVida;
 
 
 
@@ -74,8 +74,20 @@ public class Personaje {
         this.nivel = 1;
         this.experiencia = 0;
         this.puntosDeVida = 50 + generarValor();
+
+        this.vidaInicial = puntosDeVida;
+
     }
 
+    
+
+    public int getPuntosDeVida() {
+        return puntosDeVida;
+    }
+
+    public void setPuntosDeVida(int puntosDeVida) {
+        this.puntosDeVida = puntosDeVida;
+    }
 
     private int generarValor(){
         return new Random().nextInt(0, 101);
@@ -90,10 +102,16 @@ public class Personaje {
         return valor < 1 ? 1 : valor;
     }
 
-    @Override
-    public String toString() {
+    public String mostrar() {
         return "Personaje " + nombre + "\nFuerza=" + fuerza + ", agilidad=" + agilidad + ", constitucion="
                 + constitucion + ", nivel=" + nivel + ", experiencia=" + experiencia + ", puntosDeVida=" + puntosDeVida;
+    }
+
+    
+
+    @Override
+    public String toString() {
+        return this.nombre + "(" + puntosDeVida + "/" + vidaInicial + ")";
     }
 
     byte sumarExperiencia(int puntos){
@@ -119,5 +137,54 @@ public class Personaje {
 
     public void curar(){
 
+        if (puntosDeVida >= vidaInicial) {
+            System.out.println("No se puede usar curación , tu vida está al limite");
+        } else{
+            puntosDeVida = vidaInicial;
+        }
+    }
+
+    boolean perderVida(int puntos){
+        this.puntosDeVida -= puntos;
+
+        if (this.puntosDeVida <= 0) {
+            return true;
+        } else{
+            return false;
+        }
+    }
+
+
+    boolean estaVivo(){
+        if (this.puntosDeVida > 0) {
+            return true;
+        } else{
+            return false;
+        }
+
+    }
+
+    int atacar(Personaje enemigo){
+        int puntuacionAtaque = new Random().nextInt(1,101) + (int) fuerza;
+
+        int defensaDefensor  = new Random().nextInt(1,101) + (int)agilidad;
+
+        int diferencia = puntosDeVida - defensaDefensor;
+
+        if (puntuacionAtaque == defensaDefensor) {
+            // No pasa nada
+        } else if (puntuacionAtaque > defensaDefensor && puntuacionAtaque >= enemigo.getPuntosDeVida()) {
+            // El atacante gana la partida porqué termeino en 0 o menos la vida del enemigo
+
+        } else if (puntuacionAtaque > defensaDefensor && puntuacionAtaque < enemigo.getPuntosDeVida()) {
+            enemigo.perderVida(diferencia);
+
+            this.experiencia += diferencia;
+            enemigo.sumarExperiencia(diferencia);
+        } else{
+            // El defensa gana
+        }
+
+        return diferencia;
     }
 }

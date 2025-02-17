@@ -7,10 +7,20 @@ public class app {
         barbudo.sumarExperiencia(1000);
 
 
-        System.out.println(barbudo.toString());
+        // System.out.println(barbudo.toString());
 
         barbudo.subirNivel();
 
+        barbudo.setPuntosDeVida(10);
+
         System.out.println(barbudo.toString());
+
+
+
+        barbudo.curar();
+
+        System.out.println(barbudo.toString());
+
+
     }
 }
