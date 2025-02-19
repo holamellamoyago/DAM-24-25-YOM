@@ -1,8 +1,10 @@
 package ud5.Practicas.Rol;
 
+import ud5.Practicas.Rol.Personaje.Raza;
+
 public class app {
     public static void main(String[] args) {
-        Personaje barbudo = new Personaje("Barbudo");
+        Personaje barbudo = new Personaje("Antonio", Raza.ORCO, -1, 20 ,    20);
 
         barbudo.sumarExperiencia(1000);
 

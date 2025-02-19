@@ -1,9 +1,9 @@
-package ud5.Practicas.Rol;
+package rol;
 
 import java.util.Random;
 
 public class Personaje {
-    public enum Raza {
+    enum Raza {
         HUMANO, ELFO, ENANO, HOBBIT, ORCO, TROLL
     }
 

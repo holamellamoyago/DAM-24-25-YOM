@@ -1,4 +1,4 @@
-package ud5.Practicas.Rol;
+package rol;
 
 import java.util.Random;
 import java.util.Scanner;
