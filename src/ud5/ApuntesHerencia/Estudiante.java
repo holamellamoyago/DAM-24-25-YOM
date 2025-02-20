@@ -22,10 +22,17 @@ public class Estudiante extends Persona {
 
         p[0] = new Persona("Marta");
         p[1] = new Empleado("Marta" , 2000);
+        p[2] = new Estudiante("Yago", "Primero");
         
         for (int i = 0; i < p.length; i++) {
             p[i].mostrarDatos();
+
+            if (p[i] instanceof Estudiante) {
+                System.out.println("Practucas");
+            }
         }
+
+
     }
 
     

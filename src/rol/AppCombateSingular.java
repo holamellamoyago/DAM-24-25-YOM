@@ -3,7 +3,8 @@ package rol;
 import java.util.Random;
 import java.util.Scanner;
 
-import ud5.Practicas.Rol.Personaje.Raza;
+import rol.Personaje.Raza;
+
 
 public class AppCombateSingular {
     public static void main(String[] args) {
@@ -62,7 +63,7 @@ public class AppCombateSingular {
 
         String raza = sc.nextLine();
 
-        Personaje personaje = new Personaje(nombre, Raza.valueOf(raza.toUpperCase()));
+        Personaje personaje = new Personaje(nombre, Raza.ELFO);
 
         return personaje;
 

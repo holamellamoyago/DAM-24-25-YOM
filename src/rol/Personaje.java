@@ -3,7 +3,7 @@ package rol;
 import java.util.Random;
 
 public class Personaje {
-    enum Raza {
+    public enum Raza {
         HUMANO, ELFO, ENANO, HOBBIT, ORCO, TROLL
     }
 
