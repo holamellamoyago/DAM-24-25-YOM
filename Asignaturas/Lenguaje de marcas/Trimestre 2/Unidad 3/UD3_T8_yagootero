@@ -1,0 +1,10 @@
+﻿<!ELEMENT curriculumVitae (presentación, (estudios | experienciaLaboral)+, (idiomas | deportes | otros)*, referencias*, observaciones?)>
+<!ELEMENT presentacion (#CDATA)>
+<!ELEMENT estudios (#CDATA)>
+<!ELEMENT experiencia laboral (#CDATA)>
+<!ELEMENT idiomas (#CDATA)>
+<!ELEMENT deportes (#CDATA)>
+<!ELEMENT otros (#CDATA)>
+<!ELEMENT referencias (#CDATA)>
+<!ELEMENT observaciones (#CDATA)>
+

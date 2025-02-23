@@ -1,0 +1,20 @@
+<!ELEMENT curriculumVitae (presentacion, (estudios | experienciaLaboral)+, (idiomas | deportes | otros)*, referencias*, observaciones?)> 
+<!ELEMENT presentacion (#PCDATA)>
+<!ELEMENT estudios (#PCDATA)>
+
+<!ATTLIST estudios notaMedia CDATA #REQUIRED>
+
+<!ELEMENT experienciaLaboral (nombre, horas)>
+<!ELEMENT nombre  (#PCDATA)>
+<!ELEMENT horas  (#PCDATA)>
+
+
+<!ELEMENT idiomas EMPTY>
+<!ATTLIST idiomas nombre CDATA #REQUIRED>
+<!ATTLIST idiomas nivel (bajo | medio | alto) "medio">
+
+<!ELEMENT deportes (#PCDATA)>
+<!ELEMENT otros (#PCDATA)>
+<!ELEMENT referencias (#PCDATA)>
+<!ELEMENT observaciones (#PCDATA)>
+

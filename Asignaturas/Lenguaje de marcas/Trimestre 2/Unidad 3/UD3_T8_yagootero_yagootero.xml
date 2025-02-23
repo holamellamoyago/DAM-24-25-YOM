@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE curriculumVitae SYSTEM "UD3_T8_yagootero.dtd">
+<curriculumVitae>
+  <presentacion>Hola buenas esté es mi cv</presentacion>
+  <estudios notaMedia="5">DAM1</estudios>
+  <experienciaLaboral>
+      <nombre>
+          Fandicosta      
+      </nombre>  
+      <horas>200</horas>
+  </experienciaLaboral>
+  <idiomas nombre="gallego" nivel="medio"></idiomas>
+  <deportes>Correr</deportes>
+  <referencias>Fandicosta</referencias>
+  <observaciones>Muy buen trabajador</observaciones>
+
+</curriculumVitae>
