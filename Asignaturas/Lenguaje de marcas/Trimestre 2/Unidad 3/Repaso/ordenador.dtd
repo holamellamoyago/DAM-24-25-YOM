@@ -1,0 +1,17 @@
+<!ELEMENT informatica (movil | portatil | pc | tablet)*>
+
+<!ENTITY % procesador
+    "marca CDATA #REQUIRED ">
+    
+    <!ENTITY % tornillos 
+        "diametro CDATA #IMPLIED">
+
+<!ELEMENT movil (#PCDATA)>
+<!ELEMENT portatil (#PCDATA)>
+<!ELEMENT pc (#PCDATA)>
+<!ELEMENT tablet (#PCDATA)>
+
+<!ATTLIST movil %procesador;>
+<!ATTLIST pc %procesador;>
+<!ATTLIST portatil %tornillos;>
+
