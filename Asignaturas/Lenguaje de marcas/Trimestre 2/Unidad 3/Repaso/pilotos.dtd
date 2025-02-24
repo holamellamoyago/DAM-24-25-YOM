@@ -1,0 +1,27 @@
+<!ELEMENT formula1 (piloto+, escuderia+, pilotoGanador)>
+<!ELEMENT piloto (nombre, numero)>
+
+<!ENTITY  % neumaticos 
+  "neumaticos (blandos | medios | duros) #REQUIRED ">
+
+<!ATTLIST piloto codigo ID  #REQUIRED>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT numero (#PCDATA)>
+
+<!ELEMENT escuderia (nombre, piloto1, piloto2, coche*, kart*)>
+<!ELEMENT piloto1 (#PCDATA)>
+<!ELEMENT piloto2 (#PCDATA)>
+<!ELEMENT coche (marcaMotor)>
+<!ATTLIST coche neumaticos (blandos | medios | duros) "medios"> 
+<!ELEMENT marcaMotor (#PCDATA)>
+
+<!ELEMENT pilotoGanador (#PCDATA)>
+<!ATTLIST pilotoGanador escuderia NMTOKENS #REQUIRED>
+<!ATTLIST pilotoGanador ref IDREF  #IMPLIED>
+
+<!ELEMENT kart (#PCDATA)>
+<!ATTLIST kart %neumaticos;>
+
+
+
+

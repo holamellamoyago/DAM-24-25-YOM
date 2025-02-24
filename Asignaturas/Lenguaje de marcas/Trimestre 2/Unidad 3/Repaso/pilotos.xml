@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE formula1 SYSTEM "pilotos.dtd">
+<formula1>
+  <piloto codigo="A">
+      <nombre>Fernando Alonso</nombre>
+      <numero>33</numero>
+  </piloto>
+  
+  <escuderia>
+     <nombre>Aston martin</nombre>
+     <piloto1>Fernando</piloto1>
+     <piloto2>Carlos</piloto2>
+     
+     <coche neumaticos="medios">
+         <marcaMotor>Aston Martin </marcaMotor>
+     </coche>
+     
+      <kart neumaticos="blandos">
+        Kart
+      </kart>
+     
+  </escuderia>
+  
+  
+  
+  <pilotoGanador escuderia="RedBull Racing" ref="A">Max Verstapen</pilotoGanador>
+  
+</formula1>
