@@ -34,22 +34,42 @@ public class AppCombateSingular {
         System.out.println(atacante.nombre + "(" + atacante.puntosDeVida + ")" + " ataca a " + defensor.nombre + "("
                 + defensor.puntosDeVida + " )");
 
-        atacante.atacar(defensor);
+        boolean bandera = false;
 
-        int puntosDeAtaque = atacante.atacar(defensor);
+        do {
+            atacante.atacar(defensor);
 
-        if (puntosDeAtaque == 0 || puntosDeAtaque <0) {
-            System.out.println("El ataque no tuvo exito");
-        } else if (puntosDeAtaque > 0) {
-            System.out.println("El ataque tuvo exito");
+            int puntosDeAtaque = atacante.atacar(defensor);
 
-            System.out.println("Se perdieron " + puntosDeAtaque + " de vida");
+            if (puntosDeAtaque == 0 || puntosDeAtaque < 0) {
+                System.out.println("El ataque no tuvo exito");
+            } else if (puntosDeAtaque > 0) {
+                System.out.println("El ataque tuvo exito");
 
-            if (!defensor.estaVivo()) {
-                System.out.println("El personaje atacado " + (defensor.nombre) + " murio");
+                System.out.println("Se perdieron " + puntosDeAtaque + " de vida");
+
+                if (!defensor.estaVivo()) {
+                    System.out.println("El personaje atacado " + (defensor.nombre) + " murio");
+                }
             }
+
+            comprobarSiEstanvivos(Personaje atacante , Personaje defensor)
+        } while (!bandera);
+
+    }
+
+    static void comprobarSiEstanvivos(Personaje p1, Personaje p2){
+        if (!p1.estaVivo()) {
+            System.out.println("________________________________");
+            System.out.println("El personaje" + p1.nombre + " murio");
+            System.out.println("El personaje " + p2.nombre + " ha ganado");
         }
 
+        if (!p2.estaVivo()) {
+            System.out.println("________________________________");
+            System.out.println("El personaje" + p1.nombre + " murio");
+            System.out.println("El personaje " + p2.nombre + " ha ganado");
+        }
     }
 
     static Personaje escogerPersonaje() {
