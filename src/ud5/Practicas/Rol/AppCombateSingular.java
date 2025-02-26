@@ -7,6 +7,10 @@ import ud5.Practicas.Rol.Personaje.Raza;
 
 public class AppCombateSingular {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int numeroRonda = 0;
+        int turnoPersonaje = 1;
+
         System.out.println("Comienza la partida.");
 
         // Personaje personaje1 = escogerPersonaje();
@@ -15,61 +19,82 @@ public class AppCombateSingular {
         // Personaje presonaje2 = escogerPersonaje();
         Personaje presonaje2 = new Personaje("Antonio");
 
-        if (personaje1.agilidad == presonaje2.agilidad) {
-            int rdm = new Random().nextInt(1);
-
-            if (rdm == 0) {
-                atacar(personaje1, presonaje2);
-            } else {
-                atacar(presonaje2, personaje1);
-            }
-        } else if (personaje1.agilidad > presonaje2.agilidad) {
-            atacar(personaje1, presonaje2);
-        } else {
-            atacar(presonaje2, personaje1);
-        }
-    }
-
-    static void atacar(Personaje atacante, Personaje defensor) {
-        System.out.println(atacante.nombre + "(" + atacante.puntosDeVida + ")" + " ataca a " + defensor.nombre + "("
-                + defensor.puntosDeVida + " )");
-
-        boolean bandera = false;
-
         do {
-            atacante.atacar(defensor);
+            if (numeroRonda == 0) {
+                numeroRonda++;
+                if (personaje1.agilidad == presonaje2.agilidad) {
+                    int rdm = new Random().nextInt(1);
 
-            int puntosDeAtaque = atacante.atacar(defensor);
+                    if (rdm == 0) {
+                        atacar(personaje1, presonaje2);
 
-            if (puntosDeAtaque == 0 || puntosDeAtaque < 0) {
-                System.out.println("El ataque no tuvo exito");
-            } else if (puntosDeAtaque > 0) {
-                System.out.println("El ataque tuvo exito");
+                        // Elijo el siguiente turno
+                        turnoPersonaje = 2;
+                    } else {
+                        atacar(presonaje2, personaje1);
+                        turnoPersonaje = 1;
+                    }
+                } else if (personaje1.agilidad > presonaje2.agilidad) {
 
-                System.out.println("Se perdieron " + puntosDeAtaque + " de vida");
-
-                if (!defensor.estaVivo()) {
-                    System.out.println("El personaje atacado " + (defensor.nombre) + " murio");
+                    turnoPersonaje = 2;
+                    atacar(personaje1, presonaje2);
+                } else {
+                    turnoPersonaje = 1;
+                    atacar(presonaje2, personaje1);
+                }
+            } else {
+                if (turnoPersonaje == 1) {
+                    turnoPersonaje = 2;
+                    atacar(personaje1, presonaje2);
+                } else {
+                    turnoPersonaje = 1;
+                    atacar(presonaje2, personaje1);
                 }
             }
 
-            comprobarSiEstanvivos(Personaje atacante , Personaje defensor)
-        } while (!bandera);
+            sc.nextLine();
+        } while (personaje1.estaVivo() && presonaje2.estaVivo());
 
     }
 
-    static void comprobarSiEstanvivos(Personaje p1, Personaje p2){
+    static void atacar(Personaje atacante, Personaje defensor) {
+
+        System.out.println(atacante.nombre + "(" + atacante.puntosDeVida + ")" + " ataca a " + defensor.nombre + "("
+                + defensor.puntosDeVida + " )");
+
+        int puntosDeAtaque = atacante.atacar(defensor);
+
+        if (puntosDeAtaque == 0) {
+            System.out.println("El ataque no tuvo exito");
+        } else if (puntosDeAtaque > 0) {
+            System.out.println("El ataque tuvo exito");
+
+            System.out.println("Se perdieron " + puntosDeAtaque + " de vida");
+        } else {
+            System.out.println("El atacado se defiende");
+
+        }
+
+    }
+
+    static boolean comprobarSiEstanvivos(Personaje p1, Personaje p2) {
         if (!p1.estaVivo()) {
             System.out.println("________________________________");
             System.out.println("El personaje" + p1.nombre + " murio");
             System.out.println("El personaje " + p2.nombre + " ha ganado");
+
+            return false;
         }
 
         if (!p2.estaVivo()) {
             System.out.println("________________________________");
             System.out.println("El personaje" + p1.nombre + " murio");
             System.out.println("El personaje " + p2.nombre + " ha ganado");
+
+            return false;
         }
+
+        return true;
     }
 
     static Personaje escogerPersonaje() {

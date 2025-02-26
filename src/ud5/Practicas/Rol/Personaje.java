@@ -157,20 +157,22 @@ public class Personaje {
 
         int defensaDefensor = new Random().nextInt(1, 101) + (int) agilidad;
 
-        int diferencia = puntosDeVida - defensaDefensor;
+        int diferencia = puntuacionAtaque - defensaDefensor;
 
         if (puntuacionAtaque == defensaDefensor) {
             // No pasa nada
-        } else if (puntuacionAtaque > defensaDefensor && puntuacionAtaque >= enemigo.getPuntosDeVida()) {
+        } else if (diferencia > 0 && diferencia >= enemigo.getPuntosDeVida()) {
             // El atacante gana la partida porqué termeino en 0 o menos la vida del enemigo
-
-        } else if (puntuacionAtaque > defensaDefensor && puntuacionAtaque < enemigo.getPuntosDeVida()) {
+            System.out.println("El defensor muere");
+            enemigo.perderVida(diferencia);
+        } else if (diferencia > 0 && diferencia < enemigo.getPuntosDeVida()) {
             enemigo.perderVida(diferencia);
 
             this.experiencia += diferencia;
             enemigo.sumarExperiencia(diferencia);
         } else {
             // El defensa gana
+            System.out.println("El atacado consigue defenderse");
         }
 
         return diferencia;
