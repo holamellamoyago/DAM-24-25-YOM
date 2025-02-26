@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE informatica SYSTEM "ordenador.dtd">
+<informatica>
+  <portatil diametro="18mm">ASUS</portatil>
+  <pc marca="corsair">Vegetta</pc>
+  <movil marca="snapdragon">
+    Xiaomi  
+  </movil>
+</informatica>
