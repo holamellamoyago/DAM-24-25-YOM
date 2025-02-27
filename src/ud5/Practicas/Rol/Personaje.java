@@ -177,4 +177,29 @@ public class Personaje {
 
         return diferencia;
     }
+
+    int atacar(Mounstro enemigo) {
+        int puntuacionAtaque = new Random().nextInt(1, 101) + (int) fuerza;
+
+        int defensaDefensor = new Random().nextInt(1, 101) + (int) agilidad;
+
+        int diferencia = puntuacionAtaque - defensaDefensor;
+
+        if (puntuacionAtaque == defensaDefensor) {
+            // No pasa nada
+        } else if (diferencia > 0 && diferencia >= enemigo.getPuntosDeVida()) {
+            // El atacante gana la partida porqué termeino en 0 o menos la vida del enemigo
+            System.out.println("El defensor muere");
+            enemigo.perderVida(diferencia);
+        } else if (diferencia > 0 && diferencia < enemigo.getPuntosDeVida()) {
+            enemigo.perderVida(diferencia);
+
+            this.experiencia += diferencia;
+        } else {
+            // El defensa gana
+            System.out.println("El atacado consigue defenderse");
+        }
+
+        return diferencia;
+    }
 }
