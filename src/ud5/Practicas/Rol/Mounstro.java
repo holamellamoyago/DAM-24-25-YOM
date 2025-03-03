@@ -30,7 +30,15 @@ public class Mounstro {
         return puntosDeVida;
     }
 
-    
+    public String mostrar() {
+        return "Mostruo " + nombre + "\nAtaque=" + ataque + ", defensa=" + defensa + ", velocidad="
+                + velocidad + ", puntosVida=" + puntosDeVida;
+    }
+
+    @Override
+    public String toString() {
+        return "nombre" + "(" + puntosDeVida + ")";
+    }
 
     int atacar(Mounstro enemigo) {
         int puntuacionAtaque = new Random().nextInt(1, 101) + this.ataque;

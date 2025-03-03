@@ -74,24 +74,37 @@ public class Personaje {
 
     }
 
+
+
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Personaje other = (Personaje) obj;
+        if (nombre == null) {
+            if (other.nombre != null)
+                return false;
+        } else if (!nombre.equals(other.nombre))
+            return false;
+        if (raza != other.raza)
+            return false;
+        if (vidaInicial != other.vidaInicial)
+            return false;
+        return true;
+    }
+
     public int getPuntosDeVida() {
         return puntosDeVida;
     }
 
     public void setPuntosDeVida(int puntosDeVida) {
         this.puntosDeVida = puntosDeVida;
-    }
-
-    private int generarValor() {
-        return new Random().nextInt(0, 101);
-    }
-
-    private int validarValor(int valor) {
-        if (valor >= 0) {
-            return valor;
-        } else {
-            throw new ArithmeticException("Personaje no valido");
-        }
     }
 
     public String mostrar() {
@@ -102,18 +115,6 @@ public class Personaje {
     @Override
     public String toString() {
         return this.nombre + "(" + puntosDeVida + "/" + vidaInicial + ")";
-    }
-
-    byte sumarExperiencia(int puntos) {
-
-        this.experiencia += puntos;
-
-        while (puntos > 1000) {
-            this.nivel++;
-            puntos -= 1000;
-        }
-
-        return this.nivel;
     }
 
     public void subirNivel() {
@@ -131,6 +132,18 @@ public class Personaje {
         } else {
             puntosDeVida = vidaInicial;
         }
+    }
+
+    byte sumarExperiencia(int puntos) {
+
+        this.experiencia += puntos;
+
+        while (puntos > 1000) {
+            this.nivel++;
+            puntos -= 1000;
+        }
+
+        return this.nivel;
     }
 
     boolean perderVida(int puntos) {
@@ -201,5 +214,17 @@ public class Personaje {
         }
 
         return diferencia;
+    }
+
+    private int generarValor() {
+        return new Random().nextInt(0, 101);
+    }
+
+    private int validarValor(int valor) {
+        if (valor >= 0) {
+            return valor;
+        } else {
+            throw new ArithmeticException("Personaje no valido");
+        }
     }
 }

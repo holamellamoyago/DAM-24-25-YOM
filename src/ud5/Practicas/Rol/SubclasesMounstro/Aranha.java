@@ -2,7 +2,9 @@ package ud5.Practicas.Rol.SubclasesMounstro;
 
 import java.util.Random;
 
-public class Aranha {
+import ud5.Practicas.Rol.Mounstro;
+
+public class Aranha extends Mounstro{
         Random random = new Random();
     int ataque, defensa,velocidad,puntosVida;
 

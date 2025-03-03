@@ -2,7 +2,9 @@ package ud5.Practicas.Rol.SubclasesMounstro;
 
 import java.util.Random;
 
-public class Troll {
+import ud5.Practicas.Rol.Mounstro;
+
+public class Troll extends Mounstro{
         Random random = new Random();
     int ataque, defensa,velocidad,puntosVida;
 
