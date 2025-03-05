@@ -7,15 +7,19 @@ import java.util.Arrays;
 public class PersonajeEx extends Personaje {
     int monedas; // default 0
     Item[] items;
-    private double cargaMaxima;
-    private double pesoTotal;
+    private double pesoMaximo;
+
+    Item itemManoIzq ;
+    Item itemManoDch;
+    Armadura armaduraCabeza;
+    Armadura armaduraCuerpo;
 
     public PersonajeEx(String nombre, int fuerza, int agilidad, int constitucion, byte nivel, int experiencia,
             int puntosDeVida, Raza raza, int monedas, Item[] items) {
         super(nombre, fuerza, agilidad, constitucion, nivel, experiencia, puntosDeVida, raza);
         this.monedas = monedas;
         this.items = items;
-        this.cargaMaxima = (constitucion + 50) *2;
+        this.pesoMaximo = (constitucion + 50) *2;
     }
 
     public PersonajeEx(String nombre, Raza raza, int fuerza, int agilidad, int constitucion, int monedas,
@@ -24,7 +28,7 @@ public class PersonajeEx extends Personaje {
         this.monedas = monedas;
         this.items = items;
 
-        this.cargaMaxima = (constitucion + 50) *2;
+        this.pesoMaximo = (constitucion + 50) *2;
     }
 
     public PersonajeEx(String nombre, Raza raza, int monedas, Item[] items) {
@@ -32,7 +36,7 @@ public class PersonajeEx extends Personaje {
         this.monedas = monedas;
         this.items = items;
 
-        this.cargaMaxima = (constitucion + 50) *2;
+        this.pesoMaximo = (constitucion + 50) *2;
         
     }
 
@@ -43,7 +47,7 @@ public class PersonajeEx extends Personaje {
         this.monedas = monedas;
         this.items = items;
 
-        this.cargaMaxima = (constitucion + 50) *2;
+        this.pesoMaximo = (constitucion + 50) *2;
     }
 
     public PersonajeEx(String nombre) {
@@ -51,19 +55,27 @@ public class PersonajeEx extends Personaje {
         this.monedas = 0;
         this.items = new Item[0];
 
-        this.cargaMaxima = (constitucion + 50) *2;
+        this.pesoMaximo = (constitucion + 50) *2;
+    }
+
+    double pesoActualInventario(){
+        double peso = 0;
+
+        for (Item itemsLista: items){
+            peso += itemsLista.peso;
+        }
+
+        return peso;
     }
 
 
     boolean addToInventario(Item item){
 
-        // Peso con el ITEM puesto.
-        for (Item itemsLista: items){
-            pesoTotal += itemsLista.peso;
-        }
 
+
+        // Peso con el ITEM puesto.
         
-        if (item.peso + pesoTotal > cargaMaxima) {
+        if (item.peso + pesoActualInventario() > pesoMaximo) {
             System.out.println("El item excede el peso que puede transportar el Monstruo");
             return false;
         } else{
@@ -76,6 +88,38 @@ public class PersonajeEx extends Personaje {
         }
     }
 
+    void mostrarInformacion(){
+        System.out.println("1. Inventario de personaje");
+        System.out.println("==========================");
+        System.out.println("\nInventario de " + nombre);
+        
+        for (int i = 0; i < items.length; i++) {
+            System.out.println(i+". " + items[i].nombre+", peso: " + items[i].peso + ", precio: " + items[i].precioBase + monedas);
+        }
+
+        System.out.println("\nCarga total transportada: " + pesoActualInventario() + "/" + pesoMaximo  + " kilos");
+    }
+
+    @Override
+    public String toString() {
+        return "1. Inventario de personaje";
+    }
+
+    
+    boolean equipar(Item itemManoIzq, Item itemManoDch, Armadura armaduraCabeza, Armadura armaduraCuerpo ){
+
+
+       this.itemManoDch = itemManoDch;
+
+       if (itemManoIzq) {
+        
+       }
+
+
+
+
+        return false;
+    }
     
     
 

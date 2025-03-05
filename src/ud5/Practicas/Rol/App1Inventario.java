@@ -9,5 +9,7 @@ public class App1Inventario {
 
         p.addToInventario(antorcha);
         p.addToInventario(Escudo);
+
+        p.mostrarInformacion();
     }
 }
