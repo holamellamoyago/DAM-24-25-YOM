@@ -32,6 +32,7 @@ public class app {
 
         Personaje[] personajes = {barbudo, oscar, eca};
 
+        System.out.println("\nPersonajes ordenados: ");
         System.out.println(Arrays.toString(sortAgilidadDesc(personajes)));
     }
 
