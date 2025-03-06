@@ -1,4 +1,4 @@
-package ud5.ApuntesInterfaces;
+package ud5.ApuntesInterfaces.Animales;
 
 public class AppAnimal {
     public static void main(String[] args) {

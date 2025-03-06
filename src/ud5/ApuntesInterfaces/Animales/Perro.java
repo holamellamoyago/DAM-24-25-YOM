@@ -1,4 +1,4 @@
-package ud5.ApuntesInterfaces;
+package ud5.ApuntesInterfaces.Animales;
 
 public class Perro implements Sonido {
     String nombre;

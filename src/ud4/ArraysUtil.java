@@ -160,6 +160,15 @@ public class ArraysUtil {
         }
     }
 
+    public static void mostrarMatriz( char [][] t){
+        for (int i = 0; i < t.length; i++) {
+            for (int j = 0; j < t[i].length; j++) {
+                System.out.print(t[i][j] + " ");
+            }
+            System.err.println();
+        }
+    }
+
     public static String quitarEspacios(String frase){
 
         // frase = frase.replace(" ", ""); \\s Todo \\ttabulacion \\saltoLinea \\retorno de carro

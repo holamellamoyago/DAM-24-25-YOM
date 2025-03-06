@@ -1,4 +1,4 @@
-package ud5.ApuntesInterfaces;
+package ud5.ApuntesInterfaces.Animales;
 
 public class Caracol implements Sonido{
     String nombre;
