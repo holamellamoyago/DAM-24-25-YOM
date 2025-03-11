@@ -43,7 +43,7 @@ public class Socio implements Comparable {
             s, 
             s2,
             new Socio(5, "paco"),
-            new Socio(3, "Laura"),
+            new Socio(3, "Jose"),
             new Socio(4, "Jose")
         };
 
@@ -62,7 +62,13 @@ public class Socio implements Comparable {
 
         Socio nuevoSocio = (Socio) o;
 
-        return nombre.compareTo(nuevoSocio.nombre);
+        int res =  nombre.compareTo(nuevoSocio.nombre);
+
+        if (res == 0) {
+            res = nuevoSocio.id -id ;
+        }
+
+        return res;
         // Para ordenarlo al revés 
         // return -nombre.compareTo(nuevoSocio.nombre);
 
