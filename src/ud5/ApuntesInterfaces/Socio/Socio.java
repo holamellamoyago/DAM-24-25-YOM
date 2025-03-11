@@ -63,6 +63,9 @@ public class Socio implements Comparable {
         Socio nuevoSocio = (Socio) o;
 
         return nombre.compareTo(nuevoSocio.nombre);
+        // Para ordenarlo al revés 
+        // return -nombre.compareTo(nuevoSocio.nombre);
+
 
     }
 
