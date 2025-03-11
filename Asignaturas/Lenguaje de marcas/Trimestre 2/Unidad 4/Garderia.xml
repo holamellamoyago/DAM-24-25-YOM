@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<garderia xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Tarea1.xsd">
+  <neno numeroExpedente="2">
+    <nome>Yago</nome>
+    <dataNacemento>2003-02-11</dataNacemento>
+    <peso>12</peso>
+    <altura>25</altura>
+    <vacunas>true</vacunas>
+  </neno>
+</garderia>
