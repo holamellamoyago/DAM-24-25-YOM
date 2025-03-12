@@ -39,6 +39,7 @@ public class Buscaminas {
                 System.out.println("Perdiste");
             } else {
                 System.out.println("No hay bomba");
+                t2[fila][columna] = '^';
                 t2 = comprobarBombasCercanas(t2, t, fila, columna);
                 mostrarTableroLimpio(t2);
 
@@ -57,13 +58,13 @@ public class Buscaminas {
         // comprobamos verticalmente
         if (nFila != 0) {
             if (t2[nFila - 1][nColumna] == true) {
-                t[nFila - 1][nColumna] = '1';
+                t[nFila][nColumna] = '1';
             }
         }
 
         if (nFila != t.length) {
             if (t2[nFila + 1][nColumna] == true) {
-                t[nFila + 1][nColumna] = '1';
+                t[nFila][nColumna] = '1';
             }
         }
 
@@ -74,7 +75,7 @@ public class Buscaminas {
             }
         }
 
-        if (nFila != t.length) {
+        if (nColumna != t.length) {
             if (t2[nFila][nColumna + 1] == true) {
                 t[nFila][nColumna + 1] = '1';
             }
