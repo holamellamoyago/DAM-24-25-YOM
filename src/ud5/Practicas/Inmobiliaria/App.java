@@ -1,5 +1,7 @@
 package ud5.Practicas.Inmobiliaria;
 
+import java.util.Arrays;
+
 public class App {
     public static void main(String[] args) {
         // 1.1. Modelo de Clases
@@ -26,16 +28,41 @@ public class App {
         casa2.setPrecioVenta(400000);
 
         // Imprimir Inmueble: Piso, Casa
-        System.out.println(piso1);
-        System.out.println(casa1);
-        System.out.println("");
+        // System.out.println(piso1);
+        // System.out.println(casa1);
+        // System.out.println("");
         
         // Mostrar Detalle Inmueble: Piso, Casa
-        System.out.println(piso1.detalle());
-        System.out.println("");
-        System.out.println(piso2.detalle());
-        System.out.println("");
-        System.out.println(casa2.detalle());
+        // System.out.println(piso1.detalle());
+        // System.out.println("");
+        // System.out.println(piso2.detalle());
+        // System.out.println("");
+        // System.out.println(casa2.detalle());
 
+        Inmueble[] inmuebles = {
+            piso1,piso2, piso3, casa1, casa2
+        };
+
+
+
+        System.out.println("\nTODOS LOS INMUEBLES");
+        mostrarInmuebles(inmuebles);   
+
+        System.out.println("\nNMUEBLES ORDENADOS POR m2 (ascendente): ");
+        Arrays.sort(inmuebles, new ComparableMetrosCuadrados());
+        mostrarInmuebles(inmuebles);
+
+
+        System.out.println("\nNMUEBLES ORDENADOS POR habitaciones y m2 (ascendente): ");
+        Arrays.sort(inmuebles, new ComparableNumHabitaciones());
+        mostrarInmuebles(inmuebles);
+
+
+    }
+
+    static void mostrarInmuebles(Inmueble[] t){
+        for (Inmueble inmueble: t ){
+            System.out.println(inmueble.toString());
+        }
     }
 }

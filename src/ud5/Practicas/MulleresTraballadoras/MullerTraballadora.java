@@ -3,8 +3,8 @@ package ud5.Practicas.MulleresTraballadoras;
 import java.time.Year;
 
 public abstract class MullerTraballadora {
-    String nome, apelidos;
-    int anoNacemento;
+    protected String nome, apelidos;
+    protected int anoNacemento;
 
     public MullerTraballadora(String nome, String apelidos, int anoNacemento) {
         this.nome = nome;

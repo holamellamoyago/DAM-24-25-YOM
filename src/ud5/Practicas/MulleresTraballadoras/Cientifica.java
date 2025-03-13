@@ -12,7 +12,7 @@ public class Cientifica extends MullerTraballadora implements IPioneira {
 
     @Override
     String descricionContribucion() {
-        return descubrimento;
+        return nome + " " + apelidos + " foi unha cientifica pioneira que descubriu: " + descubrimento;
     }
 
     @Override

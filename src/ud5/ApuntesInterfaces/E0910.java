@@ -7,10 +7,6 @@ import java.util.Random;
 public class E0910 {
     public static void main(String[] args) {
         Integer[] a = new Integer[20];
-
-        for (Integer integer : a) {
-            
-        }
         
         
         for (int i = 0; i < a.length; i++) {

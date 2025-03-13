@@ -1,6 +1,8 @@
 package ud5.Practicas.Inmobiliaria;
 
-public abstract class Inmueble {
+import java.util.Arrays;
+
+public abstract class Inmueble implements Comparable {
     String nombre;
     int metros2,habitaciones,baños,planta,metrosTerreno, precioAlquiler, precioVenta;
 
@@ -12,9 +14,18 @@ public abstract class Inmueble {
         this.baños = baños;
         this.planta = planta;
         this.metrosTerreno = metrosTerreno;
+        
 
         this.precioAlquiler = 0;
 
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Inmueble inmueble = (Inmueble) o;
+        int res = this.nombre.compareTo(inmueble.nombre);
+
+        return res;
     }
 
     
@@ -54,15 +65,27 @@ public abstract class Inmueble {
 
 
 
+
+
     @Override
     public String toString() {
         return "Inmueble en " + nombre + " (" + metros2 + " m2), " + habitaciones + " hab)";
     }
 
+    void sortMetrosDesc(Inmueble[] t){
+        Arrays.sort(t, new ComparableMetrosCuadrados().reversed());
+    }
+
+    void sortHabMetrosDesc(Inmueble[] t){
+        
+    }
+
+    
+    
     
 
 
-    
+
 
     
 

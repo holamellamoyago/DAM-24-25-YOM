@@ -22,8 +22,7 @@ public class App {
     static void imprimirInformacion(MullerTraballadora[] mulleres) {
         for (MullerTraballadora muller : mulleres) {
             if (muller instanceof Cientifica) {
-                System.out.println(muller.nome + " " + muller.apelidos + " foi unha científica que descubriu: "
-                        + muller.descricionContribucion());
+                ((Cientifica)muller).descricionContribucion();
             } else if (muller instanceof Artista) {
                 System.out.println(muller.nome + " " + muller.apelidos + "  destacou na arte co estilo: "
                         + muller.descricionContribucion());
