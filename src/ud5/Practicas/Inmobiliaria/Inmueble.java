@@ -28,6 +28,12 @@ public abstract class Inmueble implements Comparable {
         return res;
     }
 
+    static void mostrarInmuebles(Inmueble[] t){
+        for (Inmueble inmueble: t ){
+            System.out.println(inmueble.toString());
+        }
+    }
+
     
 
     // public Inmueble(String nombre, int metros2, int habitaciones, int baños, int planta, int metrosTerreno,

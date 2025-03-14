@@ -46,23 +46,19 @@ public class App {
 
 
         System.out.println("\nTODOS LOS INMUEBLES");
-        mostrarInmuebles(inmuebles);   
+        Inmueble.mostrarInmuebles(inmuebles);   
 
         System.out.println("\nNMUEBLES ORDENADOS POR m2 (ascendente): ");
         Arrays.sort(inmuebles, new ComparableMetrosCuadrados());
-        mostrarInmuebles(inmuebles);
+        Inmueble.mostrarInmuebles(inmuebles);
 
 
         System.out.println("\nNMUEBLES ORDENADOS POR habitaciones y m2 (ascendente): ");
         Arrays.sort(inmuebles, new ComparableNumHabitaciones());
-        mostrarInmuebles(inmuebles);
+        Inmueble.mostrarInmuebles(inmuebles);
 
 
     }
 
-    static void mostrarInmuebles(Inmueble[] t){
-        for (Inmueble inmueble: t ){
-            System.out.println(inmueble.toString());
-        }
-    }
+
 }
