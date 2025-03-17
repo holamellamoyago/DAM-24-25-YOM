@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<modulo codigo="MP0373" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="Tarea2B.xsd">
-        <duracion horas="133"/>
-        <nome>Linguaxes de marcas e sistemas de xestión da información</nome>
-        <ciclo codigo="CSIFC01">
-          Administración de sistemas informáticos e redes
-        </ciclo>
-</modulo>

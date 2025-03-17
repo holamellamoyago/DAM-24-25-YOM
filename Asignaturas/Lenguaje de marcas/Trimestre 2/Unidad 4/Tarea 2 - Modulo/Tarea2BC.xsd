@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this template
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    <xs:element name="modulo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="duracion" type="tipoDuracion"/>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element ref="ciclo" maxOccurs="unbounded"/>
+                <xs:element ref="contidos"/>
+            </xs:sequence>
+            <xs:attribute name="codigo" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:complexType name="tipoDuracion">
+        <xs:attribute name="horas" type="xs:int" use="required"/>
+        <xs:attribute name="sesions" type="xs:int" use="required"/>
+        <xs:attribute name="sesionsSemanais" type="xs:string" use="required"/>
+    </xs:complexType>
+    
+    <xs:element name="ciclo">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="codigo" type="xs:string" use="required"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="contidos">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="UD" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="UD">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="titulo" type="xs:string"/>
+                <xs:element name="descrición" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="num" type="xs:int"/>
+            <xs:attribute name="sesións" type="xs:int"/>
+        </xs:complexType>
+    </xs:element>
+    
+    
+    
+</xs:schema>
