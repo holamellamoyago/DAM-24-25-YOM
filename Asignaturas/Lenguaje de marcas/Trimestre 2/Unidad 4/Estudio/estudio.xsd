@@ -1,0 +1,15 @@
+﻿<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="motor">
+      <xs:complexType>
+          <xs:sequence>
+            <xs:element name="motogp" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="pilotos" minOccurs="1" maxOccurs="23" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>  
+          </xs:sequence>
+      </xs:complexType>
+  </xs:element>
+</xs:schema>

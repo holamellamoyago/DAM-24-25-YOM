@@ -1,29 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:element name="modulo">
-        <xs:complexType mixed="true">
+        <xs:complexType>
             <xs:sequence>
-                <xs:element name="duracion" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
-                <xs:element name="mome" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
-                <xs:element name="ciclo" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
-                
-                <xs:element name="contidos">
+                <xs:element name="duracion">
                     <xs:complexType>
-                        <sequence>
-                            <xs:element name="ciclo2" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
-                        </sequence>
+                        <xs:attribute name="horas" type="xs:int"/>
                     </xs:complexType>
-                    
                 </xs:element>
+                <xs:element name="nome" type="xs:string"/>
                 
+                <xs:element name="ciclo">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attribute name="codigo" type="xs:string"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
             </xs:sequence>
-            
             <xs:attribute name="codigo" type="xs:string"/>
-            <xs:attribute name="sesions" type="xs:string"/>
-            <xs:attribute name="sesionsSemanais" type="xs:string"/>
-            <xs:attribute name="duracion" type="xs:string"/>
-            <xs:attribute name="codigo" type="xs:string"/>
-            <xs:attribute name="horas" type="xs:string"/>
         </xs:complexType>
     </xs:element>
 </xs:schema>
