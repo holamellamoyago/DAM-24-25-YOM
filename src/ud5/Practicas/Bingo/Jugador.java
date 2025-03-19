@@ -4,30 +4,26 @@ import java.util.Random;
 
 public class Jugador {
     String nombre;
-    int[][] carton;
-    int numCartones;
+    Carton[] cartones;
 
-    public Jugador(String nombre, int[][] carton, int numCartones) {
+    public Jugador(String nombre, int numCartones) {
         this.nombre = nombre;
-        this.carton = carton;
-        this.numCartones = numCartones;
+        this.cartones = rellenarCartones(numCartones);
     }
 
-    public Jugador(String nombre) {
-        this(nombre, rellenarCarton(), 1);
 
-    }
 
-    
 
-    public void setNumCartones(int numCartones) {
-        if (numCartones > 5) {
-            throw new ArithmeticException("No se pueden registrar mas de 5 cartones");
-        } else{
+    static Carton[] rellenarCartones(int numCartones){
+        Carton[] cartones = new Carton[numCartones];
 
-            this.numCartones = numCartones;
+        for (int i = 0; i < cartones.length; i++) {
+            cartones[i].numeros = rellenarCarton();
         }
+
+        return cartones;
     }
+    
 
     static int[][] rellenarCarton() {
         int[][] carton = new int[3][9];

@@ -1,6 +1,7 @@
 
 package ud5.Practicas.praiasdegalicia;
 
+import java.util.Arrays;
 import java.util.Comparator;
 
 public class Praia implements Comparable{
@@ -107,6 +108,26 @@ public class Praia implements Comparable{
     public int compareTo(Object o) {
         Praia p = (Praia) o;
         return p.id;
+    }
+
+    static Praia[] sortLatitudNorteSur(Praia[] p){
+        Praia[] p2 = Arrays.copyOf(p, p.length);
+
+
+        Comparator comparatorLatitudNorteSuComparator = new Comparator() {
+
+            @Override
+            public int compare(Object o1, Object o2) {
+                Praia p1 = (Praia) o1; 
+                Praia p2 = (Praia) o2; 
+                double res= p1.lat - p2.lat;
+                return (int)res;
+            }
+            
+        };
+
+        Arrays.sort(p2, comparatorLatitudNorteSuComparator);
+        return p2;
     }
 
 

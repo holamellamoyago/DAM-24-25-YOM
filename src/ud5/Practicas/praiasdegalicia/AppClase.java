@@ -26,5 +26,10 @@ public class AppClase {
 
         System.out.println();
 
+        Praia.imprimirLista(Praia.sortLatitudNorteSur(praias), 300);
+
+
+        
+
     }
 }
