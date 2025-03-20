@@ -14,9 +14,12 @@
         <xs:element ref="peso"/>
         <xs:element name="altura" type="xs:unsignedByte"/>
         <xs:element name="vacunas" type="xs:boolean"/>
+        <xs:element ref="tlfnContacto" minOccurs="1" maxOccurs="4"/>
+        <xs:element ref="idade"/>
       </xs:sequence>
     <xs:attribute name="numeroExpedente" type="xs:unsignedShort"/>
     <xs:attribute name="sexo" type="restSexo" use="required" />
+    <xs:attribute name="codigo" type="codNeno"/>
     </xs:complexType>
     
     <xs:element name="nome">
@@ -36,6 +39,54 @@
             </xs:restriction>
         </xs:simpleType>
     </xs:element>
+    
+    <xs:element name="idade">
+        <xs:complexType>
+            <xs:attribute name="anos" type="anos" use="required"/>
+            <xs:attribute name="meses" type="meses" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:simpleType name="anos">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-3]"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="meses">
+        <xs:restriction base="xs:string">
+            <xs:minInclusive value="0"/>
+            <xs:maxExclusive value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:element name="tlfnContacto">
+        <xs:complexType>
+            <xs:simpleContent>
+                    <xs:extension base="restElementTelefono">
+                        <xs:attribute name="parentesco" type="parentesco"/>
+                    </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:simpleType name="restElementTelefono">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{9}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="parentesco">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="PADRE|MADRE"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="codNeno">
+        <xs:restriction base="xs:string">
+              <xs:pattern value="[P|M]{1}[3-7]{2}[\-]{1}[0-9]{3}"/>
+        </xs:restriction>
+    </xs:simpleType>
     
 
     <xs:simpleType name="restSexo">
