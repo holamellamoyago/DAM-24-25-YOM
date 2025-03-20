@@ -1,9 +1,9 @@
-
+﻿
 <garderia xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Tarefa3A.xsd">
   <neno numeroExpedente="2" sexo="M">
     <nome>Yao</nome>
     <dataNacemento>2003-02-11</dataNacemento>
-    <peso>1111.12</peso>
+    <peso>1111.1</peso>
     <altura>25</altura>
     <vacunas>true</vacunas>
   </neno>

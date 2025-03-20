@@ -16,7 +16,7 @@
         <xs:element name="vacunas" type="xs:boolean"/>
       </xs:sequence>
     <xs:attribute name="numeroExpedente" type="xs:unsignedShort"/>
-    <xs:attribute name="sexo" type="restSexo"/>
+    <xs:attribute name="sexo" type="restSexo" use="required" />
     </xs:complexType>
     
     <xs:element name="nome">
@@ -31,7 +31,8 @@
     <xs:element name="peso">
         <xs:simpleType>
             <xs:restriction base="xs:decimal">
-                <xs:pattern value="[0-9]+[.][0-9][0-9]"/>
+                <!--<xs:pattern value="[0-9]+[.][0-9][0-9]"/> -->
+                <xs:fractionDigits value="1"/>
             </xs:restriction>
         </xs:simpleType>
     </xs:element>
