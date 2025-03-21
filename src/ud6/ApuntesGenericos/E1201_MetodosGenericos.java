@@ -64,6 +64,23 @@ public class E1201_MetodosGenericos {
         return t1;
     }
 
+    public static <U,V> Object[] concatenarObjectos(U[] t1, U[] t2){
+        Object[]  l = new Object[0];
+        for (int i = 0; i < t1.length; i++) {
+            l = Arrays.copyOf(l, l.length+1);
+            l[l.length-1] = t1[i];
+        }
+
+        for (int i = 0; i < t2.length; i++) {
+            if (t2[i] !=null) {
+                l = Arrays.copyOf(l, l.length+1);
+                l[l.length-1] = t2[i].toString();
+            }
+        }
+
+        return l;
+    }
+
     public static void main(String[] args) {
         Integer[] numeros = { 3, 5, 8, null, 2, null };
         Persona[] personas = { new Persona("Pepe"), null, new Persona("María") };
@@ -84,5 +101,8 @@ public class E1201_MetodosGenericos {
         Integer[] numeros2 = { 23, 45, 78, 23 };
         Integer[] masNumeros = concatenar(numeros, numeros2);
         System.out.println(Arrays.toString(masNumeros));
+        System.out.println();
+
+        System.out.println(Arrays.toString(concatenarObjectos(numeros, personas)));
     }
 }
