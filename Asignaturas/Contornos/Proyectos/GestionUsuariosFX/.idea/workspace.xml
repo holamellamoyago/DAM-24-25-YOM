@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b2e3861-5501-4251-a0a4-7cd10bd38d3d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/holamellamoyago/gestionusuariosfx/HomeScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/holamellamoyago/gestionusuariosfx/home-screen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Prueba/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Prueba/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Prueba/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Prueba/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Prueba/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Prueba/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Prueba/Prueba.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Prueba/src/Conexion.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Prueba/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Prueba/src/UsuariosBD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Lenguaje de marcas/Trimestre 2/Unidad 4/Tarea 3/Tarefa3A.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Lenguaje de marcas/Trimestre 2/Unidad 4/Tarea 3/Tarefa3A.xsd" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,9 +30,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2saCM0ze2m0n6oDLlEE23EwfVjh" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -53,23 +41,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.HelloApplication.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "C:/Users/yago8/Documents/DAM-24-25-YOM/Asignaturas/Contornos/Proyectos/GestionUsuariosFX/src/main/resources/com/holamellamoyago/gestionusuariosfx",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "streamdeck.action.browser",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/yago8/Documents/DAM-24-25-YOM/Asignaturas/Contornos/Proyectos/GestionUsuariosFX/src/main/resources/com/holamellamoyago/gestionusuariosfx&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;streamdeck.action.browser&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\yago8\Documents\DAM-24-25-YOM\Asignaturas\Contornos\Proyectos\GestionUsuariosFX\src\main\java\com\holamellamoyago\gestionusuariosfx" />
@@ -92,6 +80,7 @@
       <option name="presentableId" value="Default" />
       <updated>1738684247752</updated>
       <workItem from="1738684248780" duration="3744000" />
+      <workItem from="1742575909454" duration="354000" />
     </task>
     <servers />
   </component>

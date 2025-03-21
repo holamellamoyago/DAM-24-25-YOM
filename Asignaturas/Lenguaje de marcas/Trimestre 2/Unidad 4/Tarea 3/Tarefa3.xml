@@ -1,5 +1,4 @@
-﻿
-<garderia xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Tarefa3A.xsd">
+﻿<garderia xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Tarefa3A.xsd">
   <neno numeroExpedente="2" sexo="M" codigo="P33-123">
     <nome>Yao</nome>
     <dataNacemento>2003-02-11</dataNacemento>
@@ -7,6 +6,6 @@
     <altura>25</altura>
     <vacunas>true</vacunas>
     <tlfnContacto parentesco="MADRE">692433876</tlfnContacto>
-    <idade anos="1" meses="9"></idade>
+    <idade anos="1" meses="11"></idade>
   </neno>
 </garderia>

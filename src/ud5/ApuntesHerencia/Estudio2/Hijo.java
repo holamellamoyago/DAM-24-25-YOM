@@ -4,7 +4,7 @@ import ud5.ApuntesHerencia.Estudio.Padre;
 
 public class Hijo extends Padre{
     String nombreHijo;
-    String nombrePadre;
+    public String nombrePadre;
 
     public Hijo(String nombrePadre, String nombreHijo, String nombrePadre2) {
         super(nombrePadre);

@@ -15,21 +15,45 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this te
                 <xs:element ref="ciclo" maxOccurs="unbounded"/>
                 <xs:element ref="contidos"/>
             </xs:sequence>
-            <xs:attribute name="codigo" type="xs:string"/>
+            <xs:attribute name="codigo" type="restCodigo"/>
         </xs:complexType>
     </xs:element>
     
+    <xs:simpleType name="restCodigoCiclo">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="C[S|M][A-Z]{3}[0-9]{2}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="restPositivos">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="restCodigo">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="MP[0-9]{4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="rest21">
+        <xs:restriction base="xs:integer">
+            <xs:maxInclusive value="21"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
     <xs:complexType name="tipoDuracion">
-        <xs:attribute name="horas" type="xs:int" use="required"/>
-        <xs:attribute name="sesions" type="xs:int" use="required"/>
-        <xs:attribute name="sesionsSemanais" type="xs:string" use="required"/>
+        <xs:attribute name="horas" type="restPositivos" use="required"/>
+        <xs:attribute name="sesions" type="restPositivos" use="required"/>
+        <xs:attribute name="sesionsSemanais" type="rest21" use="required"/>
     </xs:complexType>
     
     <xs:element name="ciclo">
         <xs:complexType>
             <xs:simpleContent>
                 <xs:extension base="xs:string">
-                    <xs:attribute name="codigo" type="xs:string" use="required"/>
+                    <xs:attribute name="codigo" type="restCodigoCiclo" use="required"/>
                 </xs:extension>
             </xs:simpleContent>
         </xs:complexType>
@@ -46,13 +70,19 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this te
     <xs:element name="UD">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="titulo" type="xs:string"/>
+                <xs:element name="titulo" type="tipoNomeLongo"/>
                 <xs:element name="descrición" type="xs:string" minOccurs="0"/>
             </xs:sequence>
-            <xs:attribute name="num" type="xs:int"/>
+            <xs:attribute name="num" type="rest21"/>
             <xs:attribute name="sesións" type="xs:int"/>
         </xs:complexType>
     </xs:element>
+    
+    <xs:simpleType name="tipoNomeLongo">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="150"/>
+        </xs:restriction>
+    </xs:simpleType>
     
     
     

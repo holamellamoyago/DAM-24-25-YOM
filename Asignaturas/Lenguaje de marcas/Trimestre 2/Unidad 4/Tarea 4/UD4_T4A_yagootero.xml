@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<instituto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="UD4_T4A_yagootero.xsd">
+  <alumno numExpedente="2" nome="María De Los" apelido1="Otero" apelido2="Otero">Alumno</alumno>
+  <profesor NRP="1234A123" nome="Pepa" apelido1="galan" apelido2="otero">Pepa</profesor>
+</instituto>

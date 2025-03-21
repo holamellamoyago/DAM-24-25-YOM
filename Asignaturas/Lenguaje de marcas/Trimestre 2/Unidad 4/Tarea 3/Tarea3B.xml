@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <modulo codigo="MP0373" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Tarea3B.xsd">
       <duracion horas="133" sesions="160" sesionsSemanais="5"/>
       <name>Linguaxes de marcas e sistemas de xestión da información</name>

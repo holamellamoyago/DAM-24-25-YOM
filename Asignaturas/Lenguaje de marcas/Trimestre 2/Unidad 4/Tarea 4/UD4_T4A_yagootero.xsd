@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this template
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    <xs:element name="instituto">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="alumno"/>
+                <xs:element ref="profesor"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:attributeGroup name="grupoAtributos">
+                    <xs:attribute name="nome" type="restNome"/>
+                    <xs:attribute name="apelido1" type="xs:string"/>
+                    <xs:attribute name="apelido2" type="xs:string"/>
+    </xs:attributeGroup>
+    
+    <xs:element name="profesor">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="NRP" type="restNRP"/>
+                    <xs:attributeGroup ref="grupoAtributos"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:simpleType name="restNRP">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([0-9]{3}|[0-9]{4})[A-E][0-9]{3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    
+    <xs:simpleType name="restNome">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50"/>
+            <xs:pattern value="[A-Z][a-záéíóú]+([ ][A-Z][a-záéíóú]+)*"/>
+            <xs:whiteSpace value="collapse"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+
+    
+    
+    <xs:element name="alumno">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="numExpedente" type="restNumExpedente"/>
+                    <xs:attributeGroup ref="grupoAtributos"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:simpleType name="restNumExpedente">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="2"/>
+            <xs:maxExclusive value="4"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+
+</xs:schema>
+
+
