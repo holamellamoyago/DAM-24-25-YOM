@@ -1,0 +1,39 @@
+USE EMPRESANEW;
+
+-- 1.
+SELECT * FROM EMPREGADO
+	WHERE Sexo='H' AND YEAR(DataNacemento) > 1970 AND
+		NSSSupervisa = (
+			SELECT NSS FROM EMPREGADO
+				WHERE Nome = 'Sara' AND Apelido1 = 'Plaza' AND
+					Apelido2 = 'Marín'
+		)
+	
+
+-- 2.
+SELECT Nome, Apelido1, Apelido2, COALESCE(TELEFONO1, TELEFONO2, '')
+	FROM DEPARTAMENTO D INNER JOIN EMPREGADO E 
+		ON D.NSSDirector = NSS
+		ORDER BY Apelido1, Apelido2,Nome
+		
+-- 3.
+SELECT NOME, APELIDO1 + ' ' + Apelido2 AS APELLIDOS, 
+	DATEDIFF(YEAR, DataNacemento, GETDATE()) - 
+		CASE 
+			WHEN (MONTH(DataNacemento) > MONTH(DataNacemento))
+				OR (MONTH(DataNacemento) = MONTH(GETDATE()) 
+						AND DAY(DataNacemento) > DAY(GETDATE()))
+			THEN 1
+			ELSE 0
+		END AS EDAD
+	FROM DEPARTAMENTO D INNER JOIN EMPREGADO E 
+		ON D.NSSDirector != NSS
+		ORDER BY APELLIDOS DESC ,Nome ASC
+		
+-- 4. 
+SELECT Nome, Apelido1, Apelido2, COALESCE(TELEFONO1, TELEFONO2, '') AS TELEFONO,
+		(SELECT NOME FROM EMPREGADO WHERE NSS = D.NSSDIRECTOR) AS [NOMBRE JEFE]
+	FROM DEPARTAMENTO D INNER JOIN EMPREGADO E 
+		ON D.NSSDirector = NSS
+		
+		
