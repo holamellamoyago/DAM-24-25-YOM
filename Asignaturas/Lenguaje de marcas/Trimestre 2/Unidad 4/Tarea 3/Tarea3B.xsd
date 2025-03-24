@@ -38,7 +38,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this te
     </xs:simpleType>
     
     <xs:simpleType name="rest21">
-        <xs:restriction base="xs:integer">
+        <xs:restriction base="xs:unsignedByte">
             <xs:maxInclusive value="21"/>
         </xs:restriction>
     </xs:simpleType>
@@ -52,7 +52,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this te
     <xs:element name="ciclo">
         <xs:complexType>
             <xs:simpleContent>
-                <xs:extension base="xs:string">
+                <xs:extension base="tipoNomeLongo">
                     <xs:attribute name="codigo" type="restCodigoCiclo" use="required"/>
                 </xs:extension>
             </xs:simpleContent>

@@ -6,6 +6,9 @@
     <altura>25</altura>
     <vacunas>true</vacunas>
     <tlfnContacto parentesco="MADRE">692433876</tlfnContacto>
+    <tlfnContacto parentesco="MADRE">692433876</tlfnContacto>
+    <tlfnContacto parentesco="MADRE">692433876</tlfnContacto>
+    <tlfnContacto parentesco="MADRE">692433876</tlfnContacto>
     <idade anos="1" meses="11"></idade>
   </neno>
 </garderia>
