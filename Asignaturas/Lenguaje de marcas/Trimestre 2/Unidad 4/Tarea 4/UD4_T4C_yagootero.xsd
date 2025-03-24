@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this template
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    <xs:element name="panaderias">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="panaderia" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="panaderia">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="idPanadería" type="xs:integer"/>
+                <xs:element name="domicilio" type="xs:string" minOccurs="0"/>
+                <xs:element name="telefono" type="xs:integer"/>
+                <xs:element ref="pedido"/>
+            </xs:sequence>
+        </xs:complexType>
+        <xs:key name="codPedido">
+            <xs:selector xpath="pedido"/>
+            <xs:field xpath="@numPedido"/>
+        </xs:key>
+    </xs:element>
+    
+    <xs:element name="pedido">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="fecha" type="xs:string"/>
+                <xs:element name="ingrediente" maxOccurs="15">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="idIngrediente" type="xs:integer"/>
+                            <xs:element name="ano" type="xs:integer"/>
+                            <xs:element name="origen">
+                                <xs:complexType>
+                                    <xs:attribute name="continente" type="xs:string"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="numPedido" type="xs:integer"/>
+            <xs:attribute name="tipo" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:simpleType name="restAno">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1970"/>
+            <xs:maxInclusive value="2050"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
