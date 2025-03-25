@@ -3,7 +3,7 @@ package Contornos.ValidacionContrasenas;
 public class PasswordValidator { 
     public static boolean isValid(String password) { 
 
-        if (password.length() <= 8) {  
+        if (password.length() < 8) {  
             return false; 
         } 
 
@@ -21,6 +21,6 @@ public class PasswordValidator {
                 hasDigit = true;  
             } 
         } 
-        return hasUpperCase || hasDigit;  
+        return hasUpperCase && hasDigit;  
     } 
 } 

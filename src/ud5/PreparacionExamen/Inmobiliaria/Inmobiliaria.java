@@ -1,7 +1,9 @@
 package ud5.PreparacionExamen.Inmobiliaria;
 
+import java.util.Arrays;
+import java.util.Comparator;
 
-public class Inmobiliaria {
+public class Inmobiliaria implements Comparator {
     public static void main(String[] args) {
         // 1.1. Modelo de Clases
         // Crea un piso en una 5a planta, de 100m2, 3 habitaciones y 2 baños en la
@@ -38,5 +40,26 @@ public class Inmobiliaria {
         System.out.println("");
         System.out.println(casa2.detalle());
 
+        Inmueble[] inmuebles = { casa1, casa2, piso1, piso2, piso3 };
+        Arrays.sort(inmuebles);
+        System.out.println("\nTODOS LOS INMUEBLES NATURAL:");
+        Inmueble.mostrarInmuebles(inmuebles);
+
+        Arrays.sort(inmuebles, new Comparator() {
+            @Override
+            public int compare(Object o1, Object o2) {
+                Inmueble in1 = (Inmueble) o1;
+                Inmueble in2 = (Inmueble) o2;
+
+                int res = in1.metrosConstruidos - in2.metrosConstruidos;
+
+                return res;
+            }
+        });
+
+        System.out.println("\nPOR METROS CUADRADOS");
+        Inmueble.mostrarInmuebles(inmuebles);
+
     }
+
 }
