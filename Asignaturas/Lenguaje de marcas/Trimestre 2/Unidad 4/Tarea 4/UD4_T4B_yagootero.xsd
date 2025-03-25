@@ -9,10 +9,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this te
            elementFormDefault="qualified">
     <xs:element name="musica">
         <xs:complexType>
-            <xs:sequence>
+            <xs:choice>
                 <xs:element ref="cd"/>
                 <xs:element ref="musico"/>
-            </xs:sequence>
+            </xs:choice>
         </xs:complexType>
         <xs:key name="codMusico">
             <xs:selector xpath="musico"/>
@@ -53,7 +53,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this te
     
     <xs:simpleType name="restTipo">
         <xs:restriction base="xs:string">
-            <xs:pattern value="cantautor|duo|solista|grupo|banda"/>
+            <xs:enumeration value="cantaautor"/>
+            <xs:enumeration value="duo"/>
+            <xs:enumeration value="solista"/>
+            <xs:enumeration value="grupo"/>
+            <xs:enumeration value="banda"/>
         </xs:restriction>
     </xs:simpleType>
 

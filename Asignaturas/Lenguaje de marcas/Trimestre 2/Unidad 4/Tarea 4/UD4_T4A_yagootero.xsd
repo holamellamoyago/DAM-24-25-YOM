@@ -9,17 +9,17 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this te
            elementFormDefault="qualified">
     <xs:element name="instituto">
         <xs:complexType>
-            <xs:sequence>
+            <xs:choice maxOccurs="unbounded">
                 <xs:element ref="alumno"/>
                 <xs:element ref="profesor"/>
-            </xs:sequence>
+            </xs:choice>
         </xs:complexType>
     </xs:element>
 
     <xs:attributeGroup name="grupoAtributos">
-                    <xs:attribute name="nome" type="restNome"/>
-                    <xs:attribute name="apelido1" type="xs:string"/>
-                    <xs:attribute name="apelido2" type="xs:string"/>
+        <xs:attribute name="nome" type="restNome"/>
+        <xs:attribute name="apelido1" type="xs:string"/>
+        <xs:attribute name="apelido2" type="xs:string"/>
     </xs:attributeGroup>
     
     <xs:element name="profesor">

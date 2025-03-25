@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+
+<empresa xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="UD4_T5B_yagootero.xsd">
+    <empregado>
+        <nome>Iria</nome>
+        <departamento>IFC</departamento>
+        <NSS>111111111111</NSS>
+        <xefe>true</xefe>
+        <contactos xsi:nil="true"></contactos>
+    </empregado>
+    <empregado>
+        <nome>Yago</nome>
+        <departamento>Otero</departamento>
+        <NSS>111111111111</NSS>
+        <xefe>true</xefe>
+        <contactos>692433876</contactos>
+    </empregado>
+    <departamento codigo="IFC">
+        <nome>Informática</nome>
+    </departamento>
+    <departamento codigo="CON">
+        <nome>Contabilidade</nome>
+    </departamento>
+</empresa>
+
+

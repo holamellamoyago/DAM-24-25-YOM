@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this template
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    <xs:element name="empresa">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="empregado" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="departamento" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="empregado">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nome" type="xs:string"/>
+                <xs:element name="departamento" type="xs:string"/>
+                <xs:element name="NSS" type="tipoNSS"/>
+                <xs:element name="xefe" type="xs:boolean"/>
+                <xs:element name="contactos" type="tipoTelefono" nillable="true"/>
+            </xs:sequence>
+        </xs:complexType>
+        <xs:key name="codDepartamento">
+            <xs:selector xpath="departamento"/>
+            <xs:field xpath="@codigo"/>
+        </xs:key>
+    </xs:element>
+    
+    <xs:simpleType name="tipoNSS">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{12}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="tipoTelefono">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(( )?[0-9]{9}){0,4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:element name="departamento">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nome" type="xs:string"/>
+            </xs:sequence>
+            <xs:attribute name="codigo" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
