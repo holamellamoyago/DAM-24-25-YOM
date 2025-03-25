@@ -203,6 +203,23 @@ public class ArraysUtil {
         return fraseDevolver;
     }
 
+    public static int[] añadirAlPrincipio(int[] t, int n){
+        int[] nuevaLista = new int[t.length+1];
+        nuevaLista[0] = n;
+
+        for (int i = 1; i < nuevaLista.length; i++) {
+            nuevaLista[i] = t[i-1];
+        }
+
+        return nuevaLista;
+    }
+
+    public static void main(String[] args) {
+        int[]n = { 1,2,3};
+
+        System.out.println(Arrays.toString(añadirAlPrincipio(n, 69)));
+    }
+
 
 
 
