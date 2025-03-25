@@ -27,10 +27,44 @@ public class Lista {
         lista = Arrays.copyOf(lista, lista.length+1);
         int comodin;
 
-        for (int i = 0; i < lista.length; i++) {
-            comodin = lista[i+1];
 
+        for (int i = lista.length-1; i > 0; i--) {
+            lista[i] = lista[i-1];
+            
         }
+        
+        lista[0] = n;
+
+        return lista;
+    }
+
+    int buscarElemento(int n){
+        for (int i = 0; i < lista.length; i++) {
+            if (lista[i] == n) {
+                return i;
+            }
+        }
+
+        return -1;
+        
+    }
+
+    Integer[] insertarNumeroIndice(int n, int i){
+        lista[i] = n;
+
+        return lista;
+    }
+
+    public static void main(String[] args) {
+        Lista lista = new Lista();
+
+        lista.insertarNumeroAlFinal(2);
+        System.out.println(Arrays.toString(lista.insertarNumeroAlFinal(3)));
+
+        System.out.println(Arrays.toString(lista.insertarNumeroAlPrincipio(1)));
+        System.out.println(Arrays.toString(lista.insertarNumeroAlPrincipio(2)));
+
+        System.out.println(lista.buscarElemento(7));
     }
     
 }
