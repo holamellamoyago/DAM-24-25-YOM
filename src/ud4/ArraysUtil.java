@@ -159,6 +159,14 @@ public class ArraysUtil {
             System.err.println();
         }
     }
+    public static void mostrarMatriz( boolean [][] t){
+        for (int i = 0; i < t.length; i++) {
+            for (int j = 0; j < t[i].length; j++) {
+                System.out.print(t[i][j] + " ");
+            }
+            System.err.println();
+        }
+    }
 
     public static void mostrarMatriz( char [][] t){
         for (int i = 0; i < t.length; i++) {
