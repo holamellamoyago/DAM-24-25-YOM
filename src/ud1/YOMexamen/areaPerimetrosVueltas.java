@@ -16,7 +16,7 @@ calcular y mostrar el número de vueltas completas que deberán dar los particip
 número de metros “sobrantes” redondeando hacia arriba.
  * 
  */
-package yomexamen;
+package ud1.YOMexamen;
 
  import java.util.Scanner;
 
