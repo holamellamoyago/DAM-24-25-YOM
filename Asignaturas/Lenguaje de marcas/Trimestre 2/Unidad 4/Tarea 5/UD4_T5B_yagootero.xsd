@@ -26,10 +26,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this te
                 <xs:element name="contactos" type="tipoTelefono" nillable="true"/>
             </xs:sequence>
         </xs:complexType>
-        <xs:key name="codDepartamento">
-            <xs:selector xpath="departamento"/>
-            <xs:field xpath="@codigo"/>
-        </xs:key>
+        <xs:keyref name="departamentoEmpregado" refer="codDepartamento">
+            <xs:selector xpath="empregado"/>
+            <xs:field xpath="departamento"/>
+        </xs:keyref>
     </xs:element>
     
     <xs:simpleType name="tipoNSS">
@@ -51,6 +51,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this te
             </xs:sequence>
             <xs:attribute name="codigo" type="xs:string"/>
         </xs:complexType>
+        <xs:key name="codDepartamento">
+            <xs:selector xpath="departamento"/>
+            <xs:field xpath="@codigo"/>
+        </xs:key>
     </xs:element>
 
 </xs:schema>

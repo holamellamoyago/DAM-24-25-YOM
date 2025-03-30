@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persona  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+          xsi:noNamespaceSchemaLocation="UD4_T4B_tarefaC_yagootero.xsd">
+  <nombre>Eustaqui</nombre>
+  <apellido>Otero</apellido>
+  <apellido>Otero2</apellido>
+  <fechanacimiento>2024-12-31</fechanacimiento>
+  <numerodocumento>12345678A</numerodocumento>
+  <trianero>nacido</trianero>
+</persona>

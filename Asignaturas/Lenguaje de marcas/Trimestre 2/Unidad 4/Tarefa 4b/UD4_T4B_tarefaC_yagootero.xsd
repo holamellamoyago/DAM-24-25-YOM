@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this template
+-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="persona">
+    <xs:complexType>
+     <xs:sequence>
+       <xs:element name="nombre" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+       <xs:element name="apellido" type="xs:string" minOccurs="2" maxOccurs="2"/>
+       <xs:element name="fechanacimiento" type="xs:date" maxOccurs="1"/>
+       <xs:element name="numerodocumento" type="typeNumeroDocumento"/>
+       <xs:element name="trianero" type="tipotrianero"/>
+     </xs:sequence>
+   </xs:complexType>
+  </xs:element>
+  
+  <xs:simpleType name="typeNumeroDocumento">
+      <xs:restriction base="xs:string">
+          <xs:pattern value="[0-9]{8}[A-Za-z]"/>
+      </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="typeNombres">
+      <xs:restriction base="xs:string">
+          <xs:minLength value="2"/>
+          <xs:maxLength value="25"/>
+      </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="tipotrianero">
+      <xs:restriction base="xs:string">
+          <xs:enumeration value="nacido"/>
+          <xs:enumeration value="adoptado"/>
+          <xs:enumeration value="residente"/>
+          <xs:enumeration value="extranjero"/>
+      </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

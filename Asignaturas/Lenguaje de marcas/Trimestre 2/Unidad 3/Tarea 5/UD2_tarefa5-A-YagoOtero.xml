@@ -1,12 +1,11 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE edificio SYSTEM "edificio.dtd">
-<edificio valor="" alquiler="verdadeiro">
+<?xml version="1.0" encoding="UTF-8"?>
+<edificio valor="1.11" alquiler="verdadeiro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="UD4_T5A_yagootero.xsd">
     <enderezo>
         <rua>Ponzano </rua>
         <numero>66 </numero>
         <poboacion>Madrid</poboacion>
         <provincia>Madrid</provincia>
-        <codigoPostal>28003</codigoPostal>
+        <codigoPostal>0</codigoPostal>
     </enderezo>
-    <dataConstrucion mes="feb" ano="1889"></dataConstrucion>
+    <dataConstrucion mes="Marzo" ano="1889"></dataConstrucion>
 </edificio>

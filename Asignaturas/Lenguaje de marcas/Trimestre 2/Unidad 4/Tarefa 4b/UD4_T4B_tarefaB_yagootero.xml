@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<personas  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="UD4_T4B_tarefaB_yagootero.xsd">
+  <persona puntuacion="10.5">
+    <nombre>Pepa</nombre>  
+    <apellido>Galan</apellido>
+    <fechanacimiento>2024-12-31</fechanacimiento>
+    <numerodocumento>123456</numerodocumento>
+    <trianero origen="Marin">true</trianero>
+  </persona>
+  <persona puntuacion="10.5">
+    <nombre>Pepa</nombre>  
+    <apellido>Galan</apellido>
+    <fechanacimiento>2024-12-31</fechanacimiento>
+    <numerodocumento>123456</numerodocumento>
+    <trianero origen="Marin">true</trianero>
+  </persona>
+</personas>

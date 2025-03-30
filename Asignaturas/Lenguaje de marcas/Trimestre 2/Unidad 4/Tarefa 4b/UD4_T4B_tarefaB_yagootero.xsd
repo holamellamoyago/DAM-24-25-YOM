@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this template
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" >
+  <xs:element name="personas">
+       <xs:complexType>
+          <xs:sequence>
+             <xs:element name="persona" maxOccurs="unbounded">
+               <xs:complexType>
+                 <xs:all>
+                    <xs:element name="nombre" type="xs:string" />
+                    <xs:element name="apellido" type="xs:string" />
+                    <xs:element name="fechanacimiento" type="xs:date"/>
+                    <xs:element name="numerodocumento" type="xs:int"/>
+                    <xs:element ref="trianero"/>
+                 </xs:all>
+                 <xs:attribute name="puntuacion" type="xs:decimal" use="required"/>
+               </xs:complexType>
+             </xs:element>
+          </xs:sequence>
+       </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="trianero">
+      <xs:complexType>
+          <xs:simpleContent>
+              <xs:extension base="xs:boolean">
+                <xs:attribute name="origen" type="xs:string"/>
+              </xs:extension>
+          </xs:simpleContent>
+      </xs:complexType>
+  </xs:element>
+</xs:schema>

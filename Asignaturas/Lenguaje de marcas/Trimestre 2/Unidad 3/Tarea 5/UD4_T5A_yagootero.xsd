@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this template
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    <xs:element name="edificio">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="enderezo"/>
+                <xs:element name="dataConstrucion">
+                    <xs:complexType>
+                        <xs:attribute name="mes" type="typeMes"/>
+                        <xs:attribute name="ano" type="xs:int"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="valor" type="typeValor"/>
+            <xs:attribute name="alquiler" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:simpleType name="typeMes">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Enero"/>
+            <xs:enumeration value="Febrero"/>
+            <xs:enumeration value="Marzo"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="typeValor">
+        <xs:restriction base="xs:decimal">
+            <xs:fractionDigits value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:element name="enderezo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="rua" type="xs:string"/>
+                <xs:element name="numero" type="typeNumeroRua"/>
+                <xs:element name="poboacion" type="xs:string"/>
+                <xs:element name="provincia" type="xs:string"/>
+                <xs:element name="codigoPostal" type="typeCodPostal"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:simpleType name="typeNumeroRua">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="0"/>
+            <xs:maxExclusive value="2000"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="typeCodPostal">
+        <xs:restriction base="xs:int">
+            <xs:totalDigits value="5"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
