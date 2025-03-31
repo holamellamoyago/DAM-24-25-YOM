@@ -11,10 +11,30 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this te
     <xs:element name="reinados">
         <xs:complexType>
             <xs:sequence>
-                <xs:element ref="reinado"  maxOcurrs="unbounded" />
-                <xs:element ref="persoa" maxOcurrs="unbounded"/>
+                <xs:element ref="reinado"  maxOccurs="unbounded" />
+                <xs:element ref="persoa" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
+        
+        <xs:key name="codPersoa">
+            <xs:selector xpath="persoa"/>
+            <xs:field xpath="@codigo"/>
+        </xs:key>
+        
+        <xs:keyref name="referenciaRei" refer="codPersoa">
+            <xs:selector xpath="reinado/rei"/>
+            <xs:field xpath="@codigo"/>
+        </xs:keyref>
+        
+        <xs:keyref name="referenciaReiña" refer="codPersoa">
+            <xs:selector xpath="reinado/reiña"/>
+            <xs:field xpath="@codigo"/>
+        </xs:keyref>
+        
+        <xs:unique name="nomeUnico">
+            <xs:selector xpath="persoa"/>
+            <xs:field xpath="nome"/>
+        </xs:unique>
     </xs:element>
     
     <xs:element name="reinado">
@@ -30,14 +50,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this te
                         <xs:attribute name="codigo" type="xs:string"/>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="consorte" type="xs:string">
+                <xs:element name="consorte" minOccurs="0" maxOccurs="2">
                     <xs:complexType>
                         <xs:simpleContent>
                             <xs:extension base="xs:string">
-                                
+                                <xs:attributeGroup ref="atributosFechas"/>
                             </xs:extension>
                         </xs:simpleContent>
-                        <xs:attributeGroup ref="atributosFechas"/>
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>
@@ -57,9 +76,24 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this te
                 <xs:element name="apodo" type="xs:string" maxOccurs="2"/>
                 <xs:element name="pai" type="xs:string" minOccurs="0"/>
                 <xs:element name="nai" type="xs:string" minOccurs="0"/>
-                <xs:element name="casa" type="xs:string" minOccurs="0" />
+                <xs:element name="casa" type="tipoCasa" minOccurs="0" />
             </xs:sequence>
+            <xs:attribute name="codigo" type="tipoCodigoPersoa"/>
         </xs:complexType>
     </xs:element>
+    
+    <xs:simpleType name="tipoCodigoPersoa">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{2}[0-9]{2}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="tipoCasa">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Borbón"/>
+            <xs:enumeration value="Saboya"/>
+            <xs:enumeration value="Bonaparte"/>
+        </xs:restriction>
+    </xs:simpleType>
 
 </xs:schema>

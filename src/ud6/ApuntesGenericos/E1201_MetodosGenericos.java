@@ -25,6 +25,15 @@ public class E1201_MetodosGenericos {
         return t;
     }
 
+
+    public static <U> U[] add2(U e, U[] t){
+        t = Arrays.copyOf(t, t.length+1);
+        t[t.length-1] = e;
+
+        return t;
+    }
+
+
     public static <U> boolean buscar(U e, U[] t) {
         boolean bandera = false;
         for (int i = 0; i < t.length; i++) {
@@ -40,7 +49,19 @@ public class E1201_MetodosGenericos {
 
     }
 
-    public static <U> boolean buscar2(U e, U[] t) {
+    public static <U> boolean buscar2(U e, U[] t){
+        boolean bandera = false;
+        for (U u : t) {
+            if (u.equals(e)) {
+                bandera = true;
+            }
+        }
+
+        return bandera;
+    }
+
+
+    public static <U> boolean buscar3(U e, U[] t) {
         boolean bandera = false;
         for (U u : t) {
             if (u != null) {

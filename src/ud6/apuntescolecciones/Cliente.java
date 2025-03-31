@@ -39,6 +39,8 @@ public class Cliente implements Comparable<Cliente>{
         return dni.compareTo(o.dni); 
     } 
 
+    
+
 
     public static void main(String[] args) {
         Collection<Cliente> clientes = new ArrayList<>();
@@ -68,5 +70,8 @@ public class Cliente implements Comparable<Cliente>{
 
 
         System.out.println(clientes);
+
+        // 31-03
+        
     }
 } 
