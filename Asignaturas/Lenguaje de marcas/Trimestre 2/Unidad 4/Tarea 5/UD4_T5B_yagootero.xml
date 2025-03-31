@@ -18,7 +18,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this 
         <departamento>CON</departamento>
         <NSS>111111111111</NSS>
         <xefe>true</xefe>
-        <contactos>692433876 692433876 692433876 692433876</contactos>
+        <contactos>692433876 692433876</contactos>
     </empregado>
     <departamento codigo="IFC">
         <nome>Informática</nome>
