@@ -3,8 +3,10 @@ package ud6.ApuntesGenericos;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class ContenedorLista<T> implements Pila<T>, Cola<T> {
-    T[] objetos;
+import ud6.ApuntesGenericos.Ejercicios.Pila;
+
+public class ContenedorLista<T> implements Pila<T>, Cola<T>, Cola2<T> {
+    public T[] objetos;
 
     public ContenedorLista(T[] t) {
         objetos = t;
@@ -58,6 +60,18 @@ public class ContenedorLista<T> implements Pila<T>, Cola<T> {
         return Arrays.toString(objetos);
     }
 
+    static <U> int numeroDeNulos(U[] tabla) {
+        int cont = 0;
+
+        for (U u : tabla) {
+            if (u == null) {
+                cont++;
+            }
+        }
+
+        return cont;
+    }
+
     public static void main(String[] args) {
         ContenedorLista<Integer> lista = new ContenedorLista<>(new Integer[0]);
         lista.insertarAlFinal(1);
@@ -79,10 +93,19 @@ public class ContenedorLista<T> implements Pila<T>, Cola<T> {
         cola.encolar(5); // 2, 3, 5
         System.out.println(cola.desencolar()); // Saco el 2, Quedan 3, 5
 
+
+        Cola2<Integer> cola2 = lista;
+        cola2.acoplar(3);
+
         System.out.println(cola);
         cola.encolar(99);
         lista.ordenar();
         System.out.println(lista);
+
+        // 31-03
+        System.out.println("\n31-03");
+        lista.apilar(null);
+        System.out.println(numeroDeNulos(lista.objetos));
 
         /*
          * ContenedorLista<Persona> listaP = new ContenedorLista<>(new Persona[0]);
@@ -129,8 +152,20 @@ public class ContenedorLista<T> implements Pila<T>, Cola<T> {
         return objetos[indice];
     }
 
-    void ordenar(Comparator<T> c){
-         Arrays.sort(objetos, c.reversed());
+    void ordenar(Comparator<T> c) {
+        Arrays.sort(objetos, c.reversed());
+    }
+
+    @Override
+    public T[] acoplar(T e) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'acoplar'");
+    }
+
+    @Override
+    public T[] desAcoplar(T e) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'desAcoplar'");
     }
 
 }

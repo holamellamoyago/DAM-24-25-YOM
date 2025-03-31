@@ -23,7 +23,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this te
                 <xs:element name="departamento" type="xs:string"/>
                 <xs:element name="NSS" type="tipoNSS"/>
                 <xs:element name="xefe" type="xs:boolean"/>
-                <xs:element name="contactos" type="tipoTelefono" nillable="true"/>
+                <xs:element name="contactos" type="listaTelefono" nillable="true"/>
             </xs:sequence>
         </xs:complexType>
         <xs:keyref name="departamentoEmpregado" refer="codDepartamento">
@@ -41,6 +41,22 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this te
     <xs:simpleType name="tipoTelefono">
         <xs:restriction base="xs:string">
             <xs:pattern value="(( )?[0-9]{9}){0,4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="tipoTelefono2">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{9}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="listaTelefono">
+        <xs:list itemType="tipoTelefono2"/>
+    </xs:simpleType>
+    
+    <xs:simpleType name="tipoContactos">
+        <xs:restriction base="listaTelefono">
+            <xs:maxLength value="4"/>
         </xs:restriction>
     </xs:simpleType>
     
