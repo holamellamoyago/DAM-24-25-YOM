@@ -15,6 +15,8 @@ public class E1208 {
             coleccion.add(rdm);
         }
 
+        
+
         // Ordeno
         Integer[] a = coleccion.toArray(new Integer[0]);
         Arrays.sort(a);
