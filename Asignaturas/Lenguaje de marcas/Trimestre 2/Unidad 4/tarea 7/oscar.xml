@@ -15,7 +15,7 @@
 		<título>El lado bueno de las cosas</título>
 		<títuloOrixinal>Happiness therapy</títuloOrixinal>
 		<ano>2012</ano>
-		<xéneros>Comedia Drama</xéneros>
+		<xéneros>Comedia Drama Drama</xéneros>
 		<duración>122</duración>
 		<nominacións>
 			<mellorPelícula/>
@@ -23,7 +23,7 @@
 			<mellorActriz ref="OT-A23" oscar="SI"/>
 			<mellorActor ref="OH-R23"/>
 			<mellorActrizSecundaria ref="EW-A99"/>
-			<mellorActorSecundario ref="UR-M9"/>
+                            <mellorActorSecundario ref="UR-M9"/>
 		</nominacións>
 	</película>
 	<película codigo="PO-81004">
@@ -82,7 +82,7 @@
 	</persona>
 	<persona codigo="UR-M9" sexo="Home">
 		<nome>Robert de Niro</nome>
-		<idade>69</idade>
+		<idade>110</idade>
 	</persona>
 	<persona codigo="EW-A99" sexo="Muller">
 		<nome>Jacki Weaver</nome>
@@ -94,7 +94,7 @@
 	<persona codigo="AL-E97" sexo="Home">
 		<nome>Ang Lee</nome>
 	</persona>
-        <persona codigo="AA-E97" sexo="Home">
+        <persona codigo="AB-E97" sexo="Home">
 		<nome>Prueba</nome>
 	</persona>
 </oscar>

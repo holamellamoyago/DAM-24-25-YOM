@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this template
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    
+        
+    <xs:attributeGroup name="grupoAtributos">
+        <xs:attribute name="nome" type="restNome"/>
+        <xs:attribute name="apelido1" type="xs:string"/>
+        <xs:attribute name="apelido2" type="xs:string"/>
+    </xs:attributeGroup>
+    
+    
+    <xs:simpleType name="restNRP">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([0-9]{3}|[0-9]{4})[A-E][0-9]{3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="typeAltura">
+        <xs:union>
+            <xs:simpleType>
+                <xs:restriction base="xs:int">
+                    <xs:minInclusive value="20"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="Alto"/>
+                    <xs:enumeration value="Baixo"/>
+                </xs:restriction>
+            </xs:simpleType>
+            
+        </xs:union>
+    </xs:simpleType>
+    
+    
+    <xs:simpleType name="restNome">
+        <xs:annotation>
+            <xs:documentation>
+                Aquí se define como debe de ser el nombre ... 
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50"/>
+            <xs:pattern value="[A-Z][a-záéíóúñ]+([ ][A-Z][a-záéíóú]+)*"/>
+            <xs:whiteSpace value="collapse"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="restNumExpedente">
+        <xs:annotation>
+            <xs:documentation>
+                Aquí se define como deben de ser los numeros de expedientes
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="\d{3,4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

@@ -1,12 +1,9 @@
 <?xml version="1.0"?>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this template
--->
-
 <xs:schema version="1.0"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            elementFormDefault="qualified">
+
+    <!-- Elemento raíz -->
     <xs:element name="oscar">
         <xs:complexType>
             <xs:sequence>
@@ -16,7 +13,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this te
             <xs:attribute name="ano" type="xs:gYear"/>
         </xs:complexType>
     </xs:element>
-    
+
+    <!-- Elemento película -->
     <xs:element name="película">
         <xs:complexType>
             <xs:sequence>
@@ -24,101 +22,149 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this te
                 <xs:element name="títuloOrixinal" type="xs:string" minOccurs="0"/>
                 <xs:element name="ano" type="xs:string" minOccurs="0"/>
                 <xs:element name="nacionalidade" type="xs:string" minOccurs="0"/>
-                <xs:element name="xéneros" type="xs:string" minOccurs="0"/>
+                <xs:element name="xéneros" type="typeGeneros" minOccurs="0"/>
                 <xs:element name="duración" type="xs:int" minOccurs="0"/>
                 <xs:element ref="nominacións"/>
             </xs:sequence>
             <xs:attribute name="codigo" type="TypeCodigoPelicula"/>
         </xs:complexType>
     </xs:element>
+
+    <!-- Tipos simples -->
+    <xs:simpleType name="typeGeneros">
+        <xs:restriction>
+            <xs:simpleType>
+                <xs:list itemType="typeListaGeneros"/>
+            </xs:simpleType>
+            <xs:maxLength value="3"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="typeListaGeneros">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Negro"/>
+            <xs:enumeration value="Drama"/>
+            <xs:enumeration value="Acción"/>
+            <xs:enumeration value="Comedia"/>
+            <xs:enumeration value="Thriller"/>
+            <xs:enumeration value="Musical"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Nominacións -->
+    <xs:element name="nominacións">
+        <xs:complexType>
+            <xs:choice maxOccurs="7">
+                <xs:element name="mellorPelícula" minOccurs="0"/>
+                <xs:element name="mellorActriz" minOccurs="0">
+                    <xs:complexType>
+                        <xs:attributeGroup ref="GrupoAtributosNominacions"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="mellorActor" minOccurs="0">
+                    <xs:complexType>
+                        <xs:attributeGroup ref="GrupoAtributosNominacions"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="mellorActrizSecundaria" minOccurs="0">
+                    <xs:complexType>
+                        <xs:attributeGroup ref="GrupoAtributosNominacions"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="mellorActorSecundario" minOccurs="0">
+                    <xs:complexType>
+                        <xs:attributeGroup ref="GrupoAtributosNominacions"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="mellorDirector" minOccurs="0">
+                    <xs:complexType>
+                        <xs:attributeGroup ref="GrupoAtributosNominacions"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="mellorLinguaNonInglesa" minOccurs="0"/>
+            </xs:choice>
+        </xs:complexType>
+
+        <!-- Referencias a claves -->
+        <xs:keyref name="refKey1" refer="keyPersona">
+            <xs:selector xpath="nominacions/mellorActriz"/>
+            <xs:field xpath="@ref"/>
+        </xs:keyref>
+        <xs:keyref name="refKey2" refer="keyPersona">
+            <xs:selector xpath="nominacions/mellorActor"/>
+            <xs:field xpath="@ref"/>
+        </xs:keyref>
+        <xs:keyref name="refKey3" refer="keyPersona">
+            <xs:selector xpath="nominacions/mellorActrizSecundaria"/>
+            <xs:field xpath="@ref"/>
+        </xs:keyref>
+        <xs:keyref name="mellorActorSecundario" refer="keyPersona">
+            <xs:selector xpath="nominacions/mellorActorSecundario"/>
+            <xs:field xpath="@ref"/>
+        </xs:keyref>
+    </xs:element>
+
+    <!-- Elemento persona -->
+    <xs:element name="persona">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nome" type="xs:string"/>
+                <xs:element name="idade" type="typeIdade" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attributeGroup ref="GrupoAtributosPersona"/>
+        </xs:complexType>
+
+        <!-- Clave -->
+        <xs:key name="keyPersona">
+            <xs:selector xpath="persona"/>
+            <xs:field xpath="@codigo"/>
+        </xs:key>
+    </xs:element>
+
+    <!-- Tipos de datos -->
+    <xs:simpleType name="TypeCodigoPelicula">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{2}-[0-9]{4,5}"/>
+        </xs:restriction>
+    </xs:simpleType>
     
-                    <xs:element name="nominacións">
-                    <xs:complexType>
-                        <xs:all>
-                            <xs:element name="mellorPelícula" minOccurs="0"/>
-                            <xs:element name="mellorActriz" minOccurs="0">
-                                <xs:complexType>
-                                    <xs:attributeGroup ref="GrupoAtributosNominacions"/>
-                                </xs:complexType>
-                            </xs:element>
-                            <xs:element name="mellorActor" minOccurs="0">
-                                <xs:complexType>
-                                    <xs:attribute name="ref" type="TypeRef"/>
-                                </xs:complexType>
-                            </xs:element>
-                            <xs:element name="mellorActrizSecundaria" minOccurs="0">
-                                <xs:complexType>
-                                    <xs:attribute name="ref" type="TypeRef"/>
-                                </xs:complexType>
-                            </xs:element>
-                            <xs:element name="mellorActorSecundario" minOccurs="0">
-                                <xs:complexType>
-                                    <xs:attribute name="ref" type="TypeRef"/>
-                                </xs:complexType>
-                            </xs:element>
-                            <xs:element name="mellorDirector" minOccurs="0">
-                                <xs:complexType>
-                                    <xs:attributeGroup ref="GrupoAtributosNominacions"/>
-                                </xs:complexType>
-                            </xs:element>
-                            <xs:element name="mellorLinguaNonInglesa" minOccurs="0"/>
-                        </xs:all>
-                    </xs:complexType>
-                </xs:element>
-                
-                
-                <xs:element name="persona">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="nome" type="xs:string"/>
-                            <xs:element name="idade" type="xs:int" minOccurs="0"/>
-                        </xs:sequence>
-                        <xs:attributeGroup ref="GrupoAtributosPersona"/>
-                    </xs:complexType>
-                </xs:element>
-                
-                <!-- AQUÍ COMIENZO CON LOS TYPES -->
-                
-                <xs:simpleType name="TypeCodigoPelicula">
-                    <xs:restriction base="xs:string">
-                        <xs:pattern value="[A-Z]{2}-[0-9]{4,5}"/>
-                    </xs:restriction>
-                </xs:simpleType>
-                
-                <xs:simpleType name="TypeSexoPersona">
-                    <xs:restriction base="xs:string">
-                        
-                    </xs:restriction>
-                </xs:simpleType>
-                
-                <xs:simpleType name="TypeCodigoPersona">
-                    <xs:restriction base="xs:string">
-                        
-                    </xs:restriction>
-                </xs:simpleType>
-                
-                <xs:simpleType name="TypeRef">
-                    <xs:restriction base="xs:string">
-                        
-                    </xs:restriction>
-                </xs:simpleType>
-                
-                <xs:simpleType name="TypeOscar">
-                    <xs:restriction base="xs:string">
-                        
-                    </xs:restriction>
-                </xs:simpleType>
-                
-                
-                <!-- Grupos de atributos -->
-                
-                <xs:attributeGroup name="GrupoAtributosPersona">
-                    <xs:attribute name="codigo" type="TypeCodigoPersona"/>
-                    <xs:attribute name="sexo" type="TypeSexoPersona"/>
-                </xs:attributeGroup>
-                
-                <xs:attributeGroup name="GrupoAtributosNominacions">
-                    <xs:attribute name="ref" type="TypeRef"/>
-                    <xs:attribute name="oscar" type="TypeOscar"/>
-                </xs:attributeGroup>
+    <xs:simpleType name="typeIdade">
+        <xs:restriction base="xs:int">
+            <xs:maxInclusive value="110"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="TypeSexoPersona">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="Home|Muller"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="TypeCodigoPersona">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[AEIOU][BCDFGHIJKLMNÑPQRSTUVWXYZ][-][A-Z][0-9]{1,2}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="TypeRef">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="TypeOscar">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="SI"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Grupos de atributos -->
+    <xs:attributeGroup name="GrupoAtributosPersona">
+        <xs:attribute name="codigo" type="TypeCodigoPersona"/>
+        <xs:attribute name="sexo" type="TypeSexoPersona"/>
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="GrupoAtributosNominacions">
+        <xs:attribute name="ref" type="TypeRef"/>
+        <xs:attribute name="oscar" type="TypeOscar" use="optional"/>
+    </xs:attributeGroup>
+
 </xs:schema>
