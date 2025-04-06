@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this template
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    
+    <xs:simpleType name="typeId">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z][-][0-9][A-Z][0-9][A-Z]"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="typeTipo">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    
+    <xs:simpleType name="typeCodigos">
+        <xs:restriction base="xs:string">
+            
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="typeNota">
+        <xs:union>
+            <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                    <xs:minInclusive value="0"/>
+                    <xs:maxInclusive value="10"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="NP"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:union>
+    </xs:simpleType>
+    
+    <xs:simpleType name="typeContactos">
+        <xs:restriction>
+            <xs:simpleType>
+                <xs:list itemType="listaContactos"/>
+            </xs:simpleType>
+            <xs:minLength value="1"/>
+            <xs:maxLength value="3"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="listaContactos">
+        <xs:restriction base="xs:string">
+            <!-- No se hacer esto , explicamelo 
+            <xs:pattern value="(+34 )?[0-9]{9}"/> -->
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="typeAltura">
+        <xs:union>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="Alto"/>
+                    <xs:enumeration value="Medio"/>
+                    <xs:enumeration value="Bajo"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                    <xs:minInclusive value="100"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:union>
+    </xs:simpleType>
+    
+    <xs:attributeGroup name="groupAsignatura">
+        <xs:attribute name="codigo" type="typeCodigos"/>
+        <xs:attribute name="nota" type="typeNota"/>
+    </xs:attributeGroup>
+
+</xs:schema>

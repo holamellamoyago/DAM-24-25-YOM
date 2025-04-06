@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+<empresa xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="UD4_T7B_yagootero.xsd">
+  <departamento codigo="D-IT" nombre="Informática">
+    <empleado nss="112233445566" cargo="Líder"/>
+  </departamento>
+  <proyecto id="P-2024" departamento="D-IT" lider="112233445566"/>
+</empresa>

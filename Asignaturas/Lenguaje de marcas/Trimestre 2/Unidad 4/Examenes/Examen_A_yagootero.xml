@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<universidad xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+             xsi:noNamespaceSchemaLocation="universidad.xsd">
+  <alumno id="A-9X7B">
+    <nombre>María López</nombre>
+    <altura tipo="cm">175</altura>
+    <contactos>+34 666777888 912345678</contactos>
+    <asignaturas>
+      <asignatura codigo="MAT-2023" nota="9.5"/>
+      <asignatura codigo="FIS-105" nota="NP"/>
+    </asignaturas>
+  </alumno>
+</universidad>

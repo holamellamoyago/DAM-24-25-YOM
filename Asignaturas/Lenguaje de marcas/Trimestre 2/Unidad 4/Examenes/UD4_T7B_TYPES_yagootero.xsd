@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this template
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    
+    <xs:simpleType name="typeNSS">
+        <xs:restriction base="xs:long">
+            <xs:totalDigits value="12"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="typeCargo">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Junior"/>
+            <xs:enumeration value="Senior"/>
+            <xs:enumeration value="Líder"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="typeCodigo">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="D[-][A-Z]{2,3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+   
+    <xs:simpleType name="typeNombre">
+        <xs:restriction base="xs:string">
+            
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="typeID">
+        <xs:restriction base="xs:string">
+            
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="typeDepartamento">
+        <xs:restriction base="xs:string">
+            
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="typeLider">
+        <xs:restriction base="xs:long">
+            
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

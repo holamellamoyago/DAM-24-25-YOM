@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this template
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    <xs:include schemaLocation="TypesUniversidad.xsd"/>
+
+    <xs:element name="universidad">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="alumno"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="alumno">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nombre" type="xs:string"/>
+                <xs:element ref="altura"/>
+                <xs:element name="contactos" type="typeContactos"/>
+                <xs:element ref="asignaturas"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="typeId"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="altura">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="typeAltura">
+                    <xs:attribute name="tipo" type="typeTipo"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="asignaturas">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="asignatura" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:attributeGroup ref="groupAsignatura"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+        <xs:unique name="UQ_asignatura">
+            <xs:selector xpath="asignatura"/>
+            <xs:field xpath="@codigo"/>
+        </xs:unique>
+    </xs:element>
+    
+</xs:schema>

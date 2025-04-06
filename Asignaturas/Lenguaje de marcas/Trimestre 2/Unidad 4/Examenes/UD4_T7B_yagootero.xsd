@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this template
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    <xs:include schemaLocation="UD4_T7B_TYPES_yagootero.xsd"/>
+    
+    <xs:element name="empresa">
+        <xs:complexType>
+            <xs:choice minOccurs="2" maxOccurs="2">
+                <xs:element ref="departamento"/>
+                <xs:element ref="proyecto"/>
+            </xs:choice>
+        </xs:complexType>
+        <xs:unique name="UQ_codigo">
+            <xs:selector xpath="departamento"/>
+            <xs:field xpath="@codigo"/>
+        </xs:unique>
+        <xs:key name="PK_NSS">
+            <xs:selector xpath="departamento/empleado"/>
+            <xs:field xpath="@nss"/>
+        </xs:key>
+        <xs:key name="PK_Departamento">
+            <xs:selector xpath="departamento"/>
+            <xs:field xpath="@codigo"/>
+        </xs:key>
+        <xs:keyref name="REF_PK_NSS" refer="PK_NSS">
+            <xs:selector xpath="proyecto"/>
+            <xs:field xpath="@lider"/>
+        </xs:keyref>
+        <xs:keyref name="REF_PK_DEPARTAMENTO" refer="PK_Departamento">
+            <xs:selector xpath="proyecto"/>
+            <xs:field xpath="@departamento"/>
+        </xs:keyref>
+    </xs:element>
+    
+    <xs:element name="departamento">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="empleado">
+                    <xs:complexType>
+                        <xs:attribute name="nss" type="typeNSS"/>
+                        <xs:attribute name="cargo" type="typeCargo"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="codigo" type="typeCodigo"/>
+            <xs:attribute name="nombre" type="typeNombre"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="proyecto">
+        <xs:complexType>
+            <xs:attribute name="id" type="typeID"/>
+            <xs:attribute name="departamento" type="typeDepartamento"/>
+            <xs:attribute name="lider" type="typeLider"/>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
