@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this template
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    <xs:include schemaLocation="UD4_Examen_C_yagootero_types.xsd"/>
+    
+    <xs:element name="clinica">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="paciente"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="paciente">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nombre" type="xs:string"/>
+                <xs:element name="historial" type="xs:string" nillable="true"/>
+                <xs:element name="pruebas" type="typePruebas"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

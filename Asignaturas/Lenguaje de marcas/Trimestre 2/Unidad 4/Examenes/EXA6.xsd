@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this template
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    
+    <xs:element name="biblioteca">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="sala" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+        
+        <!-- Te puse las claves como key porqué no me quedaba clar si las
+            querias ocmo unique o key -->
+        <xs:key name="PK_LIBRO">
+            <xs:selector xpath="sala/libro"/>
+            <xs:field xpath="@codigo"/>
+        </xs:key>
+        
+        <xs:key name="PK_sala">
+            <xs:selector xpath="sala"/>
+            <xs:field xpath="@id"/>
+        </xs:key>
+    </xs:element>
+    
+    <xs:element name="sala">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="libro" maxOccurs="unbounded"/>
+                <xs:element ref="empleado" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="typeID"/>
+            <xs:attribute name="capacidad" type="xs:unsignedByte" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="libro">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="titulo" type="xs:string"/>
+                <xs:element name="autor">
+                    <xs:complexType mixed="true">
+                        <xs:sequence>
+                            <xs:element name="fecha" type="xs:gYear" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="codigo" type="typeCodigoLibro"/>
+            <xs:attribute name="radiacion" type="typeRadiacion" use="optional"/>
+            <xs:attribute name="estado" type="typeEstado"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="empleado">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="nss" type="typeNSS"/>
+                    <xs:attribute name="rol" type="typeRol"/>
+                </xs:extension> 
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Tipo simples --> 
+    <xs:simpleType name="typeID">
+        <xs:restriction base="xs:string">
+            
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="typeCodigoLibro">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="LIB-[A-Z]{3}-[0-9]{2}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="typeEstado">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="activo"/>
+            <xs:enumeration value="retirado"/>
+            <!-- Arriba al lado del type no me dejo ponerle el 
+                        fixed="activo", porque? -->
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="typeNSS">
+        <xs:restriction base="xs:unsignedLong">
+            
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="typeRol">
+        <xs:restriction base="xs:string" >
+            <xs:enumeration value="bibliotecario"/>
+            <xs:enumeration value="tecnico"/>
+            <xs:enumeration value="seguridad"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="typeRadiacion">
+        <xs:union>
+            <xs:simpleType>
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                    
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:union>
+    </xs:simpleType>
+
+</xs:schema>

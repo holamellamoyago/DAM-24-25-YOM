@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+<clinica xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="UD4_Examen_C_yagootero.xsd">
+  <paciente id="PAC-001">
+    <nombre>Juan Pérez</nombre>
+    <historial xsi:nil="true"/>
+    <pruebas>2025-04-01  2025-04-15 2025-04-15 2025-04-15 2025-04-15</pruebas>
+  </paciente>
+</clinica>

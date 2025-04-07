@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+<seguros  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="EXA_5.xsd">
+  <poliza codigo="S-ES#A123">
+    <beneficiarios>
+      <beneficiario porcentaje="60">Ana García</beneficiario>
+      <beneficiario porcentaje="40"/>
+    </beneficiarios>
+  </poliza>
+</seguros>

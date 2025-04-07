@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+
+<!DOCTYPE biblioteca [
+<!ELEMENT biblioteca (sala+)>
+<!ELEMENT sala (libro+, empleado+)>
+<!ELEMENT libro (titulo, autor)>
+<!ELEMENT empleado (#PCDATA)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT autor (#PCDATA)>
+
+<!ATTLIST libro
+  codigo      CDATA  #REQUIRED
+  radiacion   CDATA  #IMPLIED
+  estado      (activo|retirado) "activo"
+>
+
+<!ATTLIST sala
+  id          CDATA  #REQUIRED
+  capacidad   CDATA  #IMPLIED
+>
+
+<!ATTLIST empleado
+  nss         CDATA  #REQUIRED
+  rol         (bibliotecario|tecnico|seguridad) "bibliotecario"
+>
+]> -->
+<biblioteca xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="EXA6.xsd">
+  <sala id="S1" capacidad="50">
+    <libro codigo="LIB-ABC-01" radiacion="3.2" estado="activo">
+      <titulo>El Resplandor</titulo>
+      <autor>Stephen <fecha>1947</fecha> King</autor>
+    </libro>
+    <libro codigo="LIB-DEF-02" radiacion="15.5" estado="retirado">
+      <titulo>Chernobyl: Historia de un Desastre</titulo>
+      <autor>Serhii Plokhy</autor>
+    </libro>
+    <empleado nss="112233445566" rol="bibliotecario">Ana López</empleado>
+  </sala>
+  
+  <sala id="S2">
+    <libro codigo="LIB-GHI-03" radiacion="RAD-ALPHA" estado="activo">
+      <titulo>Guía de Supervivencia Nuclear</titulo>
+      <autor>John Doe</autor>
+    </libro>
+    <empleado nss="778899001122" rol="seguridad">Carlos Méndez</empleado>
+  </sala>
+  
+</biblioteca>

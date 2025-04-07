@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this template
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    
+    <xs:element name="seguros">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="poliza"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="poliza">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="beneficiarios"/>
+            </xs:sequence>
+            <xs:attribute name="codigo" type="typePoliza"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="beneficiarios">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="beneficiario" minOccurs="0" nillable="true">
+                    <xs:complexType mixed="true">
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attribute name="porcentaje" type="xs:unsignedByte"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:simpleType name="typePoliza">
+        <xs:annotation>
+            <xs:documentation> Estoy definiendo como será el código</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]-[A-Z]{2}#[A-Z0-9]{4}"/>
+            <!-- El xml que me pasaste no coincide con el patter que 
+                        quieres, lo modifico para que valide -->
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
