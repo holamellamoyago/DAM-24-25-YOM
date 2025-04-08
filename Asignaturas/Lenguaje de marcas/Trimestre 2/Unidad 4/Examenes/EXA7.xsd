@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this template
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+           <xs:include schemaLocation="EXA7_TYPES.xsd"/>
+           <xs:include schemaLocation="EXA7_ATTGROUPS.xsd"/>
+           
+    <xs:element name="central_nuclear">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="reactor" maxOccurs="unbounded"/>
+                <xs:element ref="empleado" maxOccurs="unbounded"/>
+                <xs:element ref="registro_incidentes" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+        
+        <xs:key name="PK_REACTOR">
+            <xs:selector xpath="reactor"></xs:selector>
+            <xs:field xpath="@id"/>
+        </xs:key>
+        
+        <xs:key name="PK_COMBUSTIBLE">
+            <xs:selector xpath="reactor/combustible"/>
+            <xs:field xpath="@codigo"/>
+        </xs:key>
+    </xs:element>
+    
+    <xs:element name="reactor">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="combustible" maxOccurs="3"/>
+                <xs:element name="temperatura" type="typeTemperatura"/>
+            </xs:sequence>
+            <xs:attributeGroup ref="groupReactor"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="combustible">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="tipo" type="xs:string"/>
+                <xs:element name="nivel_radiacion" type="xs:unsignedByte"/>
+            </xs:sequence>
+            <xs:attributeGroup ref="groupCombustible"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="empleado">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="nss" type="typeNSS"/>
+                    <xs:attribute name="acceso" type="typeAcceso"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="registro_incidentes">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="incidente" maxOccurs="unbounded">
+                    <xs:complexType mixed="true">
+                        <xs:sequence>
+                            <xs:element name="ubicacion" type="xs:string"/>
+                        </xs:sequence>
+                            <xs:attribute name="fecha" type="xs:date"/>
+                            <xs:attribute name="codigo_error" type="typeError"/>
+                            <xs:attribute name="descripcion" type="typeDescripcion" use="optional"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

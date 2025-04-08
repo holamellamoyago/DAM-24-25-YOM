@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this template
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    
+    <xs:attributeGroup name="groupReactor">
+        <xs:attribute name="id" type="typeID"/>
+        <xs:attribute name="estado" type="typeEstado" default="activo"/>
+        <xs:attribute name="ultima_revision" type="xs:date" use="optional"/>
+    </xs:attributeGroup>
+    
+    <xs:attributeGroup name="groupCombustible">
+        <xs:attribute name="codigo" type="typeCodigo"/>
+        <xs:attribute name="peligrosidad" type="typePeligrosidad" default="media"/>
+    </xs:attributeGroup>
+
+</xs:schema>

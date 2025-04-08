@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this template
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    
+    <xs:simpleType name="typeEstado">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="activo"/>
+            <xs:enumeration value="mantenimiento"/>
+            <xs:enumeration value="apagado"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="typeID">
+        <xs:restriction base="xs:string">
+            
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="typeTemperatura">
+        <xs:union>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="ESTABLE"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                    
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:union>
+    </xs:simpleType>
+    
+    <xs:simpleType name="typeNSS">
+        <xs:restriction base="xs:unsignedLong">
+            <xs:totalDigits value="12"/>
+            <xs:pattern value="(9000\d{8})|([0-8][0-9]{11})"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="typeAcceso">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="basico"/>
+            <xs:enumeration value="avanzado"/>
+            <xs:enumeration value="admin"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="typeError">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="ERR-[A-Z]{2}-[0-9]{3}-(CRITICO|GRAVE|LEVE)"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="typeCodigo">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="COMB-[A-Z0-9]{3}-[0-9]{2}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="typePeligrosidad">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="baja"/>
+            <xs:enumeration value="media"/>
+            <xs:enumeration value="alta"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="typeDescripcion">
+        <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="typeTipo">
+        <xs:restriction base="xs:string">
+            <xs:whiteSpace value="preserve"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

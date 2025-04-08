@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+
+<!DOCTYPE central_nuclear [
+<!ELEMENT central_nuclear (reactor+, empleado+, registro_incidentes?)>
+<!ELEMENT reactor (combustible+, temperatura)>
+<!ELEMENT combustible (tipo, nivel_radiacion)>
+<!ELEMENT empleado (#PCDATA)>
+<!ELEMENT registro_incidentes (incidente+)>
+
+<!ATTLIST reactor
+  id              CDATA  #REQUIRED
+  estado          (activo|mantenimiento|apagado) "activo"
+  ultima_revision CDATA  #IMPLIED
+>
+
+<!ATTLIST combustible
+  codigo          CDATA  #REQUIRED
+  peligrosidad    (baja|media|alta) "media"
+>
+
+<!ATTLIST empleado
+  nss             CDATA  #REQUIRED
+  acceso          (basico|avanzado|admin) "basico"
+>
+
+<!ATTLIST incidente
+  fecha           CDATA  #REQUIRED
+  codigo_error    CDATA  #REQUIRED
+  descripcion     CDATA  #IMPLIED
+>
+]>-->
+<central_nuclear xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:noNamespaceSchemaLocation="EXA7.xsd">
+  <reactor id="R1" estado="activo" ultima_revision="2025-01-15">
+    <combustible codigo="COMB-A12-34" peligrosidad="alta">
+      <tipo>Uranio-235</tipo>
+      <nivel_radiacion>150</nivel_radiacion>
+    </combustible>
+    <temperatura>40.0</temperatura>
+  </reactor>
+  <empleado nss="900001234567" acceso="admin">Ana López</empleado>
+  <registro_incidentes>
+    <incidente fecha="2025-03-10" codigo_error="ERR-TM-001-CRITICO">
+      Fuga en <ubicacion>Sector B</ubicacion>
+    </incidente>
+  </registro_incidentes>
+</central_nuclear>
