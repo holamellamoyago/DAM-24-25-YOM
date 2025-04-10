@@ -1,7 +1,9 @@
-package ud6.Practicas.E1215;
+package ud6.Practicas.E1215_V2;
 
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.TreeMap;
 
 import com.google.gson.Gson;
@@ -11,7 +13,7 @@ public class E1215 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        Map<String, String> productos = importarProductos();
+        Map<Producto, Integer> productos = importarProductos();
         int respuesta = 0;
 
         do {
@@ -28,14 +30,26 @@ public class E1215 {
                     añadirProductos(productos);
                     break;
                 case 2:
-                    borrarProductos(productos);
+                    // borrarProductos(productos);
                     break;
                 case 3:
-                    System.out.println("\n" + productos);
+                    
+                    System.out.println("toString() del mapa:");
+                    System.err.println(productos);
+
+                    System.out.println("\nIterando el conjunto de entradas");
+                    Set<Map.Entry<Producto, Integer>> entradas = productos.entrySet();
+                    Iterator<Map.Entry<Producto, Integer>> it = entradas.iterator();
+                    while (it.hasNext()) {
+                        Map.Entry<Producto, Integer> entrada = it.next();
+                        System.out.println("- " + entrada.getKey() + "(" + entrada.getValue() + ")");
+                    }
+
+
                     break;
 
                 case 4: 
-                    exportarProductos(productos);
+                    // exportarProductos(productos);
                 default:
                     
                     break;
@@ -53,22 +67,22 @@ public class E1215 {
         
     }
 
-    static Map<String,String> importarProductos(){
+    static Map<Producto,Integer> importarProductos(){
         Gson gson = new Gson();
-        Map<String, String> productos = new TreeMap<>();
+        Map<Producto, Integer> productos = new TreeMap<>();
 
         String json = Fichero.readFileToString("src/ud6/Practicas/E1215/productos.txt");
         productos = gson.fromJson(json, Map.class);
 
         if (productos == null) {
-            return new TreeMap<String,String>();
+            return new TreeMap<Producto,Integer>();
         }else{
             return productos;
         }
         
     }
 
-    static Map<String, String> añadirProductos(Map<String, String> productos) {
+    static Map<Producto, Integer> añadirProductos(Map<Producto, Integer> productos) {
         Scanner sc = new Scanner(System.in);
         boolean creado = false;
 
@@ -86,18 +100,20 @@ public class E1215 {
 
             
 
-            if (productos.containsKey(codigo)) {
+            
+
+            if (productos.containsKey(pNuevo)) {
                 System.out.println("Ya tienes un producto con esa referencia,");
                 System.out.println("(1)Te gustaría sobrescribirlo o (2)cambiar código");
                 int respuesta = sc.nextInt();
 
                 if (respuesta == 1) {
-                    productos.put(codigo, nombre);
+                    productos.put(pNuevo, unidades);
                 } else if (respuesta == 2) {
                     añadirProductos(productos);
                 }
             } else {
-                productos.put(codigo, nombre);
+                productos.put(pNuevo, unidades);
             }
         } while (creado);
 
