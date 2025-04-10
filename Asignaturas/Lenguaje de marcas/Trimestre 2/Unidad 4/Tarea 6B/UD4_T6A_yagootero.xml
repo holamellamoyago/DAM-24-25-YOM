@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+<tabla_periodica xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:noNamespaceSchemaLocation="UD4_T6A_yagootero.xsd">
+
+  <atom estado="gaseoso">
+    <nombre>Hidrógeno</nombre>
+    <simbolo>H</simbolo>
+    <numero_atomico>1</numero_atomico>
+    <peso_atomico>1.00794</peso_atomico>
+    <punto_ebullicion unidades="kelvin">20.28</punto_ebullicion>
+    <densidad unidades="gramos/centímetros cúbicos">0.0899</densidad>
+  </atom>
+
+  <atom estado="gaseoso">
+    <nombre>Helio</nombre>
+    <simbolo>He</simbolo>
+    <numero_atomico>2</numero_atomico>
+    <peso_atomico>4.0026</peso_atomico>
+    <punto_ebullicion unidades="kelvin">4.216</punto_ebullicion>
+    <densidad unidades="gramos/centímetros cúbicos">0.1785</densidad>
+  </atom>
+
+  <!-- Ejemplo adicional de otro elemento -->
+  <atom estado="solido">
+    <nombre>Carbono</nombre>
+    <simbolo>C</simbolo>
+    <numero_atomico>6</numero_atomico>
+    <peso_atomico>12.011</peso_atomico>
+    <punto_ebullicion>4827</punto_ebullicion> <!-- Usa centígrados por defecto -->
+    <densidad unidades="gramos/centímetros cúbicos">2.267</densidad>
+  </atom>
+
+</tabla_periodica>

@@ -1,6 +1,7 @@
 package ud6.apuntesMap;
 
 import java.util.HashMap;
+import java.util.LinkedHashSet;
 import java.util.TreeMap;
 import java.util.Map;
 import java.util.Set;
@@ -32,6 +33,8 @@ public class ApuntesMap {
         m.put("Pepe", 170);
         Set<String> s = m.keySet();
         System.out.println(s);
+
+        
 
     }
 }
