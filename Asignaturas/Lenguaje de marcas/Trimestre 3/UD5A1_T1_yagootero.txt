@@ -1,0 +1,6 @@
+a) /
+b) máquina/hardware
+c) máquina/config
+d) máquina/hardware/fabricante
+e) máquina/hardware/disco
+f) máquina/config/IP

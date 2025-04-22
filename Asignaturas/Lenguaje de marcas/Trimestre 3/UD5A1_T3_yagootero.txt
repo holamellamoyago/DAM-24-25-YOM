@@ -1,0 +1,10 @@
+A. /equipos/máquina/hardware//disco[@tecnoloxía="SCSI"]
+B. //IP[text()="192.168.10.45"]//parent::config/OS
+C. //procesador[@marca="AMD"]/attribute::*
+D. //máquina[@nome="COPERNICO"]/config//descendant-or-self::node()/text()
+E. //tipo[text()="Semitorre"]/../../config/OS[text()="Windows XP"]/../..
+F. //memoria[text()="4"][@tecnoloxía="DDR2"]
+G. /equipos/máquina/hardware/procesador/@num_nucleos/../../../config/OS
+
+
+//máquina[]

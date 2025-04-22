@@ -12,17 +12,16 @@ public class Cliente implements Comparable<Cliente>{
     String dni; 
     String nombre; 
     LocalDate fechaNacimiento; 
+    public int edad;
      
-    public Cliente(String dni, String nombre, String fechaNacimiento) { 
+    public Cliente(String dni, String nombre, String fechaNacimiento, int edad) { 
         this.dni = dni; 
         this.nombre = nombre; 
         DateTimeFormatter formatoFechas= DateTimeFormatter.ofPattern("dd/MM/yyyy"); 
         this.fechaNacimiento = LocalDate.parse(fechaNacimiento, formatoFechas); 
+        this.edad = edad;
     } 
  
-    private int edad() { 
-        return (int) fechaNacimiento.until(LocalDate.now(), ChronoUnit.YEARS); 
-    } 
  
     @Override 
     public boolean equals(Object obj) { 
@@ -31,7 +30,7 @@ public class Cliente implements Comparable<Cliente>{
  
     @Override 
     public String toString() { 
-        return "DNI: " + dni + " Nombre: " + nombre + " Edad: " + edad() + " \n"; 
+        return "DNI: " + dni + " Nombre: " + nombre + " Edad: "  + " \n"; 
     } 
  
     @Override 
@@ -42,36 +41,29 @@ public class Cliente implements Comparable<Cliente>{
     
 
 
-    public static void main(String[] args) {
-        Collection<Cliente> clientes = new ArrayList<>();
-        System.out.println(clientes.size());
-        clientes.add(new Cliente("39511342X", "Yago", "11/02/2003"));
-        clientes.add(new Cliente("39512312X", "Pepe", "11/02/2003"));
-        clientes.add(new Cliente("39512352X", "María", "11/02/2003"));
-        clientes.add(new Cliente("39512312X", "Josefa", "11/02/2003"));
 
-        System.out.println(clientes);
-        System.out.println();
+    public int getEdad() {
+        return edad;
+    }
 
-        System.out.println("\nIMPRESIÓN FOR-EACH");
-        for (Cliente cliente : clientes) {
-            System.out.println(cliente.nombre);
-        }
+    public Cliente(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
 
-        System.out.println("\nIMPRESIÓN ITERADOR");
-        Iterator<Cliente> it = clientes.iterator();
-        while (it.hasNext()) {
-            Cliente c = it.next();
-            System.out.println(c.dni);
-            if (c.nombre.equals("Josefa")) {
-                it.remove();
-            }
-        }
+    public Cliente(String nombre) {
+        this.nombre = nombre;
+    }
 
+    public String getDni() {
+        return dni;
+    }
 
-        System.out.println(clientes);
+    public String getNombre() {
+        return nombre;
+    }
 
-        // 31-03
-        
+    public LocalDate getFechaNacimiento() {
+        return fechaNacimiento;
     }
 } 
