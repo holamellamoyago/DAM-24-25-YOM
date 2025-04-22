@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE biblioteca SYSTEM "Ejercicio1_dtd.dtd">
+<biblioteca>
+    <libro id="L001" categoria="novela">
+        <titulo>Don Quijote de la Mancha</titulo>
+        <autor>Miguel de Cervantes</autor>
+        <año>1605</año>
+        <prestado_a usuario="U123"/>
+    </libro>
+    <libro id="L002" categoria="ciencia">
+        <titulo>Breves respuestas a grandes preguntas</titulo>
+        <autor>Stephen Hawking</autor>
+        <año>2018</año>
+    </libro>
+    <usuario id="U123">
+        <nombre>Ana García</nombre>
+        <telefono>600111222</telefono>
+    </usuario>
+</biblioteca>

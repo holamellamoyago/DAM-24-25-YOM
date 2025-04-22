@@ -1,0 +1,21 @@
+<!ELEMENT biblioteca (libro+, usuario+)>
+<!ELEMENT libro (titulo, autor , año, prestado_a?)>
+<!ELEMENT usuario (nombre, telefono?)>
+
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT autor (#PCDATA)>
+<!ELEMENT año (#PCDATA)>
+<!ELEMENT prestado_a EMPTY>
+
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT telefono (#PCDATA)>
+
+
+
+<!ATTLIST libro id ID #REQUIRED>
+<!ATTLIST libro categoria (novela | ciencia | drama | documental) #REQUIRED>
+
+<!ATTLIST prestado_a usuario IDREFS #REQUIRED>
+
+<!ATTLIST usuario id ID #REQUIRED>
+
