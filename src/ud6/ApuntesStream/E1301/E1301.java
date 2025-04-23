@@ -7,7 +7,7 @@ import ud6.apuntescolecciones.Cliente;
 
 public class E1301 {
     public static void main(String[] args) {
-        Cliente c = new Cliente("39511342x", "Yago", "11/02/2003");
+        Cliente c = new Cliente("39511342x", "Yago", "11/02/2003", 3);
         
         Saludo<String> saludoString;
 

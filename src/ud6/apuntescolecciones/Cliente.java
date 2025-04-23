@@ -6,20 +6,26 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.List;
 
 // Clase Cliente para ejemplos posteriores. 
 public class Cliente implements Comparable<Cliente>{ 
     String dni; 
     String nombre; 
-    LocalDate fechaNacimiento; 
+    String fechaNacimiento; 
     public int edad;
      
     public Cliente(String dni, String nombre, String fechaNacimiento, int edad) { 
         this.dni = dni; 
         this.nombre = nombre; 
-        DateTimeFormatter formatoFechas= DateTimeFormatter.ofPattern("dd/MM/yyyy"); 
-        this.fechaNacimiento = LocalDate.parse(fechaNacimiento, formatoFechas); 
+        this.fechaNacimiento = fechaNacimiento;
         this.edad = edad;
+    } 
+
+    public Cliente(String dni, String nombre, String fechaNacimiento) { 
+        this.dni = dni; 
+        this.nombre = nombre; 
+        this.fechaNacimiento = fechaNacimiento;
     } 
  
  
@@ -63,7 +69,16 @@ public class Cliente implements Comparable<Cliente>{
         return nombre;
     }
 
-    public LocalDate getFechaNacimiento() {
+    public String getFechaNacimiento() {
         return fechaNacimiento;
     }
+
+        public static List<Cliente> clientesDeEjemplo() {
+        List<Cliente> clientes = new ArrayList<Cliente>();
+        clientes.add(new Cliente("34534534Z", "Pepe", "20/12/2000"));
+        clientes.add(new Cliente("34534534Z", "Pepe", "20/12/2000"));
+        clientes.add(new Cliente("34555534Z", "María", "20/12/2000"));
+        clientes.add(new Cliente("22222234Z", "Lola", "20/12/2000"));
+        return clientes;
+    } 
 } 
