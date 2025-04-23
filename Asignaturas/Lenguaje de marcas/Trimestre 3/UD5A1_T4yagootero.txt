@@ -1,0 +1,5 @@
+A. //descendant-or-self::comment()
+B. //título[text()="Leaving Las Vegas"]/..//self::comment()
+C. /videoteca/película/xénero[text()="Drama"]/..
+D. /videoteca/actor/sexo[text()="muller"]/../nome
+E. //descendant-or-self::text()
