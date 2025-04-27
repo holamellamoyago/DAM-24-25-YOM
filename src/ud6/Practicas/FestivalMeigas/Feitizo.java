@@ -5,15 +5,16 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
 import ud6.Practicas.Meigas.Ingrediente;
 
-public class Feitizo {
+public class Feitizo implements Comparable<Feitizo> {
     // Atributos
-    private String nome;
+    protected String nome;
     Set<String> ingredientes;
     private Integer dificultade;
 
@@ -25,10 +26,14 @@ public class Feitizo {
         this.dificultade = dificultade;
     }
 
+    
+
     @Override
     public String toString() {
         return "Feitizo [nome=" + nome + "]";
     }
+
+
 
     // Otros métodos
     public static void main(String[] args) {
@@ -135,5 +140,15 @@ public class Feitizo {
 
         return contadorIngredientes;
     }
+
+
+
+    @Override
+    public int compareTo(Feitizo o) {
+       return  nome.compareTo(o.nome);
+    }
+
+
+
 
 }
