@@ -1,0 +1,14 @@
+<!ENTITY % colores "rojo | verde | azul">
+<!ENTITY % booleano "si | no">
+
+<!ELEMENT coche (modelo, descripcion)>
+<!ELEMENT modelo (#PCDATA)>
+<!ELEMENT descripcion (#PCDATA)>
+
+<!ATTLIST coche 
+    id ID #REQUIRED
+    color (%colores;) "verde"
+    tipo CDATA "sedán"
+    disponible (%booleano;) #REQUIRED
+    puertas (1 | 2 | 4 | 5) "1"
+    >

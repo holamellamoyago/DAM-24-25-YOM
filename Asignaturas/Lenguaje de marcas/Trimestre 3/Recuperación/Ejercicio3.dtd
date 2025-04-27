@@ -1,0 +1,52 @@
+<!ELEMENT sistema_hoteles ( hotel+ , cliente+, reserva+) >
+
+<!ELEMENT hotel (nombre, descripcion, habitacion, disponibilidad) >
+<!ATTLIST hotel
+          id ID #REQUIRED
+          categoria NMTOKEN #REQUIRED
+          cadena CDATA #REQUIRED >
+          
+<!ELEMENT nombre (#PCDATA) >
+<!ELEMENT descripcion MIXED >
+
+<!ELEMENT habitacion EMPTY >
+<!ATTLIST habitacion
+          numero ID #REQUIRED
+          tipo NMTOKEN #REQUIRED
+          capacidad NMTOKEN #REQUIRED
+          servicios IDREFS >
+          
+<!ELEMENT disponibilidad EMPTY >
+<!ATTLIST disponibilidad estado NMTOKEN >
+
+<!ELEMENT cliente (nombre, contacto ) >
+<!ATTLIST cliente
+        id ID #REQUIRED
+        reservas NMTOKENS >
+        
+<!ELEMENT nombre (#PCDATA) >
+<!ELEMENT contacto EMPTY >
+<!ATTLIST contacto 
+        telefono NMTOKEN
+        pais NMTOKEN
+        vip BOOLEAN >
+        
+<!ELEMENT reserva EMPTY >
+<!ATTLIST reserva 
+          id ID
+          cliente IDREF
+          habitacion IDREF
+          fecha-inicio CDATA
+          fecha-fin NMTOKEN >
+
+
+
+
+
+
+
+
+
+
+
+

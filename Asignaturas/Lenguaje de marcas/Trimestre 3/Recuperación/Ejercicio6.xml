@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE empresa SYSTEM "Ejercicio6.dtd">
+
+<empresa nombre="&nombreEmpresa;">
+    
+    <departamento codigo="d1" tipo="IT" responsable="e1 e2">
+        <descripcion>Departamento encargado de infraestructuras de red y desarrollo de software.</descripcion>
+    </departamento>
+
+    <departamento codigo="d2" tipo="Marketing" responsable="e3">
+        <descripcion>Departamento de publicidad y redes sociales.</descripcion>
+    </departamento>
+
+    <empleado id="e1" rol="developer" habilidades="java sql docker">
+        <nombre>Laura Sánchez</nombre>
+        <cargo>Desarrolladora backend especializada en microservicios.</cargo>
+    </empleado>
+
+    <empleado id="e2" rol="admin" habilidades="servidores linux seguridad">
+        <nombre>Carlos Díaz</nombre>
+        <cargo>Administrador de sistemas y soporte técnico.</cargo>
+    </empleado>
+
+    <empleado id="e3" rol="marketer" habilidades="seo ads redes">
+        <nombre>Lucía Gómez</nombre>
+        <cargo>Especialista en marketing digital.</cargo>
+    </empleado>
+
+    <proyecto id="p1" responsable="e1">
+        <titulo>Desarrollo de nueva plataforma e-commerce</titulo>
+        <descripcion>Crear un sitio web de comercio electrónico seguro y escalable.</descripcion>
+    </proyecto>
+
+    <proyecto id="p2" responsable="e3">
+        <titulo>Campaña de publicidad para el nuevo producto</titulo>
+        <descripcion>Gestionar anuncios en redes sociales y medios digitales.</descripcion>
+    </proyecto><!ELEMENT empresa (departamento+, empleado+, proyecto+, evento)>
+<!ENTITY nombreEmpresa "Reparaciones Yago" > 
+
+<!ATTLIST empresa nombre CDATA #REQUIRED> 
+
+<!-- DEPARTAMENTO --> 
+<!ELEMENT departamento (descripcion)>
+
+<!ENTITY % tipoDepartamento "Marketing | IT | otros" >
+
+<!ATTLIST departamento
+    codigo ID #REQUIRED
+    tipo (%tipoDepartamento;) #REQUIRED
+    responsable IDREFS #REQUIRED> 
+    
+<!-- EMPLEADO --> 
+<!ELEMENT empleado (nombre, cargo) >
+<!ELEMENT nombre (#PCDATA) > 
+<!ELEMENT cargo (#PCDATA) > 
+<!ATTLIST empleado
+      id ID #REQUIRED
+      rol NMTOKEN #IMPLIED
+      habilidades NMTOKENS #IMPLIED>
+      
+<!-- PROYECTO--> 
+<!ELEMENT proyecto (titulo, descripcion)>
+<!ELEMENT titulo (#PCDATA) > 
+<!ELEMENT descripcion (#PCDATA) > 
+<!ATTLIST proyecto
+      id ID #REQUIRED
+      responsable IDREF #REQUIRED> 
+      
+<!-- EVENTO --> 
+<!ELEMENT evento (#PCDATA | detalle)* > 
+<!ELEMENT detalle (hora, tema) > 
+<!ELEMENT hora (#PCDATA) > 
+<!ELEMENT tema (#PCDATA) > 
+<!ATTLIST evento 
+      nombre CDATA #IMPLIED
+      fecha NMTOKEN #IMPLIED > 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <evento nombre="Reunión general" fecha="2025-05-10">
+        Agenda de temas a tratar:
+        <detalle>
+            <hora>10:00</hora>
+            <tema>Resultados trimestrales</tema>
+        </detalle>
+        <detalle>
+            <hora>12:00</hora>
+            <tema>Plan estratégico 2025</tema>
+        </detalle>
+    </evento>
+
+</empresa>

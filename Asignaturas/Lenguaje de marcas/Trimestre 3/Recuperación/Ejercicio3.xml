@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sistema_hoteles SYSTEM "Ejercicio3.dtd" >
+<sistema_hoteles>
+    <hotel id="H1" categoria="5_estrellas" cadena="&nombreCadena;">
+        <nombre>Grand Palace</nombre>
+        <descripcion>Un hotel de <énfasis>lujo</énfasis> con vistas al mar. <!--ANY--> <info>Piscina infinita</info> </descripcion>
+        <habitacion numero="101" tipo="suite" capacidad="4" servicios="wifi spa"/>
+        <disponibilidad estado="activa"/>
+    </hotel>
+
+    <cliente id="C001" reservas="R1 R2">
+        <nombre>Carlos Méndez</nombre>
+        <contacto telefono="+34-600111222" pais="ES" vip="false"/>
+    </cliente>
+
+    <reserva id="R1" cliente="C001" habitacion="H1-101" fecha-inicio="2023-10-01" fecha-fin="2023-10-07"/>
+</sistema_hoteles>

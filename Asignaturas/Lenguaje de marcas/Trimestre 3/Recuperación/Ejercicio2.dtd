@@ -1,0 +1,38 @@
+<!ELEMENT universidad (departamento+, alumno+, asignatura+ )>
+
+
+
+<!ELEMENT departamento (nombre, profesor, aula)>
+
+
+
+<!ELEMENT profesor (nombre, asignaturas)>
+<!ELEMENT nombre (#PCDATA)>
+
+<!ATTLIST asignatura codigo ID #REQUIRED >
+<!ELEMENT asignaturas (IDREFS) >
+
+<!ELEMENT aula EMPTY>
+<!ATTLIST departamento codigo ID #REQUIRED >
+<!ATTLIST departamento tipo (ciencias, humanidades, ingeniería) #REQUIRED >
+<!ATTLIST profesor id ID #REQUIRED >
+<!ATTLIST profesor jefe BOOLEAN #REQUIRED >
+<!ATTLIST aula numero NMTOKEN #REQUIRED >
+<!ATTLIST aula capacidad CDATA #REQUIRED >
+<!ATTLIST aula recursos CDATA #REQUIRED >
+
+
+<!ELEMENT alumno (nombre, telefono) >
+<!ELEMENT telefono (#PCDATA) >
+<!ATTLIST alumno id ID #REQUIRED >
+<!ATTLIST alumno matriculas IDREFS #REQUIRED >
+
+<!ELEMENT asignatura (nombre, horario) >
+<!ELEMENT horario EMPTY >
+
+
+<!ATTLIST asignatura departamento IDREF #REQUIRED >
+<!ATTLIST asigntatura creditos CDATA #REQUIRED >
+<!ATTLIST horario dia (L, M, X, J, V) #REQUIRED >
+<!ATTLIST horario hora CDATA #REQUIRED >
+ 

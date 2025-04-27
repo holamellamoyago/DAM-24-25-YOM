@@ -1,0 +1,52 @@
+<!ELEMENT empresa (departamento+, empleado+, proyecto+, evento)>
+<!ENTITY nombreEmpresa "Reparaciones Yago" > 
+
+<!ATTLIST empresa nombre CDATA #REQUIRED> 
+
+<!-- DEPARTAMENTO --> 
+<!ELEMENT departamento (descripcion)>
+
+<!ENTITY % tipoDepartamento "Marketing | IT | otros" >
+
+<!ATTLIST departamento
+    codigo ID #REQUIRED
+    tipo (%tipoDepartamento;) #REQUIRED
+    responsable IDREFS #REQUIRED> 
+    
+<!-- EMPLEADO --> 
+<!ELEMENT empleado (nombre, cargo) >
+<!ELEMENT nombre (#PCDATA) > 
+<!ELEMENT cargo (#PCDATA) > 
+<!ATTLIST empleado
+      id ID #REQUIRED
+      rol NMTOKEN #IMPLIED
+      habilidades NMTOKENS #IMPLIED>
+      
+<!-- PROYECTO--> 
+<!ELEMENT proyecto (titulo, descripcion)>
+<!ELEMENT titulo (#PCDATA) > 
+<!ELEMENT descripcion (#PCDATA) > 
+<!ATTLIST proyecto
+      id ID #REQUIRED
+      responsable IDREF #REQUIRED> 
+      
+<!-- EVENTO --> 
+<!ELEMENT evento (#PCDATA | detalle)* > 
+<!ELEMENT detalle (hora, tema) > 
+<!ELEMENT hora (#PCDATA) > 
+<!ELEMENT tema (#PCDATA) > 
+<!ATTLIST evento 
+      nombre CDATA #IMPLIED
+      fecha NMTOKEN #IMPLIED > 
+
+
+
+
+
+
+
+
+
+
+
+

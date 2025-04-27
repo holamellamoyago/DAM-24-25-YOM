@@ -1,0 +1,51 @@
+  <!ENTITY nombreGaleria "Galería Internacional de Arte Moderno">
+  <!ENTITY % tiposSala "moderna | clasica | contemporanea">
+
+<!ELEMENT exposicion ( artista+ , obra+, sala+, evento+) >
+
+<!ATTLIST exposicion nombre CDATA "moderna">
+
+  
+<!ELEMENT artista (nombre, estilo) > 
+<!ATTLIST artista   
+        id ID #REQUIRED
+        nacionalidad CDATA #REQUIRED>
+<!ELEMENT nombre (#PCDATA) >
+<!ELEMENT estilo (#PCDATA) >
+
+<!ELEMENT obra (titulo, descripcion) > 
+<!ELEMENT titulo (#PCDATA) > 
+<!ELEMENT descripcion (#PCDATA) > 
+<!ATTLIST obra
+        id ID #REQUIRED
+        creador IDREF #REQUIRED>
+        
+<!ELEMENT sala (informacion) > 
+<!ELEMENT informacion (#PCDATA) > 
+<!ATTLIST sala
+        codigo ID #REQUIRED
+        tipo CDATA #REQUIRED
+        responsable IDREFS #REQUIRED > 
+        
+<!ELEMENT evento (#PCDATA | detalle )* > 
+<!ELEMENT detalle (horario) >
+<!ELEMENT horario (#PCDATA) > 
+<!ATTLIST evento nombre CDATA #REQUIRED>
+<!ATTLIST evento fecha NMTOKEN #REQUIRED > 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

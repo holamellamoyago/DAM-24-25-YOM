@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE coche SYSTEM "Ejercicio5.dtd">
+<coche id="c1" color="rojo" tipo="SUV" disponible="no" puertas="1">
+    <modelo>Toyota RAV4</modelo>
+    <descripcion>Un SUV compacto para ciudad y montaña.</descripcion>
+</coche>

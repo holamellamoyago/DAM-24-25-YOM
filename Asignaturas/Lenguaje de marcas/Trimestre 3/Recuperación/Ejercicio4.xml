@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE exposicion SYSTEM "Ejercicio4.dtd" >
+
+<exposicion nombre="&nombreGaleria;">
+  
+  <artista id="a1" nacionalidad="española">
+    <nombre>Lucía Gómez</nombre>
+    <estilo>Abstracto</estilo>
+  </artista>
+  
+  <artista id="a2" nacionalidad="francesa">
+    <nombre>Jean Dupont</nombre>
+    <estilo>Realismo</estilo>
+  </artista>
+  
+  <obra id="o1" creador="a1">
+    <titulo>Colores del alma</titulo>
+    <descripcion>Una explosión de emociones en acrílico.</descripcion>
+  </obra>
+  
+  <obra id="o2" creador="a2">
+    <titulo>Reflejos de París</titulo>
+    <descripcion>Un viaje íntimo por las calles de Montmartre.</descripcion>
+  </obra>
+
+  <sala codigo="salaA" tipo="moderna" responsable="a1 a2">
+    <informacion>Obras modernas de artistas contemporáneos</informacion>
+  </sala>
+
+  <evento nombre="Noche de artistas" fecha="2025-05-12">
+    Una noche donde los artistas compartirán sus experiencias.
+    <detalle>
+      <horario>20:00 - 23:00</horario>
+    </detalle>
+  </evento>
+
+</exposicion>
