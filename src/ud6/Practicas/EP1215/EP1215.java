@@ -17,7 +17,7 @@ public class EP1215<T> {
 
         System.out.println(a.listaNumerica);
         System.out.println();
-        System.out.println(sinRepeticiones(a.listaNumerica));
+        // System.out.println(sinRepeticiones(a.listaNumerica));
         
         
     }
