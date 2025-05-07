@@ -1,0 +1,13 @@
+<!ELEMENT biblioteca (diccionario+, libro+)>
+
+<!ENTITY % tipoMaterial "papel | papelReciclado" > 
+
+<!ENTITY % parametrosBiblioteca 
+    "paginas NMTOKEN #REQUIRED
+      material (%tipoMaterial;) #IMPLIED">
+    
+
+<!ELEMENT diccionario EMPTY >
+<!ELEMENT libro EMPTY >
+<!ATTLIST biblioteca %parametrosBiblioteca; >
+<!ATTLIST diccionario material (%tipoMaterial;) #REQUIRED > 

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ordenadores SYSTEM "Ejercicio8.dtd">
+<ordenadores>
+  <software/>
+  <hardware>
+    <tGrafica>
+      <nvidia nucleosNormales="1"/> 
+    </tGrafica>
+    <procesador/>  
+  </hardware>
+  <software/>
+</ordenadores>

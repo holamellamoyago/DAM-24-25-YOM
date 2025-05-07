@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE biblioteca SYSTEM "Ejercicio7.dtd">
+<biblioteca paginas="12">
+  <diccionario material="papel"/>
+  <libro/>
+</biblioteca>

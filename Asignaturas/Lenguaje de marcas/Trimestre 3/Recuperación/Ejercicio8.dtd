@@ -1,0 +1,11 @@
+<!ENTITY % parametros
+  "nucleosNormales NMTOKEN #REQUIRED
+  nucleosArtificial NMTOKEN #IMPLIED">
+
+<!ELEMENT ordenadores ( hardware | software)*>
+<!ELEMENT hardware (tGrafica+, procesador)>
+<!ELEMENT tGrafica (#PCDATA | nvidia)*>
+<!ELEMENT procesador EMPTY>
+<!ELEMENT nvidia EMPTY>
+<!ATTLIST nvidia %parametros; >
+<!ELEMENT software EMPTY>
