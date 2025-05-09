@@ -6,6 +6,7 @@ CREATE PROCEDURE PR_SUMN
 @NUMERO INT, @SUMA INT OUTPUT
 AS 
 BEGIN
+
 IF (@NUMERO < 0) RETURN -1
 END
 
@@ -20,10 +21,82 @@ AS
 BEGIN 
 IF @N1 = @N2 PRINT 'SON IGUALES'
 IF @N1 > @N2 
-	PRINT @N1 + ' ES MAYOR QUE ' + @N2
+	PRINT CAST(@N1 AS VARCHAR) + ' ES MAYOR QUE ' + CAST(@N2 AS VARCHAR)
 ELSE
 	PRINT @N2 + ' ES MAYOR QUE ' + @N1
 	
 END
 
 EXEC MayorDeDosEnteros 9,9
+EXEC MayorDeDosEnteros @N1 = 4, @N2=3Ç
+
+-- 3. 
+USE EMPRESANEW;
+
+IF OBJECT_ID('DBO.MayorQueSueldoMin') IS NOT NULL
+DROP PROCEDURE MayorQueSueldoMin
+GO
+
+CREATE PROCEDURE MayorQueSueldoMin 
+@X INT
+AS 
+BEGIN 
+IF @X < 0 RETURN -1 
+
+DECLARE @MIN_SALARIO INT
+SELECT @MIN_SALARIO = MIN(SALARIO) FROM EMPREGADOFIXO
+
+IF @X < @MIN_SALARIO
+	PRINT 'el valor: ' + CAST(@X AS VARCHAR) +' es menor que el sueldo del empleado que menos gana: ' + 
+	CAST(@MIN_SALARIO AS VARCHAR) 
+ELSE 
+	PRINT 'el valor: ' + CAST(@X AS VARCHAR)  +' NO es menor que el sueldo del empleado que menos gana: ' +		CAST(@MIN_SALARIO AS VARCHAR) 
+
+END	
+
+EXEC MayorQueSueldoMin 100
+
+
+-- 4.
+IF OBJECT_ID('DBO.DatosDepartamento') IS NOT NULL
+BEGIN 
+DROP PROCEDURE DatosDepartamento
+END
+
+GO
+
+IF OBJECT_ID('DBO.visualizardatosdepartamento') IS NOT NULL
+BEGIN 
+DROP PROCEDURE visualizardatosdepartamento
+END
+
+GO
+
+CREATE PROCEDURE DatosDepartamento
+@N VARCHAR
+AS
+
+DECLARE @NOME_DEP VARCHAR
+DECLARE @NOME_APE VARCHAR
+DECLARE @SALARIO	INT
+
+
+SELECT NomeDepartamento = @NOME_DEP, CONCATE() Nome + ' ' + Apelido1 + ' ' + Apelido2 = @NOME_APE, ISNULL(EF.Salario, '')
+INTO , , @SALARIO
+FROM DEPARTAMENTO D
+INNER JOIN EMPREGADO E ON E.NumDepartamentoPertenece = D.NumDepartamento
+LEFT JOIN EMPREGADOFIXO EF ON EF.NSS = E.NSS
+WHERE NomeDepartamento=@N
+
+PRINT 'DEPARTAMENTO: ' + (SELECT NOMEDEPARTAMENTO FROM DEPARTAMENTO
+							WHERE NOMEDEPARTAMENTO = @N)
+
+GO
+
+CREATE PROCEDURE visualizardatosdepartamento
+@N VARCHAR
+AS
+EXEC DatosDepartamento 'PERSOAL'
+
+
+EXEC DatosDepartamento 'PERSOAL'

@@ -15,10 +15,9 @@ public class Ejemplo1 extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-               TextField textField = new TextField("Escribe tu nomnbre... ");
         Button btn = new Button("Saludar");
         Label lbl = new Label();
-        VBox vBox = new VBox(textField, btn, lbl);
+        VBox vBox = new VBox(btn, lbl);
 
         Scene scene = new Scene(vBox,300,200);
 
@@ -26,8 +25,8 @@ public class Ejemplo1 extends Application {
         primaryStage.setTitle("juas");
         primaryStage.setResizable(false);
 
-        btn.setOnAction(e -> {
-           lbl.setText("Hola " + textField.getText()+ "!"); 
-        });
+        // btn.setOnAction(e -> {
+        //    lbl.setText("Hola " + textField.getText()+ "!"); 
+        // });
     }
 }
