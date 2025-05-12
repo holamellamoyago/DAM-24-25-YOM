@@ -1,8 +1,10 @@
 package ud7.PanelAdministracion.Controllers;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -16,18 +18,43 @@ public class MenuPrincipalController implements Initializable {
     @FXML
     private Button btnUsuarios;
 
-    public void cambiarVentana() {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../Resources/panelAdministracion.fxml"));
-        Parent root = loader.load();
-        Stage stage = (Stage) btnUsuarios.getScene().getWindow(); // boton es cualquier nodo de la escena actual
-        stage.setScene(new Scene(root));
-        stage.show();
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
 
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        
+    @FXML
+    public void abrirPantallaUsuarios() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../resources/panelAdministracion.fxml"));
+            Parent root = loader.load();
+
+            UsuariosController usuariosController = loader.getController();
+
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Segunda pantalla");
+
+            stage.show();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @FXML
+    public void intercambiarPantallas(){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../resources/panelAdministracion.fxml"));
+            Parent root = loader.load();
+
+            Stage currentStage = (Stage) btnUsuarios.getScene().getWindow();
+
+            currentStage.setScene(new Scene(root));
+            currentStage.setTitle("Panel de usuarios");
+
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
     }
 
 }

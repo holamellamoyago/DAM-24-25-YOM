@@ -2,6 +2,7 @@ package ud7.PanelAdministracion;
 
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.*;
@@ -10,7 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-public class PanelAdministracion extends Application {
+public class MainController extends Application {
 
 
     public static void main(String[] args) {
@@ -29,7 +30,7 @@ public class PanelAdministracion extends Application {
 
         // Scene scene = new Scene(bp, 300, 200);
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("resources/panelAdministracion.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("resources/MenuPrincipal.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
 
@@ -40,4 +41,6 @@ public class PanelAdministracion extends Application {
         primaryStage.show();
 
     }
+
+   
 }
