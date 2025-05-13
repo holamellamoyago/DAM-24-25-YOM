@@ -84,7 +84,7 @@
                         <Insets bottom="25.0" top="25.0" />
                      </HBox.margin>
                   </TextField>
-                  <PasswordField fx:id="txtFieldPassword" promptText="Password">
+                  <PasswordField fx:id="txtPassword" promptText="Password">
                      <HBox.margin>
                         <Insets bottom="25.0" left="25.0" top="25.0" />
                      </HBox.margin>

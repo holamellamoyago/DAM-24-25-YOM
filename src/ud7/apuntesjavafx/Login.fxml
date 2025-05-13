@@ -13,7 +13,7 @@
       <Label layoutX="46.0" layoutY="79.0" text="Password" />
       <TextField fx:id="txtUsuario" layoutX="109.0" layoutY="45.0" />
       <PasswordField fx:id="txtPassword" layoutX="109.0" layoutY="75.0" />
-      <Button layoutX="109.0" layoutY="113.0" mnemonicParsing="false" onAction="#login" text="Login" />
+      <Button defaultButton="true" layoutX="109.0" layoutY="113.0" mnemonicParsing="false" onAction="#login" text="Login" />
       <Label layoutX="43.0" layoutY="14.0" text="Inicio de Sesión">
          <font>
             <Font name="System Bold" size="18.0" />
