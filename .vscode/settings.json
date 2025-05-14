@@ -4,11 +4,11 @@
     ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
-        "c:\\Users\\yago8\\Documents\\DAM-24-25-YOM\\lib\\junit-platform-console-standalone-1.11.3.jar",
-        "c:\\Users\\yago8\\Documents\\DAM-24-25-YOM\\lib\\bytes-1.6.1.jar",
-        "c:\\Users\\yago8\\Documents\\DAM-24-25-YOM\\lib\\bcrypt-0.10.2.jar",
-        "c:\\Users\\yago8\\Documents\\DAM-24-25-YOM\\lib\\gson-2.10.1.jar",
-        "c:\\Users\\yago8\\Documents\\DAM-24-25-YOM\\lib\\mysql-connector-j-9.1.0.jar"
+        "lib/bcrypt-0.10.2.jar",
+        "lib/bytes-1.6.1.jar",
+        "lib/gson-2.10.1.jar",
+        "lib/junit-platform-console-standalone-1.11.3.jar",
+        "lib/mysql-connector-j-9.1.0.jar"
     ],
     "github.copilot.enable": {
         "*": false
