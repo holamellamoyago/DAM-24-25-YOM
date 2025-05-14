@@ -14,6 +14,7 @@ BEGIN
 	RETURN DATEDIFF(DD, @FECHA, GETDATE()) /365.25
 END
 
+GO
 
 SELECT dbo.FnEdad('11/02/2003') AS EDAD
 
@@ -23,8 +24,8 @@ SELECT NOME + ' ' + APELIDO1 + ' ' + ISNULL(Apelido2,'') AS NOME,
 FROM EMPREGADO E 
 
 -- 1B
-IF OBJECT_ID('prFamiliarEdad') IS NOT NULL 
-	DROP PROCEDURE prFamiliarEdad
+IF OBJECT_ID('dbo.prFamiliarEdad') IS NOT NULL 
+	DROP PROCEDURE dbo.prFamiliarEdad
 
 GO
 
@@ -39,15 +40,14 @@ SELECT * ,
 ) AS NUM_FAMILIARES
 FROM EMPREGADO E 
 
-DECLARE @EDAD2 INT
-SELECT @EDAD2 = dbo.FnEdad('11/02/2002')
+DECLARE @SALIDA INT
+EXEC @SALIDA = dbo.prFamiliarEdad 20
 
-EXEC dbo.prFamiliarEdad @EDAD = @EDAD2
 
 
 -- 2. 
-IF OBJECT_ID('fnNumEmplMayorQueEdad') IS NOT NULL
-	DROP FUNCTION fnNumEmplMayorQueEdad
+IF OBJECT_ID('dbo.fnNumEmplMayorQueEdad') IS NOT NULL
+	DROP FUNCTION dbo.fnNumEmplMayorQueEdad
 GO
 
 CREATE FUNCTION fnNumEmplMayorQueEdad
@@ -79,6 +79,9 @@ BEGIN
 END
 
 GO
+
+SELECT dbo.fnNumEmplMayorQueEdad( 'CONTABILIDAD' , 20 )
+
 
 
 
