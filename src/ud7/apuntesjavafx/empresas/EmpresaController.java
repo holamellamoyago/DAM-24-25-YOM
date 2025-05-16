@@ -1,15 +1,16 @@
 package ud7.apuntesjavafx.empresas;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import AceptaElReto.JuegoOnline.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
 
 public class EmpresaController implements Initializable {
 
@@ -27,6 +28,9 @@ public class EmpresaController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        AppEmpresa.cargarFichero(AppEmpresa.ficheroEmpresas);
+        AppEmpresa.stagePrincipal.setTitle("Empresas - " + AppEmpresa.ficheroEmpresas);
+
         lstEmpresas.getItems().addAll(AppEmpresa.empresas);
 
         lstEmpresas.getSelectionModel().selectedItemProperty().addListener(
@@ -41,16 +45,19 @@ public class EmpresaController implements Initializable {
     void actualizar(ActionEvent event) {
         int id = Integer.parseInt(txtId.getText());
         int indice = AppEmpresa.empresas.indexOf(new Empresa(id));
-
-        if (indice != -1 ) {
+        if (indice != -1) {
             Empresa e = AppEmpresa.empresas.get(indice);
             e.setNombre(txtNombre.getText());
             e.setWeb(txtWeb.getText());
 
-            lstEmpresas.getItems().clear();
-            lstEmpresas.getItems().addAll(AppEmpresa.empresas);
+            actualizarListView();
         }
+    }
 
+    private void actualizarListView() {
+        // TODO Actualizar listview más quirúrgicamente
+        lstEmpresas.getItems().clear();
+        lstEmpresas.getItems().addAll(AppEmpresa.empresas);
     }
 
     @FXML
@@ -71,8 +78,55 @@ public class EmpresaController implements Initializable {
     }
 
     @FXML
-    void obtenerItem(){
+    void guardarFichero(ActionEvent event) {
+        AppEmpresa.guardarFichero(AppEmpresa.rutaFicheroEmpresas);
+    }
 
+    @FXML
+    void cargarFichero(ActionEvent event) {
+        AppEmpresa.cargarFichero(AppEmpresa.ficheroEmpresas);
+        actualizarListView();
+    }
+
+    @FXML
+    void guardarComo(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Guardar como...");
+        fileChooser.setInitialDirectory(new File(AppEmpresa.rutaFicheroEmpresas));
+        fileChooser.getExtensionFilters().addAll(
+                new ExtensionFilter("CSV Files", "*.csv"));
+        /*
+         * new ExtensionFilter("Text Files", "*.txt"),
+         * new ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"),
+         * new ExtensionFilter("Audio Files", "*.wav", "*.mp3", "*.aac"),
+         * new ExtensionFilter("All Files", "*.*"));
+         */
+        File selectedFile = fileChooser.showSaveDialog(AppEmpresa.stagePrincipal);
+        if (selectedFile != null){}
+            AppEmpresa.guardarFichero(selectedFile.toString());
+    }
+
+    @FXML
+    void abrir(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Abrir...");
+        fileChooser.setInitialDirectory(new File(AppEmpresa.rutaFicheroEmpresas));
+        fileChooser.getExtensionFilters().addAll(
+                new ExtensionFilter("CSV Files", "*.csv"));
+        /*
+         * new ExtensionFilter("Text Files", "*.txt"),
+         * new ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"),
+         * new ExtensionFilter("Audio Files", "*.wav", "*.mp3", "*.aac"),
+         * new ExtensionFilter("All Files", "*.*"));
+         */
+        File selectedFile = fileChooser.showOpenDialog(AppEmpresa.stagePrincipal);
+        if (selectedFile != null) {
+            AppEmpresa.cargarFichero(selectedFile.toString());
+            actualizarListView();
+            AppEmpresa.stagePrincipal.setTitle("Empresas - " + selectedFile.toString());
+            AppEmpresa.rutaFicheroEmpresas = selectedFile.getParent();
+            AppEmpresa.ficheroEmpresas = selectedFile.getPath();
+        }
     }
 
 }
