@@ -1,0 +1,38 @@
+package ud7.apuntesjavafx;
+
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+public class Ejemplo2 extends Application {
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        TextField textField = new TextField("Escribe tu nomnbre... ");
+        Button btn = new Button("Saludar");
+        Label lbl = new Label();
+        VBox vBox = new VBox(textField, btn, lbl);
+
+        Scene scene = new Scene(vBox,300,200);
+
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("juas");
+        primaryStage.setResizable(false);
+
+        btn.setOnAction(e -> {
+           lbl.setText("Hola " + textField+ "!"); 
+        });
+        
+    }
+
+    
+}
