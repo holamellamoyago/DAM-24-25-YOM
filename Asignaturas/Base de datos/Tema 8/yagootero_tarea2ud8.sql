@@ -124,7 +124,7 @@ END
 
 GO
 
-SELECT dbo.FN_ESVOCAL('C')
+SELECT dbo.FN_ESVOCAL('Á')
 
 
 
@@ -145,6 +145,7 @@ SET @CONTADORVocales = 0
 
 
 WHILE @CONTADOR != LEN(@V) +1 
+-- <= 
 	BEGIN
 	
 		IF (dbo.FN_ESVOCAL(SUBSTRING(@V, @CONTADOR,1)) = 1)
@@ -163,8 +164,6 @@ GO
 SELECT dbo.fnVocales('HOLA MUNDO')
 
 
-SELECT SUBSTRING('HOLA MUNDO',3,1)
-
 -- 4C 
 USE EMPRESANEW
 
@@ -175,9 +174,9 @@ IF OBJECT_ID('FNVOCALESNOMBRE') IS NOT NULL
 
 GO
 CREATE FUNCTION FNVOCALESNOMBRE
-	(@D VARCHAR)
+	(@D VARCHAR(50))
 	RETURNS @RESULTADO TABLE (
-		NOMBRECOMPLETO VARCHAR,
+		NOMBRECOMPLETO VARCHAR(50),
 		CONTADOR INT
 	)
 AS
@@ -204,8 +203,54 @@ DECLARE @NUMD INT
 SELECT @NUMD = NUMDEPARTAMENTO FROM DEPARTAMENTO WHERE NomeDepartamento = 'PERSOAL'
 SELECT @NUMD
 
+
+
+
+
+
+
+GO
+
+IF OBJECT_ID('prVisualizaTabla') IS NOT NULL 
+	DROP PROCEDURE prVisualizaTabla
+
+GO
+CREATE PROCEDURE prVisualizaTabla
+	(@nombreBD VARCHAR, @esquema varchar = 'dbo', @nombreTabla VARCHAR)
+as
+begin
 	
- 
+
+end 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
