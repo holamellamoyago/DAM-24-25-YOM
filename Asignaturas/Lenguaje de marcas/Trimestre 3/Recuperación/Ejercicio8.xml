@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE congreso SYSTEM "Ejercicio8.dtd" > 
+<congreso sede="Madrid" año="2025">
+  <conferencia id="c01" nombre="Inteligencia Artificial" tipo="tecnica" duracion="2h">
+    <ponente id="p01" nombre="Laura Gómez" />
+    <ponente id="p02" nombre="Carlos Ruiz" />
+    <material tipo="pdf" formato="digital" estado="disponible" />
+    <material tipo="video" formato="streaming" estado="pendiente" />
+    <asistentes refs="a01 a02 a03" />
+    <comentario autorRef="a01">
+      Comentario general con 
+    </comentario>
+  </conferencia>
+
+  <conferencia id="c02" nombre="Ciberseguridad" tipo="practica" duracion="3h">
+    <ponente id="p03" nombre="Eva Méndez" />
+    <comentario autorRef="a02">Solo texto plano sin destacado.</comentario>
+  </conferencia>
+
+  <asistente id="a01" nombre="Manuel Ortega" />
+  <asistente id="a02" nombre="Lucía Torres" />
+  <asistente id="a03" nombre="Javier Peña" />
+
+  <patrocinador id="pt01" nombre="TechCorp" nivel="oro" />
+  <patrocinador id="pt02" nombre="InnovaSoft" nivel="plata" />
+  
+  <otro></otro>
+  
+</congreso>

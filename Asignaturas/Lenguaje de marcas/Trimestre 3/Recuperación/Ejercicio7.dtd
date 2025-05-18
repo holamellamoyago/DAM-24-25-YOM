@@ -1,0 +1,42 @@
+<!ELEMENT biblioteca (libro+ , revista+ , multimedia+ , otro+)>
+<!ATTLIST biblioteca
+  nombre CDATA #REQUIRED
+  localidad CDATA #REQUIRED > 
+
+<!ELEMENT libro (titulo, autor,resumen,prestamo)>
+<!ELEMENT titulo (#PCDATA) > 
+<!ELEMENT autor (#PCDATA) > 
+<!ELEMENT resumen (#PCDATA | destacado)* > 
+<!ELEMENT prestamo (#PCDATA) > 
+<!ATTLIST prestamo tipo CDATA #REQUIRED> 
+<!ELEMENT destacado (#PCDATA) > 
+
+<!ATTLIST libro 
+  id ID #REQUIRED
+  codigo NMTOKEN #IMPLIED
+  genero CDATA #IMPLIED > 
+  
+
+<!ELEMENT revista (titulo, editor,temas)>
+<!ELEMENT editor (#PCDATA) > 
+<!ELEMENT temas (#PCDATA) > 
+<!ATTLIST revista 
+    id ID #REQUIRED
+    idioma CDATA #IMPLIED >
+     
+
+<!ELEMENT multimedia (#PCDATA) >
+<!ATTLIST multimedia
+    tipo CDATA #REQUIRED
+    formato CDATA #REQUIRED > 
+    
+    <!ELEMENT otro (contenido) > 
+    <!ATTLIST otro tipo CDATA #IMPLIED > 
+    <!ELEMENT contenido (#PCDATA) > 
+    
+      <!-- Entidades internas -->
+  <!ENTITY autorDefecto "Anónimo">
+  <!ENTITY % extraAttrs "id ID #REQUIRED codigo CDATA #IMPLIED">
+
+  <!-- Entidad parámetro para usar más tarde -->
+  <!ENTITY % tipoPrestamo "(interno | externo)">

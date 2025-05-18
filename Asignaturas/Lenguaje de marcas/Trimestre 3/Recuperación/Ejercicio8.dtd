@@ -1,0 +1,77 @@
+<!ELEMENT congreso (conferencia+, asistente+, patrocinador+, otro+)>
+<!ATTLIST congreso 
+    sede NMTOKEN #REQUIRED
+    año NMTOKEN #REQUIRED > 
+    
+      <!-- Enumeraciones -->
+  <!ENTITY % tiposFormato "(pdf | video | audio)">
+  <!ENTITY % nivelesPatrocinio "(oro | plata | bronce)">
+    
+
+<!ELEMENT conferencia (ponente+, material*, asistentes?, comentario)>
+<!ATTLIST conferencia
+    id ID #REQUIRED
+    nombre CDATA #REQUIRED
+    tipo CDATA #REQUIRED
+    duracion NMTOKEN #REQUIRED > 
+    
+<!ELEMENT ponente EMPTY > 
+<!ATTLIST ponente
+  id ID #REQUIRED
+  nombre CDATA #REQUIRED > 
+
+<!ELEMENT material EMPTY > 
+<!ATTLIST material 
+    tipo %tiposFormato; #REQUIRED
+    formato NMTOKEN #REQUIRED
+    estado (disponible | pendiente) #REQUIRED > 
+
+<!ELEMENT asistentes EMPTY > 
+<!ATTLIST asistentes refs IDREFS #REQUIRED> 
+
+<!ELEMENT comentario (#PCDATA | destacado)* > 
+<!ATTLIST comentario autorRef IDREF #REQUIRED > 
+<!ELEMENT destacado (#PCDATA) > 
+
+  <!ENTITY % datosEntidadComunes "id ID #REQUIRED nombre CDATA #REQUIRED">
+  
+  <!ELEMENT asistente EMPTY > 
+  <!ATTLIST asistente 
+      id ID #REQUIRED
+      nombre CDATA #REQUIRED> 
+      
+  
+      
+      
+<!ELEMENT patrocinador EMPTY > 
+<!ATTLIST patrocinador 
+      id ID #REQUIRED 
+      nombre CDATA #REQUIRED
+      nivel %nivelesPatrocinio; #REQUIRED > 
+      
+  <!ELEMENT otro EMPTY> 
+  <!ATTLIST otro test CDATA "no att" > 
+      
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

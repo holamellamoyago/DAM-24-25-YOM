@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE biblioteca SYSTEM "Ejercicio7.dtd" > 
+<biblioteca nombre="Municipal" localidad="Madrid">
+  <libro id="l001" codigo="A23" genero="ficcion">
+    <titulo>El Quijote</titulo>
+    <autor> &autorDefecto; </autor>
+    <resumen>Una historia MIXTA con <destacado>elementos importantes</destacado>.</resumen>
+    <prestamo tipo="interno">Disponible</prestamo>
+  </libro>
+
+  <revista id="r002" idioma="es">
+    <titulo>Revista Científica</titulo>
+    <editor>Grupo Ciencia</editor>
+    <temas>física química biología</temas>
+  </revista>
+
+  <multimedia tipo="video" formato="mp4">
+    ¡Incluye entrevistas!
+  </multimedia>
+
+  <otro tipo="documento">
+    <contenido>Texto libre</contenido>
+  </otro>
+</biblioteca>
+
