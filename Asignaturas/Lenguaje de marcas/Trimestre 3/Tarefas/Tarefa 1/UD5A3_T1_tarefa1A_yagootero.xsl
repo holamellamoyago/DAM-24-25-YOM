@@ -16,10 +16,10 @@
     -->
     <xsl:template match="/">
         <almacenamento>
-            <discos>
+            <discos num="{count(equipos/máquina/hardware/disco)}">
                 <xsl:apply-templates select="equipos/máquina/hardware/disco"/>
             </discos>
-            <memorias>
+            <memorias num="{count(equipos/máquina/hardware/memoria)}">
                 <xsl:apply-templates select="equipos/máquina/hardware"/>
             </memorias>
         </almacenamento>

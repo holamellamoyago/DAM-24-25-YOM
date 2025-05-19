@@ -39,7 +39,7 @@
             <li><xsl:value-of select="hardware/fabricante"/></li>
             <li><xsl:value-of select="hardware/procesador"/></li>
             <li>Memoria: <xsl:value-of select="hardware/memoria"/>GB</li>
-            <li>Lectora tipo: <xsl:value-of select="hardware/lectora/@tipo"/></li>
+            <li>Lectora tipo: <xsl:value-of select="hardware[lectora or gravadora]/@cod"/></li>
 
 
 
