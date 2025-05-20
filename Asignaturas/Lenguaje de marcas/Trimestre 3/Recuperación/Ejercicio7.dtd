@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!ELEMENT biblioteca (libro+ , revista+ , multimedia+ , otro+)>
 <!ATTLIST biblioteca
   nombre CDATA #REQUIRED
@@ -42,6 +43,8 @@
   <!-- Entidad parámetro para usar más tarde -->
   <!ENTITY % tipoPrestamo "(interno | externo)">
 =======
+=======
+>>>>>>> d44b7688ae915873b36101121ca329133bf893e7
 <!ELEMENT biblioteca (diccionario+, libro+)>
 
 <!ENTITY % tipoMaterial "papel | papelReciclado" > 
@@ -54,5 +57,9 @@
 <!ELEMENT diccionario EMPTY >
 <!ELEMENT libro EMPTY >
 <!ATTLIST biblioteca %parametrosBiblioteca; >
+<<<<<<< HEAD
 <!ATTLIST diccionario material (%tipoMaterial;) #REQUIRED > 
 >>>>>>> 005517de7fa308643d021d1625a6c3a91e1fb95d
+=======
+<!ATTLIST diccionario material (%tipoMaterial;) #REQUIRED > 
+>>>>>>> d44b7688ae915873b36101121ca329133bf893e7

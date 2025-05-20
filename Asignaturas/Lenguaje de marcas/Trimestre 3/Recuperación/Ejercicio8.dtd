@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!ELEMENT congreso (conferencia+, asistente+, patrocinador+, otro+)>
 <!ATTLIST congreso 
     sede NMTOKEN #REQUIRED
@@ -77,6 +78,8 @@
   
   
 =======
+=======
+>>>>>>> d44b7688ae915873b36101121ca329133bf893e7
 <!ENTITY % parametros
   "nucleosNormales NMTOKEN #REQUIRED
   nucleosArtificial NMTOKEN #IMPLIED">
@@ -87,5 +90,9 @@
 <!ELEMENT procesador EMPTY>
 <!ELEMENT nvidia EMPTY>
 <!ATTLIST nvidia %parametros; >
+<<<<<<< HEAD
 <!ELEMENT software EMPTY>
 >>>>>>> 005517de7fa308643d021d1625a6c3a91e1fb95d
+=======
+<!ELEMENT software EMPTY>
+>>>>>>> d44b7688ae915873b36101121ca329133bf893e7

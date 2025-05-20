@@ -14,12 +14,17 @@
     <!-- TODO customize transformation rules 
          syntax recommendation http://www.w3.org/TR/xslt 
     -->
+<<<<<<< HEAD
     <xsl:template match="/horario/horas">
+=======
+    <xsl:template match="/">
+>>>>>>> d44b7688ae915873b36101121ca329133bf893e7
         <html>
             <head>
                 <title>UD5A2_T4_tarefa4A_yagootero.xsl</title>
             </head>
             <body>
+<<<<<<< HEAD
                 <main>
                     <h1>Horarios ASIR ordinario, ano 2013</h1>
                     <table border="1px solid black">
@@ -48,5 +53,10 @@
             </td>
         </tr>
     </xsl:template>
+=======
+            </body>
+        </html>
+    </xsl:template>
+>>>>>>> d44b7688ae915873b36101121ca329133bf893e7
 
 </xsl:stylesheet>

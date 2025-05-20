@@ -124,7 +124,11 @@ END
 
 GO
 
+<<<<<<< HEAD
 SELECT dbo.FN_ESVOCAL('C')
+=======
+SELECT dbo.FN_ESVOCAL('Á')
+>>>>>>> d44b7688ae915873b36101121ca329133bf893e7
 
 
 
@@ -145,6 +149,10 @@ SET @CONTADORVocales = 0
 
 
 WHILE @CONTADOR != LEN(@V) +1 
+<<<<<<< HEAD
+=======
+-- <= 
+>>>>>>> d44b7688ae915873b36101121ca329133bf893e7
 	BEGIN
 	
 		IF (dbo.FN_ESVOCAL(SUBSTRING(@V, @CONTADOR,1)) = 1)
@@ -163,8 +171,11 @@ GO
 SELECT dbo.fnVocales('HOLA MUNDO')
 
 
+<<<<<<< HEAD
 SELECT SUBSTRING('HOLA MUNDO',3,1)
 
+=======
+>>>>>>> d44b7688ae915873b36101121ca329133bf893e7
 -- 4C 
 USE EMPRESANEW
 
@@ -175,9 +186,15 @@ IF OBJECT_ID('FNVOCALESNOMBRE') IS NOT NULL
 
 GO
 CREATE FUNCTION FNVOCALESNOMBRE
+<<<<<<< HEAD
 	(@D VARCHAR)
 	RETURNS @RESULTADO TABLE (
 		NOMBRECOMPLETO VARCHAR,
+=======
+	(@D VARCHAR(50))
+	RETURNS @RESULTADO TABLE (
+		NOMBRECOMPLETO VARCHAR(50),
+>>>>>>> d44b7688ae915873b36101121ca329133bf893e7
 		CONTADOR INT
 	)
 AS
@@ -204,8 +221,59 @@ DECLARE @NUMD INT
 SELECT @NUMD = NUMDEPARTAMENTO FROM DEPARTAMENTO WHERE NomeDepartamento = 'PERSOAL'
 SELECT @NUMD
 
+<<<<<<< HEAD
 	
  
+=======
+
+
+
+
+
+
+GO
+
+IF OBJECT_ID('prVisualizaTabla') IS NOT NULL 
+	DROP PROCEDURE prVisualizaTabla
+
+GO
+CREATE PROCEDURE prVisualizaTabla
+	(@nombreBD VARCHAR, @esquema varchar = 'dbo', @nombreTabla VARCHAR)
+as
+begin
+	
+
+end 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> d44b7688ae915873b36101121ca329133bf893e7
 
 
 
