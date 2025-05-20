@@ -1,0 +1,23 @@
+A. /videoteca/película[título=títuloorixinal]
+
+
+B. /videoteca/actor[nome="Elisabeth Shue"]/@id
+
+C. /videoteca/película/actúa[@id=51]/..
+
+D. /videoteca/película/actúa[@id=/videoteca/actor[nome="Elisabeth Shue"]/@id]/..
+
+E. /videoteca/película[last()]/título
+
+F. /videoteca/película[importe/@moneda="dólar"]/sum(importe)
+
+G. sum(/videoteca/película[importe/@moneda="dólar"]/importe*1.4)+sum(/videoteca/película[importe/@moneda="euro"]/importe)
+
+
+
+
+
+
+
+/videoteca/película/actúa[@id=/videoteca]
+

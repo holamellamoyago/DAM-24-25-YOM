@@ -1,0 +1,9 @@
+A. /equipos/máquina[starts-with(@nome,"PC")]
+
+b. /equipos/máquina/hardware[count(disco)>1]/../@nome
+
+C. /equipos/máquina/hardware/sum(memoria)
+
+D. /equipos/máquina/hardware/disco[@tecnoloxía="SCSI"]/sum(@capacidade)
+
+No me da tiempo a hacer mas (tuve la recuperación) y me esta costando entenderlo

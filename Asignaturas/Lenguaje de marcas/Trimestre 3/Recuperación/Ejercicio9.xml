@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE material [
+
+  <!ENTITY % parametrosRevista
+    "tipo (amor | coches) #REQUIRED
+      marca CDATA #IMPLIED
+      numero NMTOKEN #REQUIRED">
+
+  <!ELEMENT material (libro*, artigo*)>
+  <!ELEMENT libro (titulo, editorial, autor, ano)>
+  <!ELEMENT artigo (titulo, revista)>
+  <!ELEMENT revista (nome, paxina)>
+  
+  <!ELEMENT titulo (#PCDATA)>
+  <!ELEMENT editorial (#PCDATA)>
+  <!ELEMENT autor (#PCDATA) > 
+  <!ELEMENT ano (#PCDATA)>
+  <!ELEMENT nome (#PCDATA)>
+  <!ELEMENT paxina (#PCDATA)>
+  
+  <!ATTLIST libro 
+    ISBN NMTOKEN #REQUIRED
+    edicion NMTOKEN #IMPLIED
+    autor CDATA #IMPLIED
+    editorial CDATA "Santillana"
+    biblioteca CDATA #FIXED "CANGAS"
+    firmado_por (pedro | antonio) #REQUIRED>
+
+    <!ATTLIST revista %parametrosRevista; >
+]>
+<material>
+  <libro ISBN="X9-8998" firmado_por="pedro">
+    <titulo>Inverno na Pereira</titulo>
+    <editorial>Toxo verde</editorial>
+    <autor>Xurxo Cancelas Brión</autor>
+    <ano>2008</ano>
+  </libro>
+    <artigo>
+    <titulo>O carballo</titulo>
+    <revista numero="32">
+        <nome>Natureza verde</nome>
+       <paxina>4</paxina>
+    </revista>
+  </artigo>
+</material>

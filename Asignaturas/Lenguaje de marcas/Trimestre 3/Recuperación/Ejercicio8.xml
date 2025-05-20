@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <!DOCTYPE congreso SYSTEM "Ejercicio8.dtd" > 
 <congreso sede="Madrid" año="2025">
   <conferencia id="c01" nombre="Inteligencia Artificial" tipo="tecnica" duracion="2h">
@@ -27,3 +28,16 @@
   <otro></otro>
   
 </congreso>
+=======
+<!DOCTYPE ordenadores SYSTEM "Ejercicio8.dtd">
+<ordenadores>
+  <software/>
+  <hardware>
+    <tGrafica>
+      <nvidia nucleosNormales="1"/> 
+    </tGrafica>
+    <procesador/>  
+  </hardware>
+  <software/>
+</ordenadores>
+>>>>>>> 005517de7fa308643d021d1625a6c3a91e1fb95d

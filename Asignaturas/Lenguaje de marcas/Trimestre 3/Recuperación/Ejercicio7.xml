@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <!DOCTYPE biblioteca SYSTEM "Ejercicio7.dtd" > 
 <biblioteca nombre="Municipal" localidad="Madrid">
   <libro id="l001" codigo="A23" genero="ficcion">
@@ -23,3 +24,10 @@
   </otro>
 </biblioteca>
 
+=======
+<!DOCTYPE biblioteca SYSTEM "Ejercicio7.dtd">
+<biblioteca paginas="12">
+  <diccionario material="papel"/>
+  <libro/>
+</biblioteca>
+>>>>>>> 005517de7fa308643d021d1625a6c3a91e1fb95d
