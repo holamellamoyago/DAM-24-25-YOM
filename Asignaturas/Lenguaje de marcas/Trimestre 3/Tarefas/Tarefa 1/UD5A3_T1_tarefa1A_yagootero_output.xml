@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<almacenamento>
+<almacenamiento>
     <discos num="4">
         <disco tecnoloxía="SATA" capacidade="2000"/>
         <disco tecnoloxía="SCSI" capacidade="200"/>
@@ -10,4 +10,4 @@
         <memoria tecnoloxía="DDR3">8</memoria>
         <memoria tecnoloxía="DDR2">2</memoria>
     </memorias>
-</almacenamento>
+</almacenamiento>
