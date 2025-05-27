@@ -1,6 +1,7 @@
 package ud7.Verbos.Controllers;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
@@ -20,11 +21,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.Border;
 import javafx.scene.paint.Paint;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.stage.FileChooser.ExtensionFilter;
 import ud7.Verbos.Model.IrregularVerb;
 import ud7.Verbos.Model.Util;
 
@@ -47,6 +51,9 @@ public class MainController implements Initializable {
 
     @FXML
     Label txtMessage;
+
+    @FXML
+    MenuItem importarfichero;
 
     List<IrregularVerb> verbs;
     IrregularVerb irVrb;
@@ -115,6 +122,19 @@ public class MainController implements Initializable {
         } catch (Exception e) {
             // TODO: handle exception
         }
+    }
+
+    @FXML
+    public void importarVerbos(ActionEvent e) {
+        FileChooser fileChooser = new FileChooser();
+        ExtensionFilter filter =  new ExtensionFilter("Debes importarlo en formato JSON", "*.json");
+
+        fileChooser.setTitle("Importar JSON...");
+        fileChooser.setInitialDirectory(new File("C:\\ProgramData\\Microsoft\\Windows\\Start Menu"));
+        fileChooser.getExtensionFilters().add(filter);
+
+        File selectedFile = fileChooser.showOpenDialog()
+
     }
 
 }
