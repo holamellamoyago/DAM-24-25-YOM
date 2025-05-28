@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ud7.PracticaUD7.InventarioFX.Controllers.InventarioController">
+   <right>
+      <ListView fx:id="lsProductos" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </right>
+   <left>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="25.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="txtFieldCod" promptText="Codigo" />
+            <TextField fx:id="txtFieldNombre" promptText="Nombre" />
+            <TextField fx:id="txtFieldPrecio" promptText="Precio" />
+            <TextField fx:id="txtFieldCantidad" promptText="Cantidad" />
+         </children>
+      </VBox>
+   </left>
+   <bottom>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnAnadir" mnemonicParsing="false" onAction="#anhadirProductos" text="nuevo" />
+            <Button mnemonicParsing="false" text="Button" />
+            <Label fx:id="txtError" />
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

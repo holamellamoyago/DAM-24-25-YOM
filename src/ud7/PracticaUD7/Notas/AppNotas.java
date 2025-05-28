@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 
 
 public class AppNotas extends Application {
+        // Yago Otero Martínez
     final public static String PATH = "src/ud7/PracticaUD7/Notas/";
 
     public static void main(String[] args) {

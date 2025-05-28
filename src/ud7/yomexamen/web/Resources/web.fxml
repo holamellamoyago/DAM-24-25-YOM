@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ud7.yomexamen.web.Controllers.webController">
+   <left>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="25.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="txtFieldTitulo" promptText="Título" />
+            <TextField fx:id="txtFieldDes" promptText="Descripcion" />
+            <TextField fx:id="txtFieldtetxten" promptText="Texto enlace" />
+            <TextField fx:id="txtFieldurlen" promptText="URL Enlace" />
+            <TextField fx:id="txtFieldnombreht" promptText="Nombre html" />
+         </children>
+      </VBox>
+   </left>
+   <bottom>
+      <Button fx:id="btnGenerar" mnemonicParsing="false" onAction="#generarWeb" text="Generar" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <Label fx:id="txtErrror" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

@@ -1,4 +1,4 @@
-package ud7.PracticaUD7.Inventario;
+package ud7.PracticaUD7.InventarioFX;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -11,15 +11,24 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class AppInventario {
-    final static String PATH = "src/ud7/PracticaUD7/";
-    static Set<Producto> productos = new TreeSet<>();
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import ud7.PracticaUD7.InventarioFX.Models.Producto;
+
+public class AppInventario extends Application{
+    final static String PATH = "src/ud7/PracticaUD7/InventarioFX/Models/";
+    public static Set<Producto> productos = new TreeSet<>();
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        launch(args);
 
-        int respuesta = 0;
-        importarProductos();
+        // Scanner sc = new Scanner(System.in);
+
+        // int respuesta = 0;
+        // importarProductos();
 
         // do {
         //     System.out.println("1. Agregar productos");
@@ -126,5 +135,16 @@ public class AppInventario {
             e.printStackTrace();
         }
 
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        Parent root = FXMLLoader.load(AppInventario.class.getResource("Resources/inventario.fxml")) ;
+
+        Scene scene = new Scene(root);
+
+        primaryStage.setTitle("Inventario");
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 }
